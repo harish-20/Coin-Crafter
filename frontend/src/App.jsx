@@ -1,9 +1,15 @@
-import AllRoutes from "./components/shared/AllRoutes";
+import AllRoutes from "./pages/AllRoutes";
+import PopupMenu from "./components/UI/PopupMenu/PopupMenu";
 
 import "./App.css";
 
 function App() {
-  return <AllRoutes />;
+  return (
+    <>
+      <AllRoutes />
+      <PopupMenu />
+    </>
+  );
 }
 
 export default App;

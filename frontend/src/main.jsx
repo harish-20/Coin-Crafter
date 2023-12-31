@@ -1,19 +1,22 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import App from "./App.jsx";
 
 import "./index.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
+import store from "./store/store.js";
 
 const CLIENT_ID =
   "787616944380-ukbuj9q4bnh6tr6rqa9vo38ic7erb5cv.apps.googleusercontent.com";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <GoogleOAuthProvider clientId={CLIENT_ID}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </GoogleOAuthProvider>
 );

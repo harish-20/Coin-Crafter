@@ -11,7 +11,7 @@ const SignupTitle = () => {
         Already have an account?{" "}
         <Link
           className="text-green-800 border-b-2 border-green-800 font-semibold"
-          to="/login"
+          to="/signin"
         >
           Log in
         </Link>

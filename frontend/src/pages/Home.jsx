@@ -1,7 +1,13 @@
-import React from "react";
+import HeroSection from "../components/home/HeroSecion";
+import ProblemAndSolution from "../components/home/ProblemAndSolution";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="">
+      <HeroSection />
+      <ProblemAndSolution />
+    </div>
+  );
 };
 
 export default Home;

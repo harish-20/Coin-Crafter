@@ -7,3 +7,21 @@ body{
 *{
   @apply text-white;
 }
+
+.float-animate{
+  animation: float 2s alternate infinite ease-in-out;
+}
+
+/* to hide the cart credits */
+.canvasjs-chart-credit{
+display: none;
+}
+
+@keyframes float{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(10px);
+  }
+}

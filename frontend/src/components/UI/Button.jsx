@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const white =
@@ -6,7 +5,6 @@ const white =
 
 const Button = (props) => {
   const classList = `mt-8 py-2 w-full text-center font-bold rounded-full ${white}  focus:outline-none ${props.className}`;
-  console.log(props.href);
 
   if (props.href) {
     return (
