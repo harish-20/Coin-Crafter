@@ -65,6 +65,7 @@ const CategoryList = (props) => {
   const defaultCategories = categoryList.map((category) => (
     <CategoryItem key={category.title} {...category} />
   ));
+
   return (
     <div className="flex flex-col gap-10 mt-10  mx-[5%]">
       <CategoryListWithHeading
@@ -74,7 +75,7 @@ const CategoryList = (props) => {
       <CategoryListWithHeading
         list={defaultCategories}
         heading="Custom Categories"
-        extraItem={<AddCategoryButton />}
+        extraItem={<AddCategoryButton toggleForm={props.toggleForm} />}
       />
     </div>
   );
