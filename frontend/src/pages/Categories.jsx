@@ -1,9 +1,9 @@
 import { useState } from "react";
 
+import Popup from "../components/popup/Popup";
 import Layout from "../components/shared/Layout/Layout";
 import CategoryList from "../components/categories/categoryList";
-import AddCategoryForm from "../components/categories/CategoryForm/AddCategoryForm";
-import Popup from "../components/popup/Popup";
+import AddCategoryForm from "../components/categories/AddCategoryForm";
 
 const Categories = (props) => {
   const [isFormOpen, setIsFormOpen] = useState(true);

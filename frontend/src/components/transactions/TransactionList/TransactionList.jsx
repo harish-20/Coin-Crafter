@@ -61,10 +61,11 @@ const dummyData = [
 ];
 
 const TransactionList = (props) => {
+  const { selectTransaction } = props;
   const transactions = dummyData;
 
   return (
-    <div className="flex flex-col mt-6 gap-3">
+    <div className="flex flex-col my-6 gap-3">
       {transactions.map((transaction) => (
         <TransactionItem
           key={transaction.id}
@@ -73,6 +74,7 @@ const TransactionList = (props) => {
           date={transaction.date}
           time={transaction.time}
           amount={transaction.amount}
+          selectTransaction={selectTransaction}
         />
       ))}
     </div>

@@ -4,6 +4,17 @@ body{
   font-family:  'Noto Sans', sans-serif;
 }
 
+::-webkit-scrollbar-thumb{
+  background: rgb(120, 120, 120);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgb(29, 29, 29);
+  border-radius: 10px
+}
+
 *{
   @apply text-white;
 }
