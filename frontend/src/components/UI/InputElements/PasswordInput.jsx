@@ -5,6 +5,7 @@ import EyeIcon from "./EyeIcon";
 import Label from "../Label";
 
 const PasswordInput = (props) => {
+  const { errorMessage, ...otherProps } = props;
   const passwordRef = useRef(null);
   const [isPassword, setIsPassword] = useState(true);
   const [isFocused, setIsFocused] = useState(false);
@@ -12,17 +13,18 @@ const PasswordInput = (props) => {
   const toggleIsPassword = () => {
     setIsPassword((prev) => !prev);
   };
+
   return (
     <InputContainer className="">
-      <Label id="password" label="Password" />
+      <Label id="password" label={props.label} />
       <div className="flex relative">
         <input
           ref={passwordRef}
           className="w-full bg-transparent mt-2 py-2 px-4 border-[1.5px] border-gray-700 rounded-lg focus:border-gray-400 focus:outline-none"
           type={isPassword ? "password" : "text"}
-          {...props}
-          onFocus={setIsFocused.bind(null, true)}
-          onBlur={setIsFocused.bind(null, false)}
+          {...otherProps} // Use otherProps to pass remaining attributes like id, name, onChange, value, etc.
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           autoComplete="true"
         />
 
@@ -32,6 +34,9 @@ const PasswordInput = (props) => {
           onClick={toggleIsPassword}
         />
       </div>
+      {errorMessage && (
+        <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
+      )}
     </InputContainer>
   );
 };

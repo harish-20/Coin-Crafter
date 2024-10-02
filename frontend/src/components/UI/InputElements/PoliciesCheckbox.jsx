@@ -19,16 +19,21 @@ const PolicyLabel = (props) => (
 
 const PoliciesCheckbox = (props) => {
   return (
-    <div className="flex mt-4">
-      <input
-        id={props.id}
-        value={props.value}
-        onChange={props.onChange}
-        className="bg-transparent accent-slate-600"
-        type="checkbox"
-      />
-      <PolicyLabel id={props.id} />
-    </div>
+    <>
+      <div className="flex mt-4">
+        <input
+          id={props.id}
+          value={props.value}
+          onChange={props.onChange}
+          className="bg-transparent accent-slate-600"
+          type="checkbox"
+        />
+        <PolicyLabel id={props.id} />
+      </div>
+      {props.errorMessage && (
+        <div className="mt-1 text-red-500 text-xs">{props.errorMessage}</div>
+      )}
+    </>
   );
 };
 

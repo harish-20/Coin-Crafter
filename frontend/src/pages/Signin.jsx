@@ -1,6 +1,6 @@
 import GoogleLoginButton from "../components/signin/GoogleLogin";
 import GreetTitle from "../components/signin/GreetTitle";
-import LoginForm from "../components/signin/LoginForm";
+import SigninForm from "../components/signin/SigninForm";
 import AuthContainer from "../components/UI/AuthContainer";
 import SigupPrompt from "../components/signin/SigupPrompt";
 import TermsDetails from "../components/signin/TermsDetails";
@@ -14,7 +14,7 @@ const Signin = (props) => {
       <GoogleLoginButton />
 
       <Divider />
-      <LoginForm />
+      <SigninForm />
       <TermsDetails />
 
       {/* Fixed element */}

@@ -1,5 +1,7 @@
 const express = require("express");
 
+const { authMiddleware } = require("../auth/auth");
+
 const {
   addExpense,
   deleteExpense,
@@ -24,6 +26,6 @@ router.post("/category/create", createCategory);
 
 router.post("/user/signup", signUp);
 router.post("/user/signin", signIn);
-router.post("/user/find", findUser);
+router.post("/user/find", authMiddleware, findUser);
 
 module.exports = router;

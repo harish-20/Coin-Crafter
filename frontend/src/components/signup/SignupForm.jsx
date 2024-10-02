@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { validateEmail, validatePassword } from "../../helpers/validations";
 
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
 import PoliciesCheckbox from "../UI/InputElements/PoliciesCheckbox";
 import Button from "../UI/button";
 import SigninIcon from "../UI/Icons/SigninIcon";
+import Spinner from "../UI/Spinner";
+import { emailSignup } from "../../api/auth";
 
 const initialFormData = {
   name: "",
@@ -22,6 +26,38 @@ const SigninIconWithText = () => (
 
 const SignupForm = () => {
   const [formData, setFormData] = useState(initialFormData);
+  const [invalidData, setInvalidData] = useState({
+    name: false,
+    email: false,
+    password: false,
+    confirmPassword: false,
+  });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isSigningUp, setIsSigningUp] = useState(false);
+
+  const validateForm = () => {
+    const isValidName = !!formData.name.trim();
+    const isValidEmail = validateEmail(formData.email);
+    const isValidPassword = validatePassword(formData.password);
+    const isValidConfirmPassword =
+      validatePassword(formData.confirmPassword) &&
+      formData.password === formData.confirmPassword;
+
+    setInvalidData({
+      name: !isValidName,
+      email: !isValidEmail,
+      password: !isValidPassword,
+      confirmPassword: !isValidConfirmPassword,
+    });
+
+    return (
+      isValidName && isValidEmail && isValidPassword && isValidConfirmPassword
+    );
+  };
+
+  useEffect(() => {
+    if (isFormSubmitted) validateForm();
+  }, [formData]);
 
   const changeHandler = (event) => {
     const { name, value } = event.target;
@@ -37,6 +73,27 @@ const SignupForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    setIsFormSubmitted(true);
+    setIsSigningUp(true);
+
+    const isValidForm = validateForm();
+    if (!isValidForm) return setIsSigningUp(false);
+
+    try {
+      const response = emailSignup(
+        formData.name,
+        formData.email,
+        formData.password
+      );
+      if (response) {
+        console.log("sigin up sucess");
+      }
+    } catch (err) {
+      setIsSigningUp(false);
+      console.log("cannot signup", err);
+    }
+
+    setIsSigningUp(false);
   };
 
   return (
@@ -47,6 +104,7 @@ const SignupForm = () => {
         name="name"
         value={formData.name}
         onChange={changeHandler}
+        errorMessage={invalidData.name && "Enter a valid name"}
       />
       <TextInput
         label="email"
@@ -54,28 +112,41 @@ const SignupForm = () => {
         name="email"
         value={formData.email}
         onChange={changeHandler}
+        errorMessage={invalidData.email && "Enter a valid email"}
       />
       <PasswordInput
         label="Password"
         name="password"
         value={formData.password}
         onChange={changeHandler}
+        errorMessage={
+          invalidData.password &&
+          "Enter a valid password (A-B a-b 0-9 length-8)"
+        }
       />
       <PasswordInput
         label="Confirm Password"
         name="confirmPassword"
         value={formData.confirmPassword}
         onChange={changeHandler}
+        errorMessage={
+          invalidData.confirmPassword && "Password is not matching or invalid"
+        }
       />
 
       <PoliciesCheckbox
         id="policy"
         value={formData.isPoliciesAccepted}
         onChange={togglePolicyCheckBox}
+        errorMessage={
+          isFormSubmitted &&
+          !formData.isPoliciesAccepted &&
+          "Please check and accept the terms and condition"
+        }
       />
 
-      <Button>
-        <SigninIconWithText />
+      <Button disabled={isSigningUp}>
+        {isSigningUp ? <Spinner size={22} /> : <SigninIconWithText />}
       </Button>
     </form>
   );
