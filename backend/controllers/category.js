@@ -42,3 +42,19 @@ module.exports.createCategory = async (req, res) => {
     res.status(500).send("Something went wrong");
   }
 };
+
+module.exports.getDefaultCategories = async (req, res) => {
+  try {
+    const defaultCategories = await Category.find({ ownedBy: null });
+    if (defaultCategories.length === 0) {
+      return res.status(400).send({
+        errorMessage: "noCategoryFound",
+        message: "no category found for now add some.",
+      });
+    }
+    res.status(200).send({ categories: defaultCategories });
+  } catch (err) {
+    console.log("Error:", err);
+    res.status(500).send("Something went wrong");
+  }
+};

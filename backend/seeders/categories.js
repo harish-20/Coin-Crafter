@@ -1,0 +1,58 @@
+module.exports.categories = [
+  {
+    title: "Salary",
+    icon: "MoneyBag",
+    iconColor: "#00ff00",
+    backgroundColor: "#ffffff",
+    expenseType: "income",
+  },
+  {
+    title: "Groceries",
+    icon: "Cart",
+    iconColor: "#ff0000",
+    backgroundColor: "#f0f0f0",
+    expenseType: "spend",
+  },
+  {
+    title: "Rent",
+    icon: "Home",
+    iconColor: "#0000ff",
+    backgroundColor: "#cccccc",
+    expenseType: "spend",
+  },
+  {
+    title: "Utilities",
+    icon: "Wifi",
+    iconColor: "#ffff00",
+    backgroundColor: "#333333",
+    expenseType: "spend",
+  },
+  {
+    title: "Dining Out",
+    icon: "Cup",
+    iconColor: "#ff9900",
+    backgroundColor: "#f5f5f5",
+    expenseType: "spend",
+  },
+  {
+    title: "Entertainment",
+    icon: "Headphones",
+    iconColor: "#9900cc",
+    backgroundColor: "#e6e6e6",
+    expenseType: "spend",
+  },
+  {
+    title: "Healthcare",
+    icon: "Hammer",
+    iconColor: "#33cc33",
+    backgroundColor: "#f9f9f9",
+    expenseType: "spend",
+  },
+  {
+    title: "Travel",
+    icon: "Car",
+    iconColor: "#3366ff",
+    backgroundColor: "#d9edf7",
+    expenseType: "spend",
+  },
+];

@@ -8,20 +8,20 @@ const Pizza = (props) => (
     {...props}
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M13.784 5.459C14.8566 7.61496 15.2406 10.0485 14.884 12.43L12.36 12.53L1 13L7.076 3.182L8.426 1C10.6365 1.88592 12.5113 3.44622 13.784 5.459Z"
       stroke="black"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M12.36 12.533C12.416 10.5996 11.946 8.68717 11 7.00001C10.0868 5.37611 8.72427 4.05037 7.07599 3.18201"
       stroke="black"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M9.77002 10.23C9.49432 10.23 9.27002 10.0057 9.27002 9.72998C9.27002 9.45428 9.49432 9.22998 9.77002 9.22998C10.0457 9.22998 10.27 9.45428 10.27 9.72998C10.27 10.0057 10.0457 10.23 9.77002 10.23Z"

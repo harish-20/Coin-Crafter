@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 
 import { validateEmail, validatePassword } from "../../helpers/validations";
 
+import { emailSignup } from "../../api/auth";
+
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
 import PoliciesCheckbox from "../UI/InputElements/PoliciesCheckbox";
 import Button from "../UI/button";
 import SigninIcon from "../UI/Icons/SigninIcon";
 import Spinner from "../UI/Spinner";
-import { emailSignup } from "../../api/auth";
 
 const initialFormData = {
   name: "",

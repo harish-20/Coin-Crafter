@@ -8,7 +8,10 @@ const {
   getAllExpense,
   updateExpense,
 } = require("../controllers/expense");
-const { createCategory } = require("../controllers/category");
+const {
+  createCategory,
+  getDefaultCategories,
+} = require("../controllers/category");
 const { findUser } = require("../controllers/user");
 const { verifyGoogleAccount, signUp, signIn } = require("../controllers/auth");
 
@@ -22,6 +25,7 @@ router.post("/expense/update", updateExpense);
 router.delete("/expense/delete", deleteExpense);
 
 router.get("/category/getAll", () => {});
+router.get("/category/getDefaultCategories", getDefaultCategories);
 router.post("/category/create", createCategory);
 
 router.post("/user/signup", signUp);
