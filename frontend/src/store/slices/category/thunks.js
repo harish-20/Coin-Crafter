@@ -14,3 +14,16 @@ export const getDefaultCategories = createAsyncThunk(
     }
   }
 );
+
+export const getCustomCategories = createAsyncThunk(
+  "categories-getCustomCategories",
+  async (arg, thunkAPI) => {
+    try {
+      const categories = await categoryApi.getCustomCategories();
+
+      return categories;
+    } catch (err) {
+      thunkAPI.rejectWithValue("unable to fetch custom categories");
+    }
+  }
+);

@@ -1,17 +1,25 @@
-const Category = require("../models/category");
 const User = require("../models/user");
+const Category = require("../models/category");
 
 module.exports.createCategory = async (req, res) => {
   try {
-    const { title, icon, iconColor, backgroundColor, expenseType, ownedBy } =
-      req.body;
+    const { title, icon, iconColor, backgroundColor, expenseType } = req.body;
+
+    const owner = await User.findOne({ email: req.body.email });
+    if (!owner)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
+
+    const ownedBy = owner._id;
     const categoryData = {
       title,
       icon,
       iconColor,
       backgroundColor,
       expenseType,
-      ownedBy: ownedBy || null,
+      ownedBy,
     };
     const category = new Category(categoryData);
 
@@ -26,17 +34,14 @@ module.exports.createCategory = async (req, res) => {
 
     const savedCategory = await category.save();
 
-    if (ownedBy) {
-      const result = await User.findByIdAndUpdate(ownedBy, {
-        $push: { categories: savedCategory._id },
-      });
-      console.log(result);
-    }
+    const result = await User.findByIdAndUpdate(owner, {
+      $push: { categories: savedCategory._id },
+    });
 
-    const categories = await Category.find({});
-    res
-      .status(200)
-      .send({ message: "category created successfully!", categories });
+    res.status(200).send({
+      message: "category created successfully!",
+      category: savedCategory,
+    });
   } catch (err) {
     console.log("Error:", err);
     res.status(500).send("Something went wrong");
@@ -53,6 +58,24 @@ module.exports.getDefaultCategories = async (req, res) => {
       });
     }
     res.status(200).send({ categories: defaultCategories });
+  } catch (err) {
+    console.log("Error:", err);
+    res.status(500).send("Something went wrong");
+  }
+};
+
+module.exports.getCustomCategories = async (req, res) => {
+  try {
+    const owner = await user.findOne({ email: req.body.email });
+    if (!owner)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
+
+    const customCategories = await Category.find({ ownedBy: owner._id });
+
+    res.status(200).send({ categories: customCategories });
   } catch (err) {
     console.log("Error:", err);
     res.status(500).send("Something went wrong");

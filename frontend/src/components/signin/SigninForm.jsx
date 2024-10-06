@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
@@ -24,6 +25,8 @@ const SigninForm = () => {
     email: false,
     password: false,
   });
+
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -66,7 +69,7 @@ const SigninForm = () => {
     try {
       const response = await emailSignin(email, password);
       if (response) {
-        console.log(response);
+        navigate("/dashboard");
       }
 
       setIsSigningIn(false);

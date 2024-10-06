@@ -28,7 +28,7 @@ const ExpenseTypeInput = (props) => {
                 : "hover:shadow-[1px_1px_10px_1px_#fff8]"
             }`}
             style={{ background: bgColor }}
-            onClick={setExpenseType.bind(null, type)}
+            onClick={() => setExpenseType(type)}
           >
             <Icon />
           </div>

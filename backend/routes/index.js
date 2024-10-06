@@ -11,6 +11,7 @@ const {
 const {
   createCategory,
   getDefaultCategories,
+  getCustomCategories,
 } = require("../controllers/category");
 const { findUser } = require("../controllers/user");
 const { verifyGoogleAccount, signUp, signIn } = require("../controllers/auth");
@@ -26,7 +27,12 @@ router.delete("/expense/delete", deleteExpense);
 
 router.get("/category/getAll", () => {});
 router.get("/category/getDefaultCategories", getDefaultCategories);
-router.post("/category/create", createCategory);
+router.get(
+  "/category/getCustomCategories",
+  authMiddleware,
+  getCustomCategories
+);
+router.post("/category/create", authMiddleware, createCategory);
 
 router.post("/user/signup", signUp);
 router.post("/user/signin", signIn);

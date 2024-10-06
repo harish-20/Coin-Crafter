@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import * as thunks from "./thunks";
 import * as thunkHandlers from "./thunkHandlers";
+import * as actionHandlers from "./actionHandlers";
 
 const initialState = {
   defaultCategories: [],
@@ -15,7 +16,9 @@ const initialState = {
 const categorySlice = createSlice({
   name: "Popup",
   initialState,
-  reducers: {},
+  reducers: {
+    addCategory: actionHandlers.addCategory,
+  },
   extraReducers: (builder) => {
     builder.addCase(
       thunks.getDefaultCategories.pending,
@@ -25,9 +28,17 @@ const categorySlice = createSlice({
       thunks.getDefaultCategories.fulfilled,
       thunkHandlers.getDefaultCategoriesFulfilled
     );
+    builder.addCase(
+      thunks.getCustomCategories.pending,
+      thunkHandlers.getCustomCategoriesPending
+    );
+    builder.addCase(
+      thunks.getCustomCategories.fulfilled,
+      thunkHandlers.getCustomCategoriesFulfilled
+    );
   },
 });
 
-export const popupActions = categorySlice.actions;
+export const categoryActions = categorySlice.actions;
 
 export default categorySlice.reducer;

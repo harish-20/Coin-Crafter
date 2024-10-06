@@ -15,7 +15,6 @@ const IconItem = ({ isSelected, currentIcon, Icon, toggleIcon }) => (
 
 const IconInput = (props) => {
   const { icon, setIcon, errorMessage } = props;
-  console.log(icon);
 
   const toggleIcon = (selectedIcon) => {
     setIcon(selectedIcon);

@@ -14,16 +14,24 @@ const CategoryList = (props) => {
   const isDefaultCategoriesLoading = useSelector(
     (state) => state.category.loadingState.isDefaultCategoriesLoading
   );
-
-  console.log(defaultCategories);
+  const customCategories = useSelector(
+    (state) => state.category.customCategories
+  );
+  const isCustomCategoriesLoading = useSelector(
+    (state) => state.category.loadingState.isCustomCategoriesLoading
+  );
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(categoryThunks.getDefaultCategories());
+    dispatch(categoryThunks.getCustomCategories());
   }, []);
 
   const defaultCategoryList = defaultCategories.map((category) => (
+    <CategoryItem key={category.title} {...category} />
+  ));
+  const customCategoryList = customCategories.map((category) => (
     <CategoryItem key={category.title} {...category} />
   ));
 
@@ -36,8 +44,9 @@ const CategoryList = (props) => {
       />
 
       <CategoryListWithHeading
-        list={defaultCategoryList}
+        list={customCategoryList}
         heading="Custom Categories"
+        isLoading={isCustomCategoriesLoading}
         extraItem={<AddCategoryButton toggleForm={props.toggleForm} />}
       />
     </div>
