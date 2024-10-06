@@ -6,7 +6,7 @@ import CategoryList from "../components/categories/categoryList";
 import AddCategoryForm from "../components/categories/AddCategoryForm";
 
 const Categories = (props) => {
-  const [isFormOpen, setIsFormOpen] = useState(true);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const toggleForm = () => {
     setIsFormOpen((prev) => !prev);

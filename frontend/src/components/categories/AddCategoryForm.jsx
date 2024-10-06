@@ -25,15 +25,13 @@ const AddCategoryForm = (props) => {
     updateFormData(name, value);
   };
 
-  /*
-  title
-  icon
-  type
-  color
-  */
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.closeModal();
+  };
 
   return (
-    <form className={`py-2 ${props.className || ""}`}>
+    <form className={`py-2 ${props.className || ""}`} onSubmit={handleSubmit}>
       <div className="px-4 max-h-[500px] overflow-y-scroll">
         <TextInput
           value={formData.title}
@@ -41,24 +39,28 @@ const AddCategoryForm = (props) => {
           id="title"
           name="title"
           label="Title"
+          errorMessage="error"
         />
 
         <h2 className="mt-4 mb-2">Expense Type</h2>
         <ExpenseTypeInput
           expenseType={formData.type}
           setExpenseType={(type) => updateFormData("type", type)}
+          errorMessage="error"
         />
 
         <h2 className="mt-4 mb-2 ">Display Icon</h2>
         <IconInput
           icon={formData.icon}
           setIcon={(icon) => updateFormData("icon", icon)}
+          errorMessage="error"
         />
 
         <h2 className="mt-4 mb-2">Color</h2>
         <ColorInput
           color={formData.color}
           setColor={(color) => updateFormData("color", color)}
+          errorMessage="error"
         />
       </div>
 

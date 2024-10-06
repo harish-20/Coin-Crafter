@@ -14,7 +14,7 @@ const IconItem = ({ isSelected, currentIcon, Icon, toggleIcon }) => (
 );
 
 const IconInput = (props) => {
-  const { icon, setIcon } = props;
+  const { icon, setIcon, errorMessage } = props;
   console.log(icon);
 
   const toggleIcon = (selectedIcon) => {
@@ -31,7 +31,14 @@ const IconInput = (props) => {
     />
   ));
 
-  return <div className="grid grid-cols-5 gap-4">{selectableIcons}</div>;
+  return (
+    <>
+      <div className="grid grid-cols-5 gap-4">{selectableIcons}</div>
+      {errorMessage && (
+        <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
+      )}
+    </>
+  );
 };
 
 export default IconInput;

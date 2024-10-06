@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const popupSlice = createSlice({
-  name: "Popup",
+  name: "popup",
   initialState,
   reducers: {
     togglePopup: (state, action) => {

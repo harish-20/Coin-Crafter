@@ -11,7 +11,10 @@ const Popup = (props) => {
       <BackDrop onClick={closeModal} />
 
       <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
-        <Modal className="modal  bg-gray-900  rounded-lg" />
+        <Modal
+          closeModal={closeModal}
+          className="modal  bg-gray-900  rounded-lg"
+        />
       </div>
     </div>
   );

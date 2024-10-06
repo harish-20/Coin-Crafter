@@ -12,23 +12,28 @@ const availableColors = [
 ];
 
 const ColorInput = (props) => {
-  const { color, setColor } = props;
+  const { color, setColor, errorMessage } = props;
 
   return (
-    <div className="grid grid-cols-5 gap-3">
-      {availableColors.map((availableColor, index) => (
-        <div
-          key={index}
-          className={`h-12 w-12 rounded-md cursor-pointer duration-150 ${
-            availableColor === color
-              ? "border-2 border-green-500 shadow-[1px_1px_10px_1px_#74d572c3]"
-              : "hover:shadow-[1px_1px_10px_1px_#fff8]"
-          }`}
-          style={{ background: availableColor }}
-          onClick={setColor.bind(null, availableColor)}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-5 gap-3">
+        {availableColors.map((availableColor, index) => (
+          <div
+            key={index}
+            className={`h-12 w-12 rounded-md cursor-pointer duration-150 ${
+              availableColor === color
+                ? "border-2 border-green-500 shadow-[1px_1px_10px_1px_#74d572c3]"
+                : "hover:shadow-[1px_1px_10px_1px_#fff8]"
+            }`}
+            style={{ background: availableColor }}
+            onClick={setColor.bind(null, availableColor)}
+          />
+        ))}
+      </div>
+      {errorMessage && (
+        <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
+      )}
+    </>
   );
 };
 

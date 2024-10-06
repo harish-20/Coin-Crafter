@@ -10,7 +10,7 @@ const CategoryItem = (props) => {
   return (
     <div
       className="relative min-w-[150px] aspect-square rounded-xl flex flex-col items-center transition-transform duration-200 hover:scale-105"
-      style={{ backgroundColor: "purple" }}
+      style={{ backgroundColor }}
     >
       <div className="absolute top-3 right-3">
         {expenseType === "income" ? <IncomeIcon /> : <SpentIcon />}

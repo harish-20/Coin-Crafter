@@ -7,7 +7,6 @@ export const getDefaultCategories = createAsyncThunk(
   async (arg, thunkAPI) => {
     try {
       const categories = await categoryApi.getDefaultCategories();
-      console.log(categories);
 
       return categories;
     } catch (err) {

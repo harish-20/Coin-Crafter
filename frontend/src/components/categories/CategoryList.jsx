@@ -6,7 +6,6 @@ import * as categoryThunks from "../../store/slices/category/thunks";
 import CategoryItem from "./CategoryItem";
 import CategoryListWithHeading from "./CategoryListWithHeading";
 import AddCategoryButton from "./AddCategoryButton";
-import Spinner from "../UI/Spinner";
 
 const CategoryList = (props) => {
   const defaultCategories = useSelector(
@@ -29,7 +28,7 @@ const CategoryList = (props) => {
   ));
 
   return (
-    <div className="flex flex-col gap-10 mt-10  mx-[5%]">
+    <div className="flex flex-col gap-10 my-10  mx-[5%]">
       <CategoryListWithHeading
         list={defaultCategoryList}
         heading="Default Categories"

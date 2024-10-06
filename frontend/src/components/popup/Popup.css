@@ -1,12 +1,12 @@
-.modal{
-    animation: popup 100ms ease-in;
+.modal {
+  animation: popup 100ms ease-in;
 }
 
 @keyframes popup {
-    from{
-        transform: scale(0.9);
-    }
-    to{
-        transform: scale(1);
-    }
+  from {
+    transform: scale(0.6);
+  }
+  to {
+    transform: scale(1);
+  }
 }

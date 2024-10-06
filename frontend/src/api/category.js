@@ -6,6 +6,6 @@ export const getDefaultCategories = async () => {
 
     return response.data.categories;
   } catch (err) {
-    console.log("Cannot Login", err);
+    console.log("Cannot Fetch Default Categories", err);
   }
 };
