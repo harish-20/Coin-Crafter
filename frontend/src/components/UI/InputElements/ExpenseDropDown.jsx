@@ -1,31 +1,37 @@
-import React, { useEffect, useRef, useState } from "react";
-import InputContainer from "./InputContainer";
+import { useEffect, useRef, useState } from "react";
 
 import icons from "../CategoryIcon";
+import InputContainer from "./InputContainer";
+import FakeIcon from "../../categories/fakeIcon";
 
-const ExpenseItem = (props) => (
-  <div
-    className={`flex items-center gap-4 py-3 px-6 cursor-pointer ${
-      props.className || ""
-    }`}
-    onClick={props.onClick}
-  >
-    <icons.Box />
-    <div>Expense</div>
-  </div>
-);
+const ExpenseItem = (props) => {
+  const Icon = icons[props.icon] || FakeIcon;
+
+  return (
+    <div
+      className={`flex items-center gap-4 py-3 px-6 cursor-pointer ${
+        props.className || ""
+      }`}
+      onClick={props.onClick}
+    >
+      <Icon />
+      <div>{props.title}</div>
+    </div>
+  );
+};
 
 const expenses = [1, 2, 2, 2, 3, 4, 4, 3];
 
 const ExpenseDropDown = (props) => {
-  const { label, value, setValue } = props;
+  const { label, value, setValue, expenseList } = props;
+  console.log(expenseList);
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dropDownRef = useRef(null);
 
   const openDropDown = () => setIsDropDownOpen(true);
   const handleSelect = () => {
-    // setValue("some value for now");
+    // TODO need to set value
     setIsDropDownOpen(false);
   };
 
@@ -34,7 +40,6 @@ const ExpenseDropDown = (props) => {
       const isClickMadeOutside =
         event.target !== dropDownRef.current &&
         event.target.contains(dropDownRef.current);
-      console.log(isClickMadeOutside, isDropDownOpen);
 
       if (isDropDownOpen && isClickMadeOutside) setIsDropDownOpen(false);
     };
@@ -66,11 +71,13 @@ const ExpenseDropDown = (props) => {
           style={{ height: isDropDownOpen ? "200px" : "0px" }}
           className="absolute w-full top-[110%] overflow-y-auto duration-300 bg-gray-800 rounded-lg"
         >
-          {expenses.map((expense, index) => (
+          {expenseList.map((expense, index) => (
             <ExpenseItem
               className="hover:bg-gray-700 duration-200"
               onClick={handleSelect}
               key={index}
+              icon={expense.icon}
+              title={expense.title}
             />
           ))}
         </div>

@@ -26,7 +26,6 @@ const AddCategoryForm = (props) => {
   const dispatch = useDispatch();
 
   const updateFormData = (key, value) => {
-    console.log(key, value);
     setFormErrors((prev) => ({
       ...prev,
       [key]: value.trim() ? "" : `${key} is required.`,
@@ -103,7 +102,9 @@ const AddCategoryForm = (props) => {
       </div>
 
       <div className="px-4">
-        <Button className="rounded-lg bg-dark">Add Category</Button>
+        <Button isLoading={isFormSubmitted} className="rounded-lg bg-dark">
+          Add Category
+        </Button>
       </div>
     </form>
   );

@@ -66,7 +66,7 @@ module.exports.getDefaultCategories = async (req, res) => {
 
 module.exports.getCustomCategories = async (req, res) => {
   try {
-    const owner = await user.findOne({ email: req.body.email });
+    const owner = await User.findOne({ email: req.body.email });
     if (!owner)
       return res.status(400).send({
         errorMessage: "noUserFound",
