@@ -27,8 +27,8 @@ const linkList = [
 
 const NavLinks = () => {
   return (
-    <nav>
-      <ul className="flex flex-col gap-10">
+    <nav className="w-full">
+      <ul className="flex flex-col gap-5 w-full">
         {linkList.map((link) => (
           <NavLinkItem key={link.id} {...link} />
         ))}
