@@ -2,40 +2,38 @@ const express = require("express");
 
 const { authMiddleware } = require("../auth/auth");
 
-const {
-  addExpense,
-  deleteExpense,
-  getAllExpense,
-  updateExpense,
-} = require("../controllers/expense");
-const {
-  createCategory,
-  getDefaultCategories,
-  getCustomCategories,
-} = require("../controllers/category");
-const { findUser } = require("../controllers/user");
-const { verifyGoogleAccount, signUp, signIn } = require("../controllers/auth");
+const expenseController = require("../controllers/expense");
+const categoryController = require("../controllers/category");
+const userController = require("../controllers/user");
+const authController = require("../controllers/auth");
 
 const router = express.Router();
 
-router.post("/googleSignin", verifyGoogleAccount);
+router.post("/googleSignin", authController.verifyGoogleAccount);
 
-router.get("/expense/getAll", getAllExpense);
-router.post("/expense/create", addExpense);
-router.post("/expense/update", updateExpense);
-router.delete("/expense/delete", deleteExpense);
+router.get("/expense/getAll", expenseController.getAllExpense);
+router.post("/expense/create", expenseController.addExpense);
+router.post("/expense/update", expenseController.updateExpense);
+router.delete("/expense/delete", expenseController.deleteExpense);
 
 router.get("/category/getAll", () => {});
-router.get("/category/getDefaultCategories", getDefaultCategories);
+router.get(
+  "/category/getDefaultCategories",
+  categoryController.getDefaultCategories
+);
 router.get(
   "/category/getCustomCategories",
   authMiddleware,
-  getCustomCategories
+  categoryController.getCustomCategories
 );
-router.post("/category/create", authMiddleware, createCategory);
+router.post(
+  "/category/create",
+  authMiddleware,
+  categoryController.createCategory
+);
 
-router.post("/user/signup", signUp);
-router.post("/user/signin", signIn);
-router.post("/user/find", authMiddleware, findUser);
+router.post("/user/signup", authController.signUp);
+router.post("/user/signin", authController.signIn);
+router.post("/user/find", authMiddleware, userController.findUser);
 
 module.exports = router;
