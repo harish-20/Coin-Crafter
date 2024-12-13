@@ -27,3 +27,10 @@ export const getCustomCategories = createAsyncThunk(
     }
   }
 );
+
+const categoryThunks = {
+  getDefaultCategories,
+  getCustomCategories,
+};
+
+export default categoryThunks;

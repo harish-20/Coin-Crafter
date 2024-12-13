@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import * as categoryThunks from "../../store/slices/category/thunks";
+import categoryThunks from "../../store/slices/category/thunks";
 
 import CategoryItem from "./CategoryItem";
 import CategoryListWithHeading from "./CategoryListWithHeading";
@@ -29,10 +29,10 @@ const CategoryList = (props) => {
   }, []);
 
   const defaultCategoryList = defaultCategories.map((category) => (
-    <CategoryItem key={category.title} {...category} />
+    <CategoryItem key={category._id} {...category} />
   ));
   const customCategoryList = customCategories.map((category) => (
-    <CategoryItem key={category.title} {...category} />
+    <CategoryItem key={category._id} {...category} />
   ));
 
   return (

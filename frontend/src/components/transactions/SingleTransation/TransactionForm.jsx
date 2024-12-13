@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import ExpenseDropDown from "../../UI/InputElements/ExpenseDropDown";
 import TextInput from "../../UI/InputElements/TextInput";
@@ -8,7 +8,9 @@ import DateInput from "../../UI/InputElements/DateInput";
 import TimeInput from "../../UI/InputElements/TimeInput";
 import Button from "../../UI/Button";
 
-// we can use this form for both update and creating an expense
+import categoryThunks from "../../../store/slices/category/thunks";
+
+// used this form for both update and creating an expense
 const TransactionForm = () => {
   const defaultCategories = useSelector(
     (state) => state.category.defaultCategories
@@ -24,6 +26,14 @@ const TransactionForm = () => {
     date: new Date(),
     time: new Date(),
   });
+
+  const dispatch = useDispatch();
+
+  // fetch these categories inorder to show the available category in expense form
+  useEffect(() => {
+    dispatch(categoryThunks.getDefaultCategories());
+    dispatch(categoryThunks.getCustomCategories());
+  }, []);
 
   const handleChange = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));

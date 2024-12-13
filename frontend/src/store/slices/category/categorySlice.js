@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import * as thunks from "./thunks";
+import thunks from "./thunks";
 import * as thunkHandlers from "./thunkHandlers";
 import * as actionHandlers from "./actionHandlers";
 

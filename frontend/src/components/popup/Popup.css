@@ -1,12 +1,15 @@
 .modal {
-  animation: popup 100ms ease-in;
+  opacity: 0;
+  animation: popup 300ms ease-in forwards;
 }
 
 @keyframes popup {
   from {
-    transform: scale(0.6);
+    transform: translateY(80px);
+    opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: translateY(0px);
+    opacity: 1;
   }
 }

@@ -20,18 +20,15 @@ const ExpenseItem = (props) => {
   );
 };
 
-const expenses = [1, 2, 2, 2, 3, 4, 4, 3];
-
 const ExpenseDropDown = (props) => {
-  const { label, value, setValue, expenseList } = props;
-  console.log(expenseList);
+  const { label, value, onChange, expenseList } = props;
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dropDownRef = useRef(null);
 
   const openDropDown = () => setIsDropDownOpen(true);
-  const handleSelect = () => {
-    // TODO need to set value
+  const handleSelect = (selectedValue) => {
+    onChange(selectedValue);
     setIsDropDownOpen(false);
   };
 
@@ -51,6 +48,8 @@ const ExpenseDropDown = (props) => {
     };
   }, [isDropDownOpen]);
 
+  const selectedItem = expenseList.find((expense) => expense._id === value);
+
   return (
     <InputContainer>
       <label className="">{label}</label>
@@ -64,7 +63,10 @@ const ExpenseDropDown = (props) => {
           onClick={openDropDown}
           tabIndex={1}
         >
-          <ExpenseItem />
+          <ExpenseItem
+            icon={selectedItem?.icon || ""}
+            title={selectedItem?.title || "Select Category"}
+          />
         </div>
 
         <div
@@ -74,7 +76,7 @@ const ExpenseDropDown = (props) => {
           {expenseList.map((expense, index) => (
             <ExpenseItem
               className="hover:bg-gray-700 duration-200"
-              onClick={handleSelect}
+              onClick={() => handleSelect(expense._id)}
               key={index}
               icon={expense.icon}
               title={expense.title}

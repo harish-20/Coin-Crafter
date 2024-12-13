@@ -1,6 +1,8 @@
+import "./BackDrop.css";
+
 const BackDrop = (props) => (
   <div
-    className="h-full w-full bg-black opacity-30"
+    className="backdrop h-full w-full bg-black"
     onClick={props.onClick}
   ></div>
 );
