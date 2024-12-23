@@ -20,11 +20,19 @@ const TransactionForm = () => {
   );
 
   const [formData, setFormData] = useState({
-    expense: "",
+    category: "",
     amount: "",
     description: "",
     date: new Date(),
     time: new Date(),
+  });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [formErrors, setFormErrors] = useState({
+    category: false,
+    amount: false,
+    description: false,
+    date: false,
+    time: false,
   });
 
   const dispatch = useDispatch();
@@ -37,32 +45,60 @@ const TransactionForm = () => {
 
   const handleChange = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
+    setFormErrors((prev) => ({ ...prev, [key]: !value }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsFormSubmitted(true);
+
+    // validations
+    const collectedFormErrors = {};
+    let hasError = false;
+    for (const key of Object.keys(formData)) {
+      if (!formData[key]) hasError = true;
+      collectedFormErrors[key] = !formData[key];
+    }
+    if (hasError) {
+      setFormErrors(collectedFormErrors);
+    } else {
+      // submit the form
+      console.table(formData);
+    }
   };
   return (
     <div className="p-10 h-full overflow-auto">
       <form className="" onSubmit={handleSubmit}>
         <ExpenseDropDown
-          label="Expense"
-          value={formData.expense}
-          onChange={(value) => handleChange("expense", value)}
+          label="Category"
+          value={formData.category}
+          onChange={(value) => handleChange("category", value)}
           expenseList={[...defaultCategories, ...customCategories]}
+          errorMessage={
+            isFormSubmitted && formErrors.expense && "Select a expense type"
+          }
         />
 
         <TextInput
           id="amount"
           label="Amount"
           onChange={(event) => handleChange("amount", event.target.value)}
+          errorMessage={
+            isFormSubmitted && formErrors.amount && "Enter a valid amount"
+          }
         />
 
         <TextAreaInput
           id="description"
           label="Description"
           rows={5}
-          onChange={(event) => handleChange("time", event.target.value)}
+          value={formData.description}
+          onChange={(event) => handleChange("description", event.target.value)}
+          errorMessage={
+            isFormSubmitted &&
+            formErrors.description &&
+            "Enter a valid description"
+          }
         />
 
         <DateInput

@@ -21,7 +21,7 @@ const ExpenseItem = (props) => {
 };
 
 const ExpenseDropDown = (props) => {
-  const { label, value, onChange, expenseList } = props;
+  const { label, value, onChange, expenseList, errorMessage } = props;
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dropDownRef = useRef(null);
@@ -84,6 +84,9 @@ const ExpenseDropDown = (props) => {
           ))}
         </div>
       </div>
+      {errorMessage && (
+        <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
+      )}
     </InputContainer>
   );
 };
