@@ -1,16 +1,24 @@
 const Expense = require("../models/expense");
+const User = require("../models/user");
 
 module.exports.addExpense = async (req, res) => {
   try {
-    const { user, category, amount, shortNote, tags } = req.body;
-    if (!user || !category || !amount || !shortNote || !tags) {
+    const { email, category, amount, shortNote, tags = [] } = req.body;
+    if (!category || !amount || !shortNote || !tags) {
       res.status(400).send({
         message: "invalid or missing parameters",
       });
       return;
     }
+    const user = await User.findOne({ email });
 
-    const expense = new Expense({ user, category, amount, shortNote, tags });
+    const expense = new Expense({
+      user: user._id,
+      category,
+      amount,
+      shortNote,
+      tags,
+    });
 
     const invalidData = expense.validateSync();
     if (invalidData) {

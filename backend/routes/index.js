@@ -12,7 +12,7 @@ const router = express.Router();
 router.post("/googleSignin", authController.verifyGoogleAccount);
 
 router.get("/expense/getAll", expenseController.getAllExpense);
-router.post("/expense/create", expenseController.addExpense);
+router.post("/expense/create", authMiddleware, expenseController.addExpense);
 router.post("/expense/update", expenseController.updateExpense);
 router.delete("/expense/delete", expenseController.deleteExpense);
 

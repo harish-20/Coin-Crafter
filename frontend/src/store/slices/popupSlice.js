@@ -9,8 +9,7 @@ const popupSlice = createSlice({
   initialState,
   reducers: {
     togglePopup: (state, action) => {
-      const { payload } = action;
-      const { popupType } = payload;
+      const popupType = action.payload;
 
       state.currentPopup = popupType;
     },

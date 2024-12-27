@@ -61,7 +61,7 @@ const dummyData = [
 ];
 
 const TransactionList = (props) => {
-  const { selectTransaction } = props;
+  const { selectedTransaction, selectTransaction } = props;
   const transactions = dummyData;
 
   return (
@@ -69,12 +69,14 @@ const TransactionList = (props) => {
       {transactions.map((transaction) => (
         <TransactionItem
           key={transaction.id}
+          id={transaction.id}
           title={transaction.title}
           category={transaction.category}
           date={transaction.date}
           time={transaction.time}
           amount={transaction.amount}
           selectTransaction={selectTransaction}
+          selectedTransaction={selectedTransaction}
         />
       ))}
     </div>

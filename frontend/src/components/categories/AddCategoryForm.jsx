@@ -102,7 +102,7 @@ const AddCategoryForm = (props) => {
       </div>
 
       <div className="px-4">
-        <Button isLoading={isFormSubmitted} className="rounded-lg bg-dark">
+        <Button isLoading={isSubmitting} className="rounded-lg bg-dark">
           Add Category
         </Button>
       </div>

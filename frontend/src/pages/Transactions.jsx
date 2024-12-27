@@ -10,7 +10,7 @@ const Transactions = () => {
 
   const selectTransaction = (id) => {
     // will have to set id when it has done
-    setSelectedTransaction((prev) => !prev);
+    setSelectedTransaction(id);
   };
   const handleClose = () => {
     selectTransaction(null);
@@ -19,7 +19,10 @@ const Transactions = () => {
     <Layout className="px-8">
       <SearchBar />
       <Filters />
-      <TransactionList selectTransaction={selectTransaction} />
+      <TransactionList
+        selectedTransaction={selectedTransaction}
+        selectTransaction={selectTransaction}
+      />
       <SingleTransaction isOpen={selectedTransaction} onClose={handleClose} />
     </Layout>
   );

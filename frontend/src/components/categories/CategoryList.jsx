@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import categoryThunks from "../../store/slices/category/thunks";
+import * as categoryThunks from "../../store/slices/category/thunks";
 
 import CategoryItem from "./CategoryItem";
 import CategoryListWithHeading from "./CategoryListWithHeading";

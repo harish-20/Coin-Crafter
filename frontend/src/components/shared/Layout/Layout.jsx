@@ -3,6 +3,7 @@ import { useState } from "react";
 import SidePanel from "./SidePanel/SidePanel";
 import NavBar from "./NavBar";
 import BackDrop from "./BackDrop";
+import NewTransaction from "../../transactions/NewTransaction/NewTransaction";
 
 const Layout = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,6 +24,7 @@ const Layout = (props) => {
       >
         {props.children}
       </div>
+      <NewTransaction />
     </div>
   );
 };

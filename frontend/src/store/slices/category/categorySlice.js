@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import thunks from "./thunks";
+import * as thunks from "./thunks";
 import * as thunkHandlers from "./thunkHandlers";
 import * as actionHandlers from "./actionHandlers";
 
@@ -14,7 +14,7 @@ const initialState = {
 };
 
 const categorySlice = createSlice({
-  name: "Popup",
+  name: "category",
   initialState,
   reducers: {
     addCategory: actionHandlers.addCategory,

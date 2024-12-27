@@ -3,11 +3,24 @@ import DataWithLabel from "./DataWithLabel";
 import ExampleIcon from "../../UI/Icons/BurgerMenuIcon";
 
 const TransactionItem = (props) => {
-  const { title, categoryImage, date, time, amount, selectTransaction } = props;
+  const {
+    id,
+    title,
+    categoryImage,
+    date,
+    time,
+    amount,
+    selectTransaction,
+    selectedTransaction,
+  } = props;
+
+  const isSelectedTransaction = selectedTransaction === id;
   return (
     <div
-      className="gap-2 cursor-pointer p-2 pb-4 duration-150 hover:bg-slate-800 rounded-lg"
-      onClick={() => selectTransaction("something for now(id)")}
+      className={`gap-2 cursor-pointer p-2 pb-4 duration-150 rounded-lg ${
+        isSelectedTransaction ? "bg-slate-700" : "hover:bg-slate-800"
+      }`}
+      onClick={() => selectTransaction(id)}
     >
       <div className="flex justify-between items-center min-h-[50px] flex-wrap">
         <div className="bg-black rounded-full p-2">

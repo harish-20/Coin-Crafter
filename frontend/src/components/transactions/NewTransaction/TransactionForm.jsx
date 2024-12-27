@@ -9,6 +9,7 @@ import TimeInput from "../../UI/InputElements/TimeInput";
 import Button from "../../UI/Button";
 
 import * as categoryThunks from "../../../store/slices/category/thunks";
+import * as expenseThunks from "../../../store/slices/expense/thunks";
 
 // used this form for both update and creating an expense
 const TransactionForm = () => {
@@ -62,12 +63,11 @@ const TransactionForm = () => {
     if (hasError) {
       setFormErrors(collectedFormErrors);
     } else {
-      // submit the form
-      console.table(formData);
+      dispatch(expenseThunks.createTransaction(formData));
     }
   };
   return (
-    <div className="p-10 h-full overflow-auto">
+    <div className="p-4 min-w-[500px] overflow-auto bg-gray-900 rounded-lg">
       <form className="" onSubmit={handleSubmit}>
         <ExpenseDropDown
           label="Category"
@@ -116,7 +116,7 @@ const TransactionForm = () => {
           }}
         />
 
-        <Button className="">Edit Expense</Button>
+        <Button className="">Add Expense</Button>
       </form>
     </div>
   );
