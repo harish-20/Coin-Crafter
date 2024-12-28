@@ -1,7 +1,13 @@
 import { api } from ".";
 
-const getAllExpense = () => {
-  api.get("/expense");
+export const getAllExpense = async () => {
+  try {
+    const result = await api.get("/expense");
+
+    return result.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const createExpense = async (data) => {
@@ -16,7 +22,7 @@ export const createExpense = async (data) => {
     });
 
     return result.data;
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 };

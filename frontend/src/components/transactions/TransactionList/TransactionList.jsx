@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import TransactionItem from "./TransactionItem";
 
 const dummyData = [
@@ -62,15 +64,15 @@ const dummyData = [
 
 const TransactionList = (props) => {
   const { selectedTransaction, selectTransaction } = props;
-  const transactions = dummyData;
+  // const transactions = dummyData;
+  const transactions = useSelector((state) => state.expense.expenses);
 
   return (
     <div className="flex flex-col my-6 gap-3">
       {transactions.map((transaction) => (
         <TransactionItem
-          key={transaction.id}
-          id={transaction.id}
-          title={transaction.title}
+          key={transaction._id}
+          id={transaction._id}
           category={transaction.category}
           date={transaction.date}
           time={transaction.time}

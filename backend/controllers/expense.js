@@ -1,10 +1,30 @@
 const Expense = require("../models/expense");
 const User = require("../models/user");
 
+module.exports.getAllExpense = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    const expenses = await Expense.find(
+      { user: user._id },
+      { user: 0 }
+    ).populate("category");
+
+    res.status(200).send(expenses);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      message: "Something went wrong.",
+      error,
+    });
+  }
+};
+
 module.exports.addExpense = async (req, res) => {
   try {
     const { email, category, amount, shortNote, tags = [] } = req.body;
-    if (!category || !amount || !shortNote || !tags) {
+    if (!category || !amount || !shortNote) {
       res.status(400).send({
         message: "invalid or missing parameters",
       });
@@ -44,8 +64,6 @@ module.exports.addExpense = async (req, res) => {
     });
   }
 };
-
-module.exports.getAllExpense = async (req, res) => {};
 
 module.exports.updateExpense = async (req, res) => {};
 

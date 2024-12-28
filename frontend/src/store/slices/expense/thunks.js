@@ -1,9 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createExpense } from "../../../api/expense";
+import { createExpense, getAllExpense } from "../../../api/expense";
 
-const getAllTransaction = createAsyncThunk(
+export const getAllTransaction = createAsyncThunk(
   "get-all-transaction",
-  async (args, thunkApi) => {}
+  async (args, thunkApi) => {
+    try {
+      const expenses = await getAllExpense();
+
+      return expenses;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error);
+    }
+  }
 );
 
 export const createTransaction = createAsyncThunk(

@@ -7,7 +7,7 @@ import * as actionHandlers from "./actionHandlers";
 const initialState = {
   expenses: [],
   loadingState: {
-    isExpenseLoading: false,
+    isExpensesLoading: false,
     isExpenseAdding: false,
   },
 };
@@ -18,6 +18,16 @@ const expenseSlice = createSlice({
   reducers: {},
   extraReducers: (builder) =>
     builder
+      // get transactions
+      .addCase(
+        thunks.getAllTransaction.pending,
+        thunkHandlers.getAllTransactionPending
+      )
+      .addCase(
+        thunks.getAllTransaction.fulfilled,
+        thunkHandlers.getAllTransactionFulfilled
+      )
+      // create transaction
       .addCase(
         thunks.createTransaction.pending,
         thunkHandlers.createTransactionPending
