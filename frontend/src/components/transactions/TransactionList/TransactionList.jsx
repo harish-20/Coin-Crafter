@@ -77,6 +77,7 @@ const TransactionList = (props) => {
           date={transaction.date}
           time={transaction.time}
           amount={transaction.amount}
+          description={transaction.shortNote}
           selectTransaction={selectTransaction}
           selectedTransaction={selectedTransaction}
         />

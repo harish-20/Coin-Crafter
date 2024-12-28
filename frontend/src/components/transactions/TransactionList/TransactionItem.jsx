@@ -10,6 +10,7 @@ const TransactionItem = (props) => {
     date,
     time,
     amount,
+    description,
     selectTransaction,
     selectedTransaction,
   } = props;
@@ -38,7 +39,7 @@ const TransactionItem = (props) => {
       </div>
       <div>
         <h2 className="text-sm font-semibold">Description</h2>
-        <p className="text-sm text-gray-400">This is a sample description</p>
+        <p className="text-sm text-gray-400">{description}</p>
       </div>
     </div>
   );

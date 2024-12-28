@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { createExpense, getAllExpense } from "../../../api/expense";
+import { popupActions } from "../popupSlice";
 
 export const getAllTransaction = createAsyncThunk(
   "get-all-transaction",
@@ -20,6 +21,8 @@ export const createTransaction = createAsyncThunk(
     try {
       const { user, category, amount, description: shortNote, tags } = args;
       await createExpense({ user, category, amount, shortNote, tags });
+      thunkApi.dispatch(getAllTransaction());
+      thunkApi.dispatch(popupActions.togglePopup("none"));
     } catch (error) {
       return thunkApi.rejectWithValue(error);
     }

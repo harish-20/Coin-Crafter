@@ -8,7 +8,12 @@ module.exports.getAllExpense = async (req, res) => {
 
     const expenses = await Expense.find(
       { user: user._id },
-      { user: 0 }
+      { user: 0 },
+      {
+        sort: {
+          createdAt: -1,
+        },
+      }
     ).populate("category");
 
     res.status(200).send(expenses);
