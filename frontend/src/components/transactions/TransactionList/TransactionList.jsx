@@ -63,7 +63,6 @@ const dummyData = [
 ];
 
 const TransactionList = (props) => {
-  const { selectedTransaction, selectTransaction } = props;
   // const transactions = dummyData;
   const transactions = useSelector((state) => state.expense.expenses);
 
@@ -78,8 +77,6 @@ const TransactionList = (props) => {
           time={transaction.time}
           amount={transaction.amount}
           description={transaction.shortNote}
-          selectTransaction={selectTransaction}
-          selectedTransaction={selectedTransaction}
         />
       ))}
     </div>

@@ -1,9 +1,11 @@
 import React from "react";
-import TransactionForm from "./TransactionForm";
+
 import BackDrop from "../../shared/Layout/BackDrop";
+import TransactionForm from "./TransactionForm";
 
 const SingleTransaction = (props) => {
   const { isOpen, onClose } = props;
+
   return (
     <>
       {isOpen && <BackDrop onClick={onClose} />}

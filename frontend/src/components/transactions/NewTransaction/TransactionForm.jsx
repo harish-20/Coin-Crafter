@@ -8,10 +8,11 @@ import DateInput from "../../UI/InputElements/DateInput";
 import TimeInput from "../../UI/InputElements/TimeInput";
 import Button from "../../UI/Button";
 
+import { popupActions } from "../../../store/slices/popupSlice";
+
 import * as categoryThunks from "../../../store/slices/category/thunks";
 import * as expenseThunks from "../../../store/slices/expense/thunks";
 
-// used this form for both update and creating an expense
 const TransactionForm = () => {
   const defaultCategories = useSelector(
     (state) => state.category.defaultCategories
@@ -64,6 +65,7 @@ const TransactionForm = () => {
       setFormErrors(collectedFormErrors);
     } else {
       dispatch(expenseThunks.createTransaction(formData));
+      dispatch(popupActions.togglePopup("none"));
     }
   };
   return (

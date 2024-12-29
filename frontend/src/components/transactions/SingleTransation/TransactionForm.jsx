@@ -9,6 +9,9 @@ import TimeInput from "../../UI/InputElements/TimeInput";
 import Button from "../../UI/Button";
 
 import * as categoryThunks from "../../../store/slices/category/thunks";
+import * as expenseThunks from "../../../store/slices/expense/thunks";
+
+import { getSingleExpense, updateExpense } from "../../../api/expense";
 
 // used this form for both update and creating an expense
 const TransactionForm = () => {
@@ -17,6 +20,9 @@ const TransactionForm = () => {
   );
   const customCategories = useSelector(
     (state) => state.category.customCategories
+  );
+  const expenseOnEditMode = useSelector(
+    (state) => state.expense.expenseOnEditMode
   );
 
   const [formData, setFormData] = useState({
@@ -43,6 +49,25 @@ const TransactionForm = () => {
     dispatch(categoryThunks.getCustomCategories());
   }, []);
 
+  useEffect(() => {
+    const populateValuesForEditMode = async () => {
+      try {
+        const result = await getSingleExpense(expenseOnEditMode);
+        console.log(result);
+        setFormData({
+          category: result.category,
+          amount: result.amount,
+          description: result.shortNote,
+          date: result.date,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (expenseOnEditMode) populateValuesForEditMode();
+  }, [expenseOnEditMode]);
+
   const handleChange = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
     setFormErrors((prev) => ({ ...prev, [key]: !value }));
@@ -62,8 +87,14 @@ const TransactionForm = () => {
     if (hasError) {
       setFormErrors(collectedFormErrors);
     } else {
-      // submit the form
-      console.table(formData);
+      updateExpense({
+        _id: expenseOnEditMode,
+        category: formData.category,
+        amount: formData.amount,
+        shortNote: formData.description,
+        date: formData.date,
+      });
+      dispatch(expenseThunks.getAllTransaction());
     }
   };
   return (
@@ -82,6 +113,7 @@ const TransactionForm = () => {
         <TextInput
           id="amount"
           label="Amount"
+          value={formData.amount}
           onChange={(event) => handleChange("amount", event.target.value)}
           errorMessage={
             isFormSubmitted && formErrors.amount && "Enter a valid amount"
@@ -104,16 +136,15 @@ const TransactionForm = () => {
         <DateInput
           id="date"
           label="Date"
+          value={formData.date}
           onChange={(event) => handleChange("date", event.target.value)}
         />
 
         <TimeInput
           id="time"
           label="Time"
-          onChange={(event) => {
-            console.log(event.target);
-            handleChange("time", event.target.value);
-          }}
+          value={formData.time}
+          onChange={(event) => handleChange("time", event.target.value)}
         />
 
         <Button className="">Edit Expense</Button>

@@ -6,6 +6,7 @@ import * as actionHandlers from "./actionHandlers";
 
 const initialState = {
   expenses: [],
+  expenseOnEditMode: null,
   loadingState: {
     isExpensesLoading: false,
     isExpenseAdding: false,
@@ -15,7 +16,11 @@ const initialState = {
 const expenseSlice = createSlice({
   name: "expense",
   initialState,
-  reducers: {},
+  reducers: {
+    toggleEditMode(state, action) {
+      state.expenseOnEditMode = action.payload;
+    },
+  },
   extraReducers: (builder) =>
     builder
       // get transactions
@@ -36,6 +41,8 @@ const expenseSlice = createSlice({
         thunks.createTransaction.fulfilled,
         thunkHandlers.createTransactionFulfilled
       ),
+  // edit transaction
+  // .addCase(),
 });
 
 export const expenseActions = expenseSlice.actions;
