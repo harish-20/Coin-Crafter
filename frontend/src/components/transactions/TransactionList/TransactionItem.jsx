@@ -27,7 +27,10 @@ const TransactionItem = (props) => {
       onClick={() => dispatch(expenseActions.toggleEditMode(id))}
     >
       <div className="flex justify-between items-start min-h-[50px] flex-wrap">
-        <div className="bg-gray-100 rounded-full p-2">
+        <div
+          style={{ background: category.backgroundColor }}
+          className="bg-gray-100 rounded-full p-2"
+        >
           <Icon className="h-6 w-6" />
         </div>
 

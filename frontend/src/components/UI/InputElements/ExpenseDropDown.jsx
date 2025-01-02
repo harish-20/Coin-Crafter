@@ -14,6 +14,10 @@ const ExpenseItem = (props) => {
       }`}
       onClick={props.onClick}
     >
+      <div
+        style={{ background: props.backgroundColor }}
+        className="h-2 w-2 rounded-full"
+      ></div>
       <Icon />
       <div>{props.title}</div>
     </div>
@@ -36,7 +40,7 @@ const ExpenseDropDown = (props) => {
     const listener = (event) => {
       const isClickMadeOutside =
         event.target !== dropDownRef.current &&
-        event.target.contains(dropDownRef.current);
+        !dropDownRef.current.contains(event.target);
 
       if (isDropDownOpen && isClickMadeOutside) setIsDropDownOpen(false);
     };
@@ -66,6 +70,7 @@ const ExpenseDropDown = (props) => {
           <ExpenseItem
             icon={selectedItem?.icon || ""}
             title={selectedItem?.title || "Select Category"}
+            backgroundColor={selectedItem?.backgroundColor}
           />
         </div>
 
@@ -80,6 +85,7 @@ const ExpenseDropDown = (props) => {
               key={index}
               icon={expense.icon}
               title={expense.title}
+              backgroundColor={expense.backgroundColor}
             />
           ))}
         </div>
