@@ -20,6 +20,16 @@ export const getSingleExpense = async (id) => {
   }
 };
 
+export const getAvailableFilter = async () => {
+  try {
+    const result = await api.get("/expense/availableFilterMonths");
+
+    return result.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const createExpense = async (data) => {
   try {
     const { user, category, amount, date, time, shortNote, tags } = data;

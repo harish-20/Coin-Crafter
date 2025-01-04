@@ -5,8 +5,10 @@ import Spinner from "../components/UI/Spinner";
 import Layout from "../components/shared/Layout/Layout";
 import Charts from "../components/dashboard/Charts/Charts";
 import ExpenseList from "../components/shared/ExpenseList/ExpenseList";
+import Filters from "../components/dashboard/Filters/Filters";
 
 import * as expenseThunks from "../store/slices/expense/thunks";
+import * as chartThunks from "../store/slices/chart/thunks";
 
 const DashBoard = () => {
   const expenses = useSelector((state) => state.expense.expenses);
@@ -18,6 +20,7 @@ const DashBoard = () => {
 
   useEffect(() => {
     dispatch(expenseThunks.getAllTransaction());
+    dispatch(chartThunks.getAvailableFilter());
   }, []);
 
   return (
@@ -26,6 +29,7 @@ const DashBoard = () => {
 
       {!isExpensesLoading && (
         <>
+          <Filters />
           <Charts />
           <ExpenseList expenses={expenses.slice(0, 5)} />
         </>

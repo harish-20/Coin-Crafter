@@ -13,7 +13,8 @@ const ExpenseItem = (props) => {
 
   const handleExpenseOpen = () => {
     navigate("/transactions");
-    dispatch(expenseActions.toggleEditMode(id));
+    // timout so we don't miss the animation
+    setTimeout(() => dispatch(expenseActions.toggleEditMode(id), 0));
   };
 
   const Icon = icons[category.icon];

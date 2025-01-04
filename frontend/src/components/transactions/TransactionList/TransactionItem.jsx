@@ -23,7 +23,9 @@ const TransactionItem = (props) => {
   const isSelectedTransaction = expenseOnEditMode === id;
   const Icon = icons[category.icon] || FakeIcon;
 
-  const readableDate = new Date(date).toLocaleDateString();
+  const readableDate = new Date(date).toLocaleDateString("en-US", {
+    dateStyle: "medium",
+  });
   const readableTime = time
     ? new Date(time).toLocaleString("en-US", {
         timeZone: "IST",

@@ -6,6 +6,7 @@ import TextInput from "../../UI/InputElements/TextInput";
 import TextAreaInput from "../../UI/InputElements/TextAreaInput";
 import DateInput from "../../UI/InputElements/DateInput";
 import TimeInput from "../../UI/InputElements/TimeInput";
+import Spinner from "../../UI/Spinner";
 import Button from "../../UI/Button";
 
 import * as categoryThunks from "../../../store/slices/category/thunks";
@@ -40,6 +41,7 @@ const TransactionForm = () => {
     date: false,
     time: false,
   });
+  const [isFormDataFetching, setIsFormDataFetching] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -49,23 +51,26 @@ const TransactionForm = () => {
     dispatch(categoryThunks.getCustomCategories());
   }, []);
 
-  useEffect(() => {
-    const populateValuesForEditMode = async () => {
-      try {
-        const result = await getSingleExpense(expenseOnEditMode);
-        console.log(result);
-        setFormData({
-          category: result.category,
-          amount: result.amount,
-          description: result.shortNote,
-          date: result.date,
-          time: result.time,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const populateValuesForEditMode = async () => {
+    try {
+      setIsFormDataFetching(true);
+      const result = await getSingleExpense(expenseOnEditMode);
+      console.log(result);
+      setFormData({
+        category: result.category,
+        amount: result.amount,
+        description: result.shortNote,
+        date: result.date,
+        time: result.time,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsFormDataFetching(false);
+    }
+  };
 
+  useEffect(() => {
     if (expenseOnEditMode) populateValuesForEditMode();
   }, [expenseOnEditMode]);
 
@@ -99,6 +104,14 @@ const TransactionForm = () => {
       dispatch(expenseThunks.getAllTransaction());
     }
   };
+
+  if (isFormDataFetching)
+    return (
+      <div className="flex justify-center h-full">
+        <Spinner size={40} />
+      </div>
+    );
+
   return (
     <div className="p-10 h-full overflow-auto">
       <form className="" onSubmit={handleSubmit}>

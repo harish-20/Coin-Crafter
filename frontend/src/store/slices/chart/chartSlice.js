@@ -4,13 +4,37 @@ import * as thunks from "./thunks";
 import * as thunkHandlers from "./thunkHandlers";
 import * as actionHandlers from "./actionHandlers";
 
-const initialState = {};
+const initialState = {
+  data: [],
+  filters: {
+    year: "",
+    month: "",
+  },
+  availableFilters: {
+    yearFilters: [],
+  },
+  loadingState: {
+    isAvailableFilterLoading: false,
+  },
+};
 
 const chartSlice = createSlice({
   name: "chart",
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {},
+  reducers: {
+    setFilters: actionHandlers.setFilters,
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(
+        thunks.getAvailableFilter.pending,
+        thunkHandlers.getAvailableFilterPending
+      )
+      .addCase(
+        thunks.getAvailableFilter.fulfilled,
+        thunkHandlers.getAvailableFilterFulFilled
+      );
+  },
 });
 
 export const chartActions = chartSlice.actions;

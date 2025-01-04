@@ -4,16 +4,28 @@ const User = require("../models/user");
 module.exports.getAllExpense = async (req, res) => {
   try {
     const { email } = req.body;
+    const { month, year } = req.query;
+
     const user = await User.findOne({ email });
 
+    const filter = { user: user._id };
+
+    if (month && year) {
+      filter.date = {
+        $gte: new Date(year, month - 1, 1),
+        $lt: new Date(year, month, 1),
+      };
+    } else if (year) {
+      filter.date = {
+        $gte: new Date(year, 0, 1),
+        $lt: new Date(year + 1, 0, 1),
+      };
+    }
+
     const expenses = await Expense.find(
-      { user: user._id },
+      filter,
       { user: 0 },
-      {
-        sort: {
-          createdAt: -1,
-        },
-      }
+      { sort: { createdAt: -1 } }
     ).populate("category");
 
     res.status(200).send(expenses);
@@ -43,6 +55,47 @@ module.exports.getSigleExpense = async (req, res) => {
         message: "You do not have permission to access this expense record.",
       });
     }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      message: "Something went wrong.",
+      error,
+    });
+  }
+};
+
+module.exports.availableFilterMonths = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    const availableMonthsByYear = await Expense.aggregate([
+      { $match: { user: user._id } },
+      {
+        $group: {
+          _id: {
+            year: { $year: "$date" },
+            month: { $month: "$date" },
+          },
+        },
+      },
+      {
+        $group: {
+          _id: "$_id.year",
+          months: { $push: "$_id.month" },
+        },
+      },
+      {
+        $project: {
+          year: "$_id",
+          months: 1,
+          _id: 0,
+        },
+      },
+      { $sort: { year: -1 } },
+    ]);
+
+    res.status(200).send(availableMonthsByYear);
   } catch (error) {
     console.log(error);
     res.status(500).send({
