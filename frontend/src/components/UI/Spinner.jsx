@@ -2,7 +2,9 @@ import React from "react";
 
 const Spinner = (props) => {
   return (
-    <div className="flex items-center justify-center">
+    <div
+      className={`flex items-center justify-center ${props.className || ""}`}
+    >
       <div
         style={{
           ...(props.size

@@ -59,6 +59,7 @@ const TransactionForm = () => {
           amount: result.amount,
           description: result.shortNote,
           date: result.date,
+          time: result.time,
         });
       } catch (error) {
         console.log(error);
@@ -93,6 +94,7 @@ const TransactionForm = () => {
         amount: formData.amount,
         shortNote: formData.description,
         date: formData.date,
+        time: formData.time,
       });
       dispatch(expenseThunks.getAllTransaction());
     }
@@ -144,7 +146,12 @@ const TransactionForm = () => {
           id="time"
           label="Time"
           value={formData.time}
-          onChange={(event) => handleChange("time", event.target.value)}
+          onChange={(event) => {
+            const [hours, minutes] = event.target.value.split(":");
+            const updatedTime = new Date();
+            updatedTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
+            handleChange("time", updatedTime.toISOString());
+          }}
         />
 
         <Button className="">Edit Expense</Button>

@@ -5,11 +5,16 @@ import Label from "../Label";
 const TimeInput = (props) => {
   const { id, label, value, onChange, ...otherProps } = props;
 
-  const now = new Date(value || "");
-  const hh = String(now.getHours()).padStart(2, "0");
-  const mm = String(now.getMinutes()).padStart(2, "0");
+  const now = value ? new Date(value) : new Date();
+  const options = {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  };
+  const [hh, mm] = now.toLocaleString("en-US", options).split(":");
 
-  const timeString = hh + ":" + mm;
+  const timeString = `${hh}:${mm}`;
   return (
     <InputContainer>
       <Label label={label} id={id} />

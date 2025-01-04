@@ -23,8 +23,15 @@ export const createTransaction = createAsyncThunk(
   "create-transaction",
   async (args, thunkApi) => {
     try {
-      const { category, amount, description: shortNote, tags } = args;
-      await createExpense({ category, amount, shortNote, tags });
+      const {
+        category,
+        amount,
+        description: shortNote,
+        date,
+        time,
+        tags,
+      } = args;
+      await createExpense({ category, amount, shortNote, tags, date, time });
 
       thunkApi.dispatch(getAllTransaction());
     } catch (error) {
@@ -37,8 +44,24 @@ export const updateTransaction = createAsyncThunk(
   "update-transaction",
   async (args, thunkApi) => {
     try {
-      const { _id, category, amount, description: shortNote, tags } = args;
-      await updateExpense({ _id, category, amount, shortNote, tags });
+      const {
+        _id,
+        category,
+        amount,
+        description: shortNote,
+        date,
+        time,
+        tags,
+      } = args;
+      await updateExpense({
+        _id,
+        category,
+        amount,
+        shortNote,
+        date,
+        time,
+        tags,
+      });
     } catch (error) {
       return thunkApi.rejectWithValue(error);
     }

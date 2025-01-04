@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
-import icons from "../CategoryIcon";
 import InputContainer from "./InputContainer";
+
+import icons from "../CategoryIcon";
 import FakeIcon from "../../categories/fakeIcon";
+import SpentIcon from "../Icons/SpentIcon";
+import IncomeIcon from "../Icons/IncomeIcon";
 
 const ExpenseItem = (props) => {
   const Icon = icons[props.icon] || FakeIcon;
@@ -20,6 +23,10 @@ const ExpenseItem = (props) => {
       ></div>
       <Icon />
       <div>{props.title}</div>
+      <div className="ml-auto">
+        {props.expenseType === "spend" && <SpentIcon />}
+        {props.expenseType === "income" && <IncomeIcon />}
+      </div>
     </div>
   );
 };
@@ -71,6 +78,7 @@ const ExpenseDropDown = (props) => {
             icon={selectedItem?.icon || ""}
             title={selectedItem?.title || "Select Category"}
             backgroundColor={selectedItem?.backgroundColor}
+            expenseType={selectedItem?.expenseType}
           />
         </div>
 
@@ -86,6 +94,7 @@ const ExpenseDropDown = (props) => {
               icon={expense.icon}
               title={expense.title}
               backgroundColor={expense.backgroundColor}
+              expenseType={expense.expenseType}
             />
           ))}
         </div>

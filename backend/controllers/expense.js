@@ -54,8 +54,16 @@ module.exports.getSigleExpense = async (req, res) => {
 
 module.exports.addExpense = async (req, res) => {
   try {
-    const { email, category, amount, shortNote, tags = [] } = req.body;
-    if (!category || !amount || !shortNote) {
+    const {
+      email,
+      category,
+      amount,
+      shortNote,
+      date,
+      time,
+      tags = [],
+    } = req.body;
+    if (!category || !amount || !shortNote || !date || !time) {
       res.status(400).send({
         message: "invalid or missing parameters",
       });
@@ -68,6 +76,8 @@ module.exports.addExpense = async (req, res) => {
       category,
       amount,
       shortNote,
+      date,
+      time,
       tags,
     });
 
@@ -98,8 +108,17 @@ module.exports.addExpense = async (req, res) => {
 
 module.exports.updateExpense = async (req, res) => {
   try {
-    const { email, _id, category, amount, shortNote, tags = [] } = req.body;
-    if (!category || !amount || !shortNote) {
+    const {
+      email,
+      _id,
+      category,
+      amount,
+      shortNote,
+      date,
+      time,
+      tags = [],
+    } = req.body;
+    if (!category || !amount || !shortNote || !date || !time) {
       res.status(400).send({
         message: "invalid or missing parameters",
       });
@@ -115,6 +134,8 @@ module.exports.updateExpense = async (req, res) => {
         amount,
         shortNote,
         tags,
+        date,
+        time,
       },
       {
         upsert: 1,

@@ -1,24 +1,55 @@
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import icons from "../../UI/CategoryIcon";
+
+import { expenseActions } from "../../../store/slices/expense/expenseSlice";
+
 const ExpenseItem = (props) => {
-  const { id, title, category, amount, date, time } = props;
+  const { id, category, amount, date, time } = props;
 
-  const formattedDate = "Oct 5";
-  const formattedTime = "12:00 PM";
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const dummyIcon =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUP6sdKmkPMCkho5QIKJnuCq6LiNn8I8j5ZlAVS4DkJ_ZlIU8amzsPF0UUcnqNuusUkxs&usqp=CAU";
+  const handleExpenseOpen = () => {
+    navigate("/transactions");
+    dispatch(expenseActions.toggleEditMode(id));
+  };
+
+  const Icon = icons[category.icon];
+
+  const readableDate = new Date(date).toLocaleDateString("en-US", {
+    dateStyle: "medium",
+  });
+  const readableTime = time
+    ? new Date(time).toLocaleString("en-US", {
+        timeZone: "IST",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : null;
+
+  const isSpent = category.expenseType === "spend";
+
   return (
-    <div className="flex items-center gap-4">
+    <div
+      className="flex items-center gap-4 cursor-pointer p-3 rounded-md duration-200 hover:bg-gray-800"
+      onClick={handleExpenseOpen}
+    >
       <div>
-        <img className="h-10 w-10 rounded-full" src={dummyIcon} />
+        <Icon
+          style={{ background: category.backgroundColor }}
+          className="h-8 w-8 p-1 rounded-full"
+        />
       </div>
       <div>
-        <div className="">{title}</div>
+        <div className="">{category.title}</div>
         <div className="text-xs text-gray-500">
-          {formattedDate} - {formattedTime}
+          {readableDate} {readableTime ? `- ${readableTime}` : ""}
         </div>
       </div>
-      <div className="ml-auto">
-        {category.expenseType === "spent" ? "-" : "+"} ₹{amount}
+      <div className={`ml-auto ${isSpent ? "text-red-500" : "text-green-500"}`}>
+        {isSpent ? "-" : "+"} ₹{amount}
       </div>
     </div>
   );

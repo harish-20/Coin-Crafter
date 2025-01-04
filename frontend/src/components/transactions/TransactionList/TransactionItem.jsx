@@ -7,6 +7,11 @@ import { expenseActions } from "../../../store/slices/expense/expenseSlice";
 import FakeIcon from "../../categories/fakeIcon";
 import icons from "../../UI/CategoryIcon";
 
+const expenseTypeClasses = {
+  spend: "text-red-500",
+  income: "text-green-500",
+};
+
 const TransactionItem = (props) => {
   const { id, category, date, time, amount, description } = props;
   const expenseOnEditMode = useSelector(
@@ -19,6 +24,13 @@ const TransactionItem = (props) => {
   const Icon = icons[category.icon] || FakeIcon;
 
   const readableDate = new Date(date).toLocaleDateString();
+  const readableTime = time
+    ? new Date(time).toLocaleString("en-US", {
+        timeZone: "IST",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : null;
   return (
     <div
       className={`gap-2 cursor-pointer p-4 duration-150 rounded-lg ${
@@ -37,8 +49,12 @@ const TransactionItem = (props) => {
         <div className="w-4/12">{category.title}</div>
 
         <DataWithLabel label="Date" data={readableDate || "-"} />
-        <DataWithLabel label="Time" data={time || "-"} />
-        <DataWithLabel label="Amount" data={amount} />
+        <DataWithLabel label="Time" data={readableTime || "-"} />
+        <DataWithLabel
+          label="Amount"
+          className={expenseTypeClasses[category.expenseType]}
+          data={amount}
+        />
       </div>
       <div>
         <h2 className="text-sm font-semibold">Description</h2>

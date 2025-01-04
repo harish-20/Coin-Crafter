@@ -106,15 +106,19 @@ const TransactionForm = () => {
         <DateInput
           id="date"
           label="Date"
+          value={formData.date}
           onChange={(event) => handleChange("date", event.target.value)}
         />
 
         <TimeInput
           id="time"
           label="Time"
+          value={formData.time}
           onChange={(event) => {
-            console.log(event.target);
-            handleChange("time", event.target.value);
+            const [hours, minutes] = event.target.value.split(":");
+            const updatedTime = new Date();
+            updatedTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
+            handleChange("time", updatedTime.toISOString());
           }}
         />
 

@@ -22,13 +22,15 @@ export const getSingleExpense = async (id) => {
 
 export const createExpense = async (data) => {
   try {
-    const { user, category, amount, shortNote, tags } = data;
+    const { user, category, amount, date, time, shortNote, tags } = data;
     const result = await api.post("/expense/create", {
       user,
       category,
       amount,
       shortNote,
       tags,
+      date,
+      time,
     });
 
     return result.data;
@@ -39,7 +41,7 @@ export const createExpense = async (data) => {
 
 export const updateExpense = async (data) => {
   try {
-    const { _id, user, category, amount, shortNote, tags } = data;
+    const { _id, user, category, amount, date, time, shortNote, tags } = data;
     const result = await api.post("/expense/update", {
       _id,
       user,
@@ -47,6 +49,8 @@ export const updateExpense = async (data) => {
       amount,
       shortNote,
       tags,
+      date,
+      time,
     });
 
     return result.data;
