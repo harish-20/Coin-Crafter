@@ -15,6 +15,7 @@ const initialState = {
   },
   loadingState: {
     isAvailableFilterLoading: false,
+    isFilteredDataLoading: false,
   },
 };
 
@@ -26,6 +27,7 @@ const chartSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      // get available filter
       .addCase(
         thunks.getAvailableFilter.pending,
         thunkHandlers.getAvailableFilterPending
@@ -33,6 +35,15 @@ const chartSlice = createSlice({
       .addCase(
         thunks.getAvailableFilter.fulfilled,
         thunkHandlers.getAvailableFilterFulFilled
+      )
+      // get filtered data
+      .addCase(
+        thunks.getFilteredData.pending,
+        thunkHandlers.getFilteredDataPending
+      )
+      .addCase(
+        thunks.getFilteredData.fulfilled,
+        thunkHandlers.getFilteredDataFulfilled
       );
   },
 });

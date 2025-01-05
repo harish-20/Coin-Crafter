@@ -13,3 +13,20 @@ export const getAvailableFilter = createAsyncThunk(
     }
   }
 );
+
+export const getFilteredData = createAsyncThunk(
+  "get-filtered-data",
+  async (args, thunkApi) => {
+    try {
+      console.log(args);
+      const filteredData = await expenseApi.getAllExpense({
+        month: args.month,
+        year: args.year,
+      });
+
+      return filteredData;
+    } catch (error) {
+      thunkApi.rejectWithValue(error);
+    }
+  }
+);

@@ -1,4 +1,4 @@
-import BarChart from "./Spline";
+import BarChart from "./BarChart";
 import Pie from "./Pie";
 
 const Charts = () => {

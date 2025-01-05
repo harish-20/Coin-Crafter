@@ -2,9 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import DropDown from "./DropDown";
 
+import * as chartThunks from "../../../store/slices/chart/thunks";
 import { chartActions } from "../../../store/slices/chart/chartSlice";
 
 import { monthKeys } from "../../../helpers/monthKeys";
+import { useEffect } from "react";
 
 const Filters = () => {
   const filters = useSelector((state) => state.chart.filters);
@@ -16,6 +18,16 @@ const Filters = () => {
   );
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (filters.year && filters.month)
+      dispatch(
+        chartThunks.getFilteredData({
+          year: filters.year,
+          month: filters.month,
+        })
+      );
+  }, [filters.year, filters.month]);
 
   const setYear = (event) => {
     const { value } = event.target;

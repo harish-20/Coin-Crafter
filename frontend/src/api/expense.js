@@ -1,8 +1,12 @@
 import { api } from ".";
 
-export const getAllExpense = async () => {
+export const getAllExpense = async (data) => {
   try {
-    const result = await api.get("/expense");
+    const params = new URLSearchParams(data);
+    console.log(params);
+    const result = await api.get(
+      `/expense${params ? `?${params.toString()}` : ""}`
+    );
 
     return result.data;
   } catch (error) {
