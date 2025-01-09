@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import CanvasJSReact from "@canvasjs/react-charts";
 
@@ -18,7 +17,7 @@ const Pie = () => {
   const options = getOptionsWithData(dataPoints);
 
   return (
-    <div className="w-full md:w-6/12">
+    <div className="w-full">
       {isFilteredDataLoading && (
         <Spinner className="h-full flex justify-center" size={50} />
       )}

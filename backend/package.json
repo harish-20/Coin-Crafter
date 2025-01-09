@@ -4,8 +4,9 @@
   "description": "This is a Expense tracker application's api",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon main",
-    "seed":"node ./seeders/categoriesSeeders"
+    "start": "node .",
+    "seed":"node ./seeders/categoriesSeeders",
+    "dev": "nodemon main"
   },
   "author": "Harish kumar",
   "license": "ISC",

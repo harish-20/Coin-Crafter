@@ -1,0 +1,21 @@
+{
+  "name": "coin-crafter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": { 
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish-20/Coin-Crafter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harish-20/Coin-Crafter/issues"
+  },
+  "homepage": "https://github.com/harish-20/Coin-Crafter#readme"
+}
