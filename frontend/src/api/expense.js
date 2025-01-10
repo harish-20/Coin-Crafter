@@ -3,7 +3,6 @@ import { api } from ".";
 export const getAllExpense = async (data) => {
   try {
     const params = new URLSearchParams(data);
-    console.log(params);
     const result = await api.get(
       `/expense${params ? `?${params.toString()}` : ""}`
     );

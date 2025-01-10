@@ -25,7 +25,7 @@ module.exports.getAllExpense = async (req, res) => {
     const expenses = await Expense.find(
       filter,
       { user: 0 },
-      { sort: { createdAt: -1 } }
+      { sort: { date: -1 } }
     ).populate("category");
 
     res.status(200).send(expenses);
@@ -92,7 +92,7 @@ module.exports.availableFilterMonths = async (req, res) => {
           _id: 0,
         },
       },
-      { $sort: { year: -1 } },
+      { $sort: { year: -1, months: -1 } },
     ]);
 
     res.status(200).send(availableMonthsByYear);

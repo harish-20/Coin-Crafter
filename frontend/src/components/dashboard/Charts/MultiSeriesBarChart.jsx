@@ -3,7 +3,7 @@ import CanvasJSReact from "@canvasjs/react-charts";
 
 import Spinner from "../../UI/Spinner";
 
-import { expenseToDataPoints } from "../../../helpers/dataProcessing";
+import { expensesToDailyDataPoints } from "../../../helpers/dataProcessing";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -12,23 +12,16 @@ const MultiSeriesBarChart = () => {
   const isFilteredDataLoading = useSelector(
     (state) => state.chart.loadingState.isFilteredDataLoading
   );
-  const dataPoints = expenseToDataPoints(filteredData);
 
-  const { incomeDataPoints, spendDataPoints } = dataPoints.reduce(
-    (acc, val) => {
-      if (val.type === "spend") acc.spendDataPoints.push(val);
-      else acc.incomeDataPoints.push(val);
-      return acc;
-    },
-    { spendDataPoints: [], incomeDataPoints: [] }
-  );
+  const { incomeDataPoints, spendDataPoints } =
+    expensesToDailyDataPoints(filteredData);
 
   const options = getOptionsWithData(incomeDataPoints, spendDataPoints);
 
   return (
-    <div className="w-full">
+    <div className="min-h-[400px] w-full md:col-span-2">
       {isFilteredDataLoading && (
-        <Spinner className="h-full flex justify-center" size={50} />
+        <Spinner className="flex justify-center" size={50} />
       )}
       {!isFilteredDataLoading && <CanvasJSChart options={options} />}
     </div>
@@ -43,9 +36,12 @@ function getOptionsWithData(incomeDataPoints, spendDataPoints) {
     backgroundColor: "#0000",
     animationEnabled: true,
     zoomEnabled: true,
-    zoomType: "xy",
+    zoomType: "x",
+    axisX: {
+      interval: 1,
+    },
     title: {
-      text: "Income & Expense",
+      text: "Expense & Income Daywise",
       fontSize: 22,
       padding: 20,
     },
@@ -54,17 +50,25 @@ function getOptionsWithData(incomeDataPoints, spendDataPoints) {
     },
     legend: {
       fontWeight: "normal",
+      horizontalAlign: "right",
+      verticalAlign: "top",
     },
     data: [
       {
         type: "column",
         name: "Income",
+        legendText: "Income",
+        showInLegend: true,
         dataPoints: incomeDataPoints,
+        color: "#26C6DA",
       },
       {
         type: "column",
         name: "expense",
+        legendText: "Expense",
+        showInLegend: true,
         dataPoints: spendDataPoints,
+        color: "#FF867C",
       },
     ],
   };

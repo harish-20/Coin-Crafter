@@ -55,7 +55,7 @@ const TransactionForm = () => {
     try {
       setIsFormDataFetching(true);
       const result = await getSingleExpense(expenseOnEditMode);
-      console.log(result);
+
       setFormData({
         category: result.category,
         amount: result.amount,

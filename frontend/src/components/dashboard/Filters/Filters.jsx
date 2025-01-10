@@ -34,7 +34,7 @@ const Filters = () => {
     dispatch(chartActions.setFilters({ year: value }));
   };
 
-  const setMonth = (month) => {
+  const setMonth = (event) => {
     const { value } = event.target;
     dispatch(chartActions.setFilters({ month: value }));
   };
@@ -47,8 +47,6 @@ const Filters = () => {
   const selectedYear = yearFilters.find(
     (yearFilter) => yearFilter.year.toString() === filters.year.toString()
   );
-
-  console.log(selectedYear);
 
   const availableMonthOptions = selectedYear?.months.map((month) => ({
     label: monthKeys[month],
