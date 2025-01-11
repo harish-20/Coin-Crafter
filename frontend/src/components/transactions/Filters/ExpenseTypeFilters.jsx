@@ -14,7 +14,7 @@ const ExpenseTypeFilters = (props) => {
       {expenseTypes.map((expense) => (
         <div
           key={expense.expenseType}
-          className={`border-2 border-green-900 ${
+          className={`border-2 border-gray-700 ${
             expense.expenseType === expenseType ? "bg-green-900" : ""
           } rounded-xl p-3`}
         >

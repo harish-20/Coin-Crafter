@@ -3,14 +3,19 @@ import { useSelector } from "react-redux";
 import List from "react-virtualized/dist/commonjs/List";
 
 import TransactionItem from "./TransactionItem";
+import Spinner from "../../UI/Spinner";
 
 const THROTTLE_INTERVAL = 300;
 const TransactionList = () => {
-  const containerRef = useRef(null);
-  const timerRef = useRef(null);
-
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
   const transactions = useSelector((state) => state.expense.expenses);
+  const isTransactionsLoading = useSelector(
+    (state) => state.expense.loadingState.isExpensesLoading
+  );
+
+  const timerRef = useRef(null);
+  const containerRef = useRef(null);
 
   const updateDimensions = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -52,7 +57,13 @@ const TransactionList = () => {
 
   return (
     <div ref={containerRef} className="flex-1 flex flex-col my-6 gap-3">
-      {dimensions.height > 0 && dimensions.width > 0 && (
+      {isTransactionsLoading && (
+        <div className="h-full flex items-center justify-center">
+          <Spinner size={50} />
+        </div>
+      )}
+
+      {!isTransactionsLoading && (
         <List
           height={dimensions.height}
           rowHeight={160}
