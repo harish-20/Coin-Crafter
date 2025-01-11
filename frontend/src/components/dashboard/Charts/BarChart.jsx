@@ -1,34 +1,53 @@
 import { useSelector } from "react-redux";
 import CanvasJSReact from "@canvasjs/react-charts";
 
+import EmptyData from "../../UI/EmptyData/EmptyData";
 import Spinner from "../../UI/Spinner";
 
 import { expensesToCategoryDataPoints } from "../../../helpers/dataProcessing";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const BarChart = () => {
+const BarChart = (props) => {
+  const { expenseType } = props;
+
   const filteredData = useSelector((state) => state.chart.data);
   const isFilteredDataLoading = useSelector(
     (state) => state.chart.loadingState.isFilteredDataLoading
   );
   const dataPoints = expensesToCategoryDataPoints(filteredData);
 
-  const options = getOptionsWithData(dataPoints);
+  const filteredDataPoints = dataPoints.filter(
+    (dataPoint) => dataPoint.type === expenseType
+  );
+
+  const options = getOptionsWithData(filteredDataPoints, expenseType);
+
+  const isDataEmpty = filteredDataPoints.length === 0;
 
   return (
     <div className="w-full min-h-[400px]">
       {isFilteredDataLoading && (
         <Spinner className="h-full flex justify-center" size={50} />
       )}
-      {!isFilteredDataLoading && <CanvasJSChart options={options} />}
+
+      {isDataEmpty && <EmptyData />}
+
+      {!isFilteredDataLoading && !isDataEmpty && (
+        <CanvasJSChart options={options} />
+      )}
     </div>
   );
 };
 
 export default BarChart;
 
-function getOptionsWithData(dataPoints) {
+const expenseTitle = {
+  spend: "Expense",
+  income: "Income",
+};
+
+function getOptionsWithData(dataPoints, expenseType) {
   return {
     theme: "dark2",
     backgroundColor: "#0000",
@@ -36,7 +55,7 @@ function getOptionsWithData(dataPoints) {
     zoomEnabled: true,
     zoomType: "xy",
     title: {
-      text: "Expenses",
+      text: expenseTitle[expenseType],
       fontSize: 22,
       padding: 20,
     },

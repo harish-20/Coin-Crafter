@@ -8,8 +8,6 @@ import SpentIcon from "../Icons/SpentIcon";
 import IncomeIcon from "../Icons/IncomeIcon";
 
 const ExpenseItem = (props) => {
-  const Icon = icons[props.icon] || FakeIcon;
-
   return (
     <div
       className={`flex items-center gap-4 py-3 px-6 cursor-pointer ${
@@ -21,7 +19,7 @@ const ExpenseItem = (props) => {
         style={{ background: props.backgroundColor }}
         className="h-2 w-2 rounded-full"
       ></div>
-      <Icon />
+      {props.icon && icons[props.icon]()}
       <div>{props.title}</div>
       <div className="ml-auto">
         {props.expenseType === "spend" && <SpentIcon />}

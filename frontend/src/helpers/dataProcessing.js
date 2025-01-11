@@ -6,6 +6,7 @@ export const expensesToCategoryDataPoints = (expenses) => {
       acc[val.category.title] = {
         amount: val.amount,
         type: val.category.expenseType,
+        color: val.category.backgroundColor,
       };
     }
 
@@ -19,6 +20,7 @@ export const expensesToCategoryDataPoints = (expenses) => {
       label: key,
       y: categorizedData[key].amount,
       type: categorizedData[key].type,
+      color: categorizedData[key].color,
     });
   }
 

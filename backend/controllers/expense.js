@@ -4,12 +4,13 @@ const User = require("../models/user");
 module.exports.getAllExpense = async (req, res) => {
   try {
     const { email } = req.body;
-    const { month, year } = req.query;
+    const { month, year, category, expenseType } = req.query;
 
     const user = await User.findOne({ email });
 
     const filter = { user: user._id };
 
+    // adding month and year filter
     if (month && year) {
       filter.date = {
         $gte: new Date(year, month - 1, 1),
@@ -22,11 +23,24 @@ module.exports.getAllExpense = async (req, res) => {
       };
     }
 
-    const expenses = await Expense.find(
+    // adding category filter with category id
+    if (category) {
+      filter.category = {
+        $eq: category,
+      };
+    }
+
+    let expenses = await Expense.find(
       filter,
       { user: 0 },
       { sort: { date: -1 } }
     ).populate("category");
+
+    if (expenseType) {
+      expenses = expenses.filter(
+        (expense) => expense.category.expenseType === expenseType
+      );
+    }
 
     res.status(200).send(expenses);
   } catch (error) {
@@ -64,7 +78,7 @@ module.exports.getSigleExpense = async (req, res) => {
   }
 };
 
-module.exports.availableFilterMonths = async (req, res) => {
+module.exports.availableFiltersMonth = async (req, res) => {
   try {
     const { email } = req.body;
     const user = await User.findOne({ email });

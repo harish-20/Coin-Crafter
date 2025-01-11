@@ -3,7 +3,9 @@ import React from "react";
 const Spinner = (props) => {
   return (
     <div
-      className={`flex items-center justify-center ${props.className || ""}`}
+      className={`flex flex-col gap-3 items-center justify-center animate-pulse ${
+        props.className || ""
+      }`}
     >
       <div
         style={{
@@ -17,8 +19,9 @@ const Spinner = (props) => {
                 width: "10px",
               }),
         }}
-        className="aspect-square rounded-full border-[3px] border-white border-l-transparent animate-spin"
+        className="aspect-square rounded-full border-[6px] border-white border-l-transparent animate-spin"
       ></div>
+      <div className="font-bold">Loading...</div>
     </div>
   );
 };

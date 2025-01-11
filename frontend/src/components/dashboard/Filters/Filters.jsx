@@ -1,12 +1,12 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import DropDown from "./DropDown";
+import DropDown from "../../UI/DropDown";
 
 import * as chartThunks from "../../../store/slices/chart/thunks";
 import { chartActions } from "../../../store/slices/chart/chartSlice";
 
 import { monthKeys } from "../../../helpers/monthKeys";
-import { useEffect } from "react";
 
 const Filters = () => {
   const filters = useSelector((state) => state.chart.filters);

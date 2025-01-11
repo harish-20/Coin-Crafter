@@ -1,12 +1,31 @@
 import React from "react";
-import FilterItem from "./FilterItem";
+
+import ExpenseTypeFilters from "./ExpenseTypeFilters";
+import ExpenseDropDown from "../../UI/InputElements/ExpenseDropDown";
 
 const Filters = () => {
   return (
-    <div className="flex my-4 items-center">
-      <h3 className="mr-5">Filters :</h3>
-      <div>
-        <FilterItem />
+    <div className="flex justify-between">
+      <div className="flex items-center">
+        <h3 className="text-lg mt-6 mr-6">Filters :</h3>
+        <ExpenseDropDown
+          label=""
+          value=""
+          onChange={() => {}}
+          expenseList={[]}
+        />
+        <ExpenseTypeFilters expenseType={null} onChange={() => {}} />
+      </div>
+
+      <div className="flex items-center">
+        <h3 className="text-lg mt-6 mr-6">Sort :</h3>
+        <ExpenseDropDown
+          label=""
+          value=""
+          onChange={() => {}}
+          expenseList={[]}
+        />
+        <ExpenseTypeFilters expenseType={null} onChange={() => {}} />
       </div>
     </div>
   );

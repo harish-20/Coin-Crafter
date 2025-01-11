@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import CanvasJSReact from "@canvasjs/react-charts";
 
+import EmptyData from "../../UI/EmptyData/EmptyData";
 import Spinner from "../../UI/Spinner";
 
 import { expensesToDailyDataPoints } from "../../../helpers/dataProcessing";
@@ -18,12 +19,22 @@ const MultiSeriesBarChart = () => {
 
   const options = getOptionsWithData(incomeDataPoints, spendDataPoints);
 
+  const isDataEmpty =
+    incomeDataPoints?.length === 0 && spendDataPoints?.length === 0;
+
   return (
-    <div className="min-h-[400px] w-full md:col-span-2">
+    <div className="min-h-[400px] w-full overflow-x-auto md:col-span-2">
       {isFilteredDataLoading && (
-        <Spinner className="flex justify-center" size={50} />
+        <Spinner className="h-full flex justify-center" size={50} />
       )}
-      {!isFilteredDataLoading && <CanvasJSChart options={options} />}
+
+      {isDataEmpty && <EmptyData />}
+
+      {!isFilteredDataLoading && !isDataEmpty && (
+        <div className="min-w-[1000px]">
+          <CanvasJSChart options={options} />
+        </div>
+      )}
     </div>
   );
 };

@@ -15,7 +15,7 @@ router.get("/expense", authMiddleware, expenseController.getAllExpense);
 router.get(
   "/expense/availableFilterMonths",
   authMiddleware,
-  expenseController.availableFilterMonths
+  expenseController.availableFiltersMonth
 );
 router.get("/expense/:id", authMiddleware, expenseController.getSigleExpense);
 router.delete("/expense/:id", expenseController.deleteExpense);

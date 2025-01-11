@@ -5,6 +5,7 @@ const DropDown = (props) => {
       <label className="" htmlFor={label}>
         {label}
       </label>
+
       <select
         id={label}
         className="bg-gray-500 rounded-lg px-4 py-2"
