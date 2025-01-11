@@ -1,23 +1,66 @@
+import { useRef, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import List from "react-virtualized/dist/commonjs/List";
 
 import TransactionItem from "./TransactionItem";
 
-const TransactionList = (props) => {
+const THROTTLE_INTERVAL = 300;
+const TransactionList = () => {
+  const containerRef = useRef(null);
+  const timerRef = useRef(null);
+
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const transactions = useSelector((state) => state.expense.expenses);
 
+  const updateDimensions = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    timerRef.current = setTimeout(() => {
+      if (containerRef.current) {
+        setDimensions({
+          width: containerRef.current.offsetWidth,
+          height: containerRef.current.offsetHeight,
+        });
+      }
+    }, THROTTLE_INTERVAL);
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []);
+
+  const rowRenderer = ({ index, style }) => {
+    const transaction = transactions[index];
+    return (
+      <TransactionItem
+        style={style}
+        key={transaction._id}
+        id={transaction._id}
+        category={transaction.category}
+        date={transaction.date}
+        time={transaction.time}
+        amount={transaction.amount}
+        description={transaction.shortNote}
+      />
+    );
+  };
+
   return (
-    <div className="flex flex-col my-6 gap-3">
-      {transactions.map((transaction) => (
-        <TransactionItem
-          key={transaction._id}
-          id={transaction._id}
-          category={transaction.category}
-          date={transaction.date}
-          time={transaction.time}
-          amount={transaction.amount}
-          description={transaction.shortNote}
+    <div ref={containerRef} className="flex-1 flex flex-col my-6 gap-3">
+      {dimensions.height > 0 && dimensions.width > 0 && (
+        <List
+          height={dimensions.height}
+          rowHeight={160}
+          width={dimensions.width}
+          rowCount={transactions.length}
+          rowRenderer={rowRenderer}
         />
-      ))}
+      )}
     </div>
   );
 };

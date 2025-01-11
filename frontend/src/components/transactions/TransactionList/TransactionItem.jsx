@@ -13,7 +13,7 @@ const expenseTypeClasses = {
 };
 
 const TransactionItem = (props) => {
-  const { id, category, date, time, amount, description } = props;
+  const { id, category, date, time, amount, description, style } = props;
   const expenseOnEditMode = useSelector(
     (state) => state.expense.expenseOnEditMode
   );
@@ -35,6 +35,7 @@ const TransactionItem = (props) => {
     : null;
   return (
     <div
+      style={style}
       className={`gap-2 cursor-pointer p-4 duration-150 rounded-lg ${
         isSelectedTransaction ? "bg-slate-700" : "hover:bg-slate-800"
       }`}

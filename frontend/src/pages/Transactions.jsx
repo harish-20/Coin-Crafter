@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Layout from "../components/shared/Layout/Layout";
@@ -25,7 +25,7 @@ const Transactions = () => {
     dispatch(expenseActions.toggleEditMode(null));
   };
   return (
-    <Layout className="px-8">
+    <Layout className="px-8 flex flex-col">
       <SearchBar />
       <Filters />
       <TransactionList />
