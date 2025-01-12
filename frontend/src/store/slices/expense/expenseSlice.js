@@ -7,6 +7,11 @@ import * as actionHandlers from "./actionHandlers";
 const initialState = {
   expenses: [],
   expenseOnEditMode: null,
+  filters: {
+    category: "",
+    incomeType: "",
+  },
+  sorts: {},
   loadingState: {
     isExpensesLoading: false,
     isExpenseAdding: false,
@@ -17,9 +22,8 @@ const expenseSlice = createSlice({
   name: "expense",
   initialState,
   reducers: {
-    toggleEditMode(state, action) {
-      state.expenseOnEditMode = action.payload;
-    },
+    toggleEditMode: actionHandlers.toggleEditMode,
+    toggleFilter: actionHandlers.toggleFilter,
   },
   extraReducers: (builder) =>
     builder

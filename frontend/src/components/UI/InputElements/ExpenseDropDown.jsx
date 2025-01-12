@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import InputContainer from "./InputContainer";
 
 import icons from "../CategoryIcon";
-import FakeIcon from "../../categories/fakeIcon";
 import SpentIcon from "../Icons/SpentIcon";
 import IncomeIcon from "../Icons/IncomeIcon";
 
@@ -30,7 +29,8 @@ const ExpenseItem = (props) => {
 };
 
 const ExpenseDropDown = (props) => {
-  const { label, value, onChange, expenseList, errorMessage } = props;
+  const { label, value, className, onChange, expenseList, errorMessage } =
+    props;
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dropDownRef = useRef(null);
@@ -66,9 +66,9 @@ const ExpenseDropDown = (props) => {
       <div className="relative mt-3">
         <div
           ref={dropDownRef}
-          className={`border ${
+          className={`border rounded-lg duration-200 ${
             isDropDownOpen ? "border-gray-400" : "border-gray-700"
-          } rounded-lg duration-200`}
+          } ${className || ""}`}
           onClick={openDropDown}
           tabIndex={1}
         >
@@ -82,7 +82,7 @@ const ExpenseDropDown = (props) => {
 
         <div
           style={{ height: isDropDownOpen ? "200px" : "0px" }}
-          className="absolute w-full top-[110%] overflow-y-auto duration-300 bg-gray-800 rounded-lg"
+          className="absolute z-10 w-full top-[110%] overflow-y-auto duration-300 bg-gray-800 rounded-lg"
         >
           {expenseList.map((expense, index) => (
             <ExpenseItem

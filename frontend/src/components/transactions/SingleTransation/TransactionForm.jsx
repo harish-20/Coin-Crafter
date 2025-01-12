@@ -9,7 +9,6 @@ import TimeInput from "../../UI/InputElements/TimeInput";
 import Spinner from "../../UI/Spinner";
 import Button from "../../UI/Button";
 
-import * as categoryThunks from "../../../store/slices/category/thunks";
 import * as expenseThunks from "../../../store/slices/expense/thunks";
 
 import { getSingleExpense, updateExpense } from "../../../api/expense";
@@ -44,12 +43,6 @@ const TransactionForm = () => {
   const [isFormDataFetching, setIsFormDataFetching] = useState(false);
 
   const dispatch = useDispatch();
-
-  // fetch these categories inorder to show the available category in expense form
-  useEffect(() => {
-    dispatch(categoryThunks.getDefaultCategories());
-    dispatch(categoryThunks.getCustomCategories());
-  }, []);
 
   const populateValuesForEditMode = async () => {
     try {
