@@ -10,7 +10,7 @@ module.exports.getAllExpense = async (req, res) => {
     const user = await User.findOne({ email });
 
     const filter = { user: user._id };
-    let sort = { date: -1 };
+    let sort = { date: -1, time: -1 };
 
     // search filter
     if (search) {
@@ -45,7 +45,7 @@ module.exports.getAllExpense = async (req, res) => {
 
     // Adding sorts
     if (date) {
-      sort = { date: +date };
+      sort = { date: +date, time: +date };
     }
     if (amount) {
       sort = { amount: +amount };

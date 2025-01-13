@@ -30,6 +30,12 @@ const Transactions = () => {
   useEffect(() => {
     dispatch(categoryThunks.getDefaultCategories());
     dispatch(categoryThunks.getCustomCategories());
+
+    return () => {
+      dispatch(expenseActions.setSearch(""));
+      dispatch(expenseActions.toggleFilter({}));
+      dispatch(expenseActions.toggleSort({}));
+    };
   }, []);
 
   useEffect(() => {
