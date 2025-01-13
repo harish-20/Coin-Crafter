@@ -7,6 +7,7 @@ import * as chartThunks from "../../../store/slices/chart/thunks";
 import { chartActions } from "../../../store/slices/chart/chartSlice";
 
 import { monthKeys } from "../../../helpers/monthKeys";
+import AddExpenseButton from "../../shared/AddExpense/AddExpenseButton";
 
 const Filters = () => {
   const filters = useSelector((state) => state.chart.filters);
@@ -54,19 +55,23 @@ const Filters = () => {
   }));
 
   return (
-    <div className="m-4 flex gap-3">
-      <DropDown
-        label="Year"
-        value={filters.year}
-        options={availableYearOptions || []}
-        onChange={setYear}
-      />
-      <DropDown
-        label="Month"
-        value={filters.month}
-        options={availableMonthOptions || []}
-        onChange={setMonth}
-      />
+    <div className="flex items-center justify-between mx-6">
+      <div className="m-4 flex gap-3">
+        <DropDown
+          label="Year"
+          value={filters.year}
+          options={availableYearOptions || []}
+          onChange={setYear}
+        />
+        <DropDown
+          label="Month"
+          value={filters.month}
+          options={availableMonthOptions || []}
+          onChange={setMonth}
+        />
+      </div>
+
+      <AddExpenseButton />
     </div>
   );
 };

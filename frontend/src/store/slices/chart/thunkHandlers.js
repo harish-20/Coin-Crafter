@@ -8,8 +8,10 @@ export const getAvailableFilterFulFilled = (state, action) => {
 
   // making the recent month and year as default filter
   if (action.payload.length) {
-    state.filters.year = action.payload[0].year;
-    state.filters.month = action.payload[0].months[0];
+    if (!state.filters.year && !state.filters.month) {
+      state.filters.year = action.payload[0].year;
+      state.filters.month = action.payload[0].months[0];
+    }
   }
 };
 
