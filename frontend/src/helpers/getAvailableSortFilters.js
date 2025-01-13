@@ -2,7 +2,7 @@ const availableSortOptions = [
   {
     id: 1,
     value: "",
-    text: "No Filter",
+    text: "No Sort",
     sortOption: {},
   },
   {

@@ -7,7 +7,6 @@ import Charts from "../components/dashboard/Charts/Charts";
 import ExpenseList from "../components/shared/ExpenseList/ExpenseList";
 import Filters from "../components/dashboard/Filters/Filters";
 
-import * as expenseThunks from "../store/slices/expense/thunks";
 import * as chartThunks from "../store/slices/chart/thunks";
 
 const DashBoard = () => {
@@ -19,7 +18,6 @@ const DashBoard = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(expenseThunks.getAllTransaction());
     dispatch(chartThunks.getAvailableFilter());
   }, []);
 

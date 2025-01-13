@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Layout from "../components/shared/Layout/Layout";
@@ -23,6 +23,8 @@ const Transactions = () => {
   const sorts = useSelector((state) => state.expense.sorts);
   const search = useSelector((state) => state.expense.search);
 
+  const firstRenderRef = useRef(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,9 +37,12 @@ const Transactions = () => {
   }, [filters, sorts]);
 
   useEffect(() => {
-    debounceTimer = setTimeout(() => {
-      dispatch(expenseThunks.getAllTransaction());
-    }, debounceDelay);
+    if (!firstRenderRef.current) {
+      debounceTimer = setTimeout(() => {
+        dispatch(expenseThunks.getAllTransaction());
+      }, debounceDelay);
+    }
+    firstRenderRef.current = false;
 
     return () => clearTimeout(debounceTimer);
   }, [search]);
