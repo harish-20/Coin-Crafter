@@ -12,19 +12,35 @@ import { expenseActions } from "../store/slices/expense/expenseSlice";
 import * as expenseThunks from "../store/slices/expense/thunks";
 import * as categoryThunks from "../store/slices/category/thunks";
 
+let debounceTimer = null;
+const debounceDelay = 400;
+
 const Transactions = () => {
   const expenseOnEditMode = useSelector(
     (state) => state.expense.expenseOnEditMode
   );
+  const filters = useSelector((state) => state.expense.filters);
+  const sorts = useSelector((state) => state.expense.sorts);
+  const search = useSelector((state) => state.expense.search);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(expenseThunks.getAllTransaction());
-
     dispatch(categoryThunks.getDefaultCategories());
     dispatch(categoryThunks.getCustomCategories());
   }, []);
+
+  useEffect(() => {
+    dispatch(expenseThunks.getAllTransaction());
+  }, [filters, sorts]);
+
+  useEffect(() => {
+    debounceTimer = setTimeout(() => {
+      dispatch(expenseThunks.getAllTransaction());
+    }, debounceDelay);
+
+    return () => clearTimeout(debounceTimer);
+  }, [search]);
 
   const handleClose = () => {
     dispatch(expenseActions.toggleEditMode(null));

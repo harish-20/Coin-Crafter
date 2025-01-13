@@ -13,3 +13,7 @@ export const toggleFilter = (state, action) => {
 export const toggleSort = (state, action) => {
   state.sorts = action.payload;
 };
+
+export const setSearch = (state, action) => {
+  state.search = action.payload;
+};

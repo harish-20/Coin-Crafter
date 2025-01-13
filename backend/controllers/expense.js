@@ -4,11 +4,24 @@ const User = require("../models/user");
 module.exports.getAllExpense = async (req, res) => {
   try {
     const { email } = req.body;
-    const { month, year, category, expenseType } = req.query;
+    const { month, year, category, expenseType, date, amount, search } =
+      req.query;
 
     const user = await User.findOne({ email });
 
     const filter = { user: user._id };
+    let sort = { date: -1 };
+
+    // search filter
+    if (search) {
+      const allQueries = [];
+      const words = search.split(" ");
+      words.forEach((word) => {
+        allQueries.push({ shortNote: { $regex: word } });
+      });
+
+      filter.$or = allQueries;
+    }
 
     // adding month and year filter
     if (month && year) {
@@ -30,11 +43,17 @@ module.exports.getAllExpense = async (req, res) => {
       };
     }
 
-    let expenses = await Expense.find(
-      filter,
-      { user: 0 },
-      { sort: { date: -1 } }
-    ).populate("category");
+    // Adding sorts
+    if (date) {
+      sort = { date: +date };
+    }
+    if (amount) {
+      sort = { amount: +amount };
+    }
+
+    let expenses = await Expense.find(filter, { user: 0 }, { sort }).populate(
+      "category"
+    );
 
     if (expenseType) {
       expenses = expenses.filter(
@@ -93,6 +112,7 @@ module.exports.availableFiltersMonth = async (req, res) => {
           },
         },
       },
+      { $sort: { "_id.year": -1, "_id.month": 1 } },
       {
         $group: {
           _id: "$_id.year",
@@ -106,7 +126,6 @@ module.exports.availableFiltersMonth = async (req, res) => {
           _id: 0,
         },
       },
-      { $sort: { year: -1, months: -1 } },
     ]);
 
     res.status(200).send(availableMonthsByYear);

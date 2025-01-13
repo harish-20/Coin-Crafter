@@ -4,12 +4,18 @@ import DataWithLabel from "./DataWithLabel";
 
 import { expenseActions } from "../../../store/slices/expense/expenseSlice";
 
+import SpentIcon from "../../UI/Icons/SpentIcon";
+import IncomeIcon from "../../UI/Icons/IncomeIcon";
 import FakeIcon from "../../categories/fakeIcon";
 import icons from "../../UI/CategoryIcon";
 
 const expenseTypeClasses = {
   spend: "text-red-500",
   income: "text-green-500",
+};
+const expenseIcon = {
+  spend: SpentIcon,
+  income: IncomeIcon,
 };
 
 const TransactionItem = (props) => {
@@ -33,6 +39,8 @@ const TransactionItem = (props) => {
         minute: "2-digit",
       })
     : null;
+
+  const ExpenseIcon = expenseIcon[category.expenseType];
   return (
     <div
       style={style}
@@ -49,7 +57,9 @@ const TransactionItem = (props) => {
           <Icon className="h-6 w-6" />
         </div>
 
-        <div className="w-4/12">{category.title}</div>
+        <div className="w-4/12 flex gap-2 items-center">
+          {category.title} <ExpenseIcon />
+        </div>
 
         <DataWithLabel label="Date" data={readableDate || "-"} />
         <DataWithLabel label="Time" data={readableTime || "-"} />

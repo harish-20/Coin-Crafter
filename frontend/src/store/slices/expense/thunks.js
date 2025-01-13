@@ -10,7 +10,9 @@ export const getAllTransaction = createAsyncThunk(
   "get-all-transaction",
   async (args, thunkApi) => {
     try {
-      const expenses = await getAllExpense();
+      const { expense } = thunkApi.getState();
+      const { sorts, filters, search } = expense;
+      const expenses = await getAllExpense({ ...sorts, ...filters, search });
 
       return expenses;
     } catch (error) {

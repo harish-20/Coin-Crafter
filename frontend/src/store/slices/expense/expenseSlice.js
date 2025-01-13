@@ -12,6 +12,7 @@ const initialState = {
     incomeType: "",
   },
   sorts: {},
+  search: "",
   loadingState: {
     isExpensesLoading: false,
     isExpenseAdding: false,
@@ -25,6 +26,7 @@ const expenseSlice = createSlice({
     toggleEditMode: actionHandlers.toggleEditMode,
     toggleFilter: actionHandlers.toggleFilter,
     toggleSort: actionHandlers.toggleSort,
+    setSearch: actionHandlers.setSearch,
   },
   extraReducers: (builder) =>
     builder
