@@ -6,7 +6,7 @@ export const setFilters = (state, action) => {
       (yearFilter) =>
         yearFilter.year.toString() === action.payload.year.toString()
     );
-    state.filters.month = selectedYear.months[0];
+    state.filters.month = selectedYear.months[selectedYear.months.length - 1];
   } else {
     state.filters = { ...state.filters, ...action.payload };
   }
