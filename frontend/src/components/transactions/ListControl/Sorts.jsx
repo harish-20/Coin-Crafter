@@ -1,37 +1,23 @@
 import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import AvailableSorts from "./AvailableSorts";
 
 import SortIcon from "../../UI/Icons/SortIcon";
 
-const availableSortOptions = [
-  {
-    id: 1,
-    value: "",
-    text: "No Filter",
-    sortOption: {},
-  },
-  {
-    id: 2,
-    value: "amount-asc",
-    text: "Amount Low to High",
-    sortOption: { amount: 1 },
-  },
-  {
-    id: 3,
-    value: "amount-desc",
-    text: "Amount High to Low",
-    sortOption: { amount: -1 },
-  },
-  { id: 4, value: "date-asc", text: "By Oldest", sortOption: { date: 1 } },
-  { id: 5, value: "date-desc", text: "By Latest", sortOption: { date: -1 } },
-];
+import { expenseActions } from "../../../store/slices/expense/expenseSlice";
+
+import getAvailableSortFilters from "../../../helpers/getAvailableSortFilters";
+
+const availableSortOptions = getAvailableSortFilters();
 
 const Sorts = () => {
   const [sortOption, setSortOption] = useState(availableSortOptions[0].text);
   const [isSortOptionOpen, setIsSortOptionOpen] = useState(false);
 
   const sortIconRef = useRef(null);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleClickOutsideSort = (event) => {
@@ -48,6 +34,7 @@ const Sorts = () => {
 
   const handleChange = (selectedValue) => {
     setSortOption(selectedValue.text);
+    dispatch(expenseActions.toggleSort({ ...selectedValue.sortOption }));
   };
 
   const toggleSortOptionOpen = () => {

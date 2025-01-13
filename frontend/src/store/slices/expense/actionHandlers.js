@@ -9,3 +9,7 @@ export const toggleFilter = (state, action) => {
   };
   state.filters = { ...defaultFilters, ...action.payload };
 };
+
+export const toggleSort = (state, action) => {
+  state.sorts = action.payload;
+};

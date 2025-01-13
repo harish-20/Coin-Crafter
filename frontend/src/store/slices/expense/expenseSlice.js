@@ -24,6 +24,7 @@ const expenseSlice = createSlice({
   reducers: {
     toggleEditMode: actionHandlers.toggleEditMode,
     toggleFilter: actionHandlers.toggleFilter,
+    toggleSort: actionHandlers.toggleSort,
   },
   extraReducers: (builder) =>
     builder
