@@ -13,7 +13,9 @@ import { popupActions } from "../../../store/slices/popupSlice";
 import * as categoryThunks from "../../../store/slices/category/thunks";
 import * as expenseThunks from "../../../store/slices/expense/thunks";
 
-const TransactionForm = () => {
+const TransactionForm = (props) => {
+  const { className, ...otherProps } = props;
+
   const defaultCategories = useSelector(
     (state) => state.category.defaultCategories
   );
@@ -69,7 +71,11 @@ const TransactionForm = () => {
     }
   };
   return (
-    <div className="p-4 min-w-[500px] overflow-auto bg-gray-900 rounded-lg">
+    <div
+      className={`p-4 min-w-[500px] overflow-auto bg-gray-900 rounded-lg ${
+        className || ""
+      }`}
+    >
       <form className="" onSubmit={handleSubmit}>
         <ExpenseDropDown
           label="Category"

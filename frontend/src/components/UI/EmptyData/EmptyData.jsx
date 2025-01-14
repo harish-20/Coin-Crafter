@@ -3,7 +3,7 @@ import Button from "../Button";
 
 const EmptyData = (props) => {
   return (
-    <div className="h-full flex flex-col gap-8 items-center justify-center">
+    <div className="mt-10 flex flex-col gap-8 items-center justify-center">
       <img className="" src={emptyDataImage} />
 
       <h2 className="font-bold">It looks a bit empty here!</h2>

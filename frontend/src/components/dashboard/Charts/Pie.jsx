@@ -5,6 +5,7 @@ import Spinner from "../../UI/Spinner";
 import EmptyData from "../../UI/EmptyData/EmptyData";
 
 import { expensesToCategoryDataPoints } from "../../../helpers/dataProcessing";
+import EmptyTransaction from "../../transactions/TransactionList/EmptyTransaction";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -23,7 +24,8 @@ const Pie = (props) => {
 
   const options = getOptionsWithData(filteredDataPoints);
 
-  const isDataEmpty = filteredDataPoints.length === 0;
+  const isNoExpenseAdded = filteredData.length === 0;
+  const isDataEmpty = !isNoExpenseAdded && filteredDataPoints.length === 0;
 
   return (
     <div className="w-full min-h-[400px]">
@@ -31,9 +33,10 @@ const Pie = (props) => {
         <Spinner className="h-full flex justify-center" size={50} />
       )}
 
-      {isDataEmpty && <EmptyData />}
+      {isNoExpenseAdded && <EmptyData />}
+      {isDataEmpty && <EmptyTransaction />}
 
-      {!isFilteredDataLoading && !isDataEmpty && (
+      {!isFilteredDataLoading && !isNoExpenseAdded && !isDataEmpty && (
         <CanvasJSChart options={options} />
       )}
     </div>

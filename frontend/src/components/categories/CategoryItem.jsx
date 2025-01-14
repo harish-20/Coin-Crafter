@@ -4,7 +4,7 @@ import SpentIcon from "../UI/Icons/SpentIcon";
 import FakeIcon from "./fakeIcon";
 
 const CategoryItem = (props) => {
-  const { title, icon, iconColor, backgroundColor, expenseType } = props;
+  const { title, icon, backgroundColor, expenseType } = props;
 
   const Icon = icons[icon] || FakeIcon;
   return (

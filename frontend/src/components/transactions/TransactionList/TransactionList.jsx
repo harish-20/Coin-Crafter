@@ -2,14 +2,18 @@ import { useRef, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import List from "react-virtualized/dist/commonjs/List";
 
-import TransactionItem from "./TransactionItem";
 import Spinner from "../../UI/Spinner";
+import EmptyTransaction from "./EmptyTransaction";
+import EmptyData from "../../UI/EmptyData/EmptyData";
+import TransactionItem from "./TransactionItem";
 
 const THROTTLE_INTERVAL = 300;
 const TransactionList = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   const transactions = useSelector((state) => state.expense.expenses);
+  const search = useSelector((state) => state.expense.search);
+  const filters = useSelector((state) => state.expense.filters);
   const isTransactionsLoading = useSelector(
     (state) => state.expense.loadingState.isExpensesLoading
   );
@@ -55,6 +59,21 @@ const TransactionList = () => {
     );
   };
 
+  const isTransactionEmpty = transactions.length === 0;
+
+  const isFiltersApplied = Object.values(filters).some((filter) => !!filter);
+  const isNoTransactionAdded =
+    !search &&
+    !isFiltersApplied &&
+    isTransactionEmpty &&
+    !isTransactionsLoading;
+  const isFilteredResultEmpty =
+    (search || isFiltersApplied) &&
+    isTransactionEmpty &&
+    !isTransactionsLoading;
+
+  const shouldShowTransactionList =
+    !isTransactionsLoading && !isTransactionEmpty && !isFilteredResultEmpty;
   return (
     <div ref={containerRef} className="flex-1 flex flex-col my-6 gap-3">
       {isTransactionsLoading && (
@@ -63,7 +82,11 @@ const TransactionList = () => {
         </div>
       )}
 
-      {!isTransactionsLoading && (
+      {isNoTransactionAdded && <EmptyData />}
+
+      {isFilteredResultEmpty && <EmptyTransaction />}
+
+      {shouldShowTransactionList && (
         <List
           height={dimensions.height}
           rowHeight={160}

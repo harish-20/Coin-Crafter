@@ -54,22 +54,30 @@ const Filters = () => {
     value: month,
   }));
 
+  const isFiltersEmpty = yearFilters.length === 0;
+
   return (
-    <div className="flex items-center justify-between mx-6">
-      <div className="m-4 flex gap-3">
-        <DropDown
-          label="Year"
-          value={filters.year}
-          options={availableYearOptions || []}
-          onChange={setYear}
-        />
-        <DropDown
-          label="Month"
-          value={filters.month}
-          options={availableMonthOptions || []}
-          onChange={setMonth}
-        />
-      </div>
+    <div className="flex items-center justify-between mx-6 my-4">
+      {isFiltersEmpty && <div>Add Expense by clicking "+ Add New"</div>}
+
+      {!isFiltersEmpty && (
+        <div className="flex gap-3">
+          <DropDown
+            label="Year"
+            value={filters.year}
+            options={availableYearOptions || []}
+            onChange={setYear}
+            disabled={isAvailableFilterLoading}
+          />
+          <DropDown
+            label="Month"
+            value={filters.month}
+            options={availableMonthOptions || []}
+            onChange={setMonth}
+            disabled={isAvailableFilterLoading}
+          />
+        </div>
+      )}
 
       <AddExpenseButton />
     </div>

@@ -1,15 +1,34 @@
-.modal {
+.open-modal {
   opacity: 0;
-  animation: popup 300ms ease-in forwards;
+  animation: popup-open 400ms ease forwards;
 }
 
-@keyframes popup {
-  from {
+.close-modal {
+  opacity: 1;
+  animation: popup-close 300ms ease-in forwards;
+}
+
+@keyframes popup-open {
+  0% {
     transform: translateY(80px);
     opacity: 0;
   }
-  to {
+  70% {
+    transform: translateY(-20px);
+  }
+  100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@keyframes popup-close {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(80px);
+    opacity: 0;
   }
 }

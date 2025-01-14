@@ -1,5 +1,5 @@
 const DropDown = (props) => {
-  const { value, label, onChange, options } = props;
+  const { value, label, onChange, options, ...otherProps } = props;
   return (
     <div className="flex flex-col items-center gap-2">
       <label className="" htmlFor={label}>

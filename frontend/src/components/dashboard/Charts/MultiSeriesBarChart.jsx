@@ -19,8 +19,7 @@ const MultiSeriesBarChart = () => {
 
   const options = getOptionsWithData(incomeDataPoints, spendDataPoints);
 
-  const isDataEmpty =
-    incomeDataPoints?.length === 0 && spendDataPoints?.length === 0;
+  const isNoExpenseAdded = filteredData.length === 0;
 
   return (
     <div className="min-h-[400px] w-full overflow-x-auto md:col-span-2">
@@ -28,9 +27,9 @@ const MultiSeriesBarChart = () => {
         <Spinner className="h-full flex justify-center" size={50} />
       )}
 
-      {isDataEmpty && <EmptyData />}
+      {isNoExpenseAdded && <EmptyData />}
 
-      {!isFilteredDataLoading && !isDataEmpty && (
+      {!isFilteredDataLoading && !isNoExpenseAdded && (
         <div className="min-w-[1000px]">
           <CanvasJSChart options={options} />
         </div>
@@ -50,11 +49,6 @@ function getOptionsWithData(incomeDataPoints, spendDataPoints) {
     zoomType: "x",
     axisX: {
       interval: 1,
-    },
-    title: {
-      text: "Expense & Income Daywise",
-      fontSize: 22,
-      padding: 20,
     },
     toolTip: {
       shared: true,
