@@ -2,14 +2,21 @@ import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 
 import { googleSignin } from "../../api/auth";
+import { useDispatch } from "react-redux";
+import { userActions } from "../../store/slices/user/userSlice";
 
 const GoogleLoginButton = () => {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
   const handleGoogleSignin = (credentials) => {
     googleSignin(credentials)
       .then((data) => {
-        if (data.status === 200) navigate("/dashboard");
-        else console.log("cannot login");
+        if (data.user) {
+          dispatch(userActions.setUser(data.user));
+          navigate("/dashboard", { replace: true });
+        } else console.log("cannot login");
       })
       .catch((err) => console.log(err));
   };

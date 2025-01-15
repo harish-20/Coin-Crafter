@@ -2,13 +2,16 @@ import { useDispatch } from "react-redux";
 
 import Button from "../../UI/Button";
 
-import { popupActions } from "../../../store/slices/popupSlice";
+import { popupActions } from "../../../store/slices/popup/popupSlice";
+import getAvailablePopups from "../../../helpers/getAvailablePopups";
+
+const { newTransactionPopup } = getAvailablePopups();
 
 const AddExpenseButton = () => {
   const dispatch = useDispatch();
 
   const openTransactionPopup = () => {
-    dispatch(popupActions.togglePopup("transaction-popup"));
+    dispatch(popupActions.togglePopup(newTransactionPopup));
   };
   return (
     <Button

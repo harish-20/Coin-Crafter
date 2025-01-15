@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-
-import { validateEmail, validatePassword } from "../../helpers/validations";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { emailSignup } from "../../api/auth";
 
@@ -10,6 +10,10 @@ import PoliciesCheckbox from "../UI/InputElements/PoliciesCheckbox";
 import Button from "../UI/button";
 import SigninIcon from "../UI/Icons/SigninIcon";
 import Spinner from "../UI/Spinner";
+
+import { userActions } from "../../store/slices/user/userSlice";
+
+import { validateEmail, validatePassword } from "../../helpers/validations";
 
 const initialFormData = {
   name: "",
@@ -35,6 +39,9 @@ const SignupForm = () => {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isSigningUp, setIsSigningUp] = useState(false);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validateForm = () => {
     const isValidName = !!formData.name.trim();
@@ -81,13 +88,14 @@ const SignupForm = () => {
     if (!isValidForm) return setIsSigningUp(false);
 
     try {
-      const response = emailSignup(
+      const data = emailSignup(
         formData.name,
         formData.email,
         formData.password
       );
-      if (response) {
-        console.log("sigin up sucess");
+      if (data) {
+        dispatch(userActions.setUser(data.user));
+        navigate("/dashboard", { replace: true });
       }
     } catch (err) {
       setIsSigningUp(false);

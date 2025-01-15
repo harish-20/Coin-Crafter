@@ -5,7 +5,8 @@ import SidePanel from "./SidePanel/SidePanel";
 import NavBar from "./NavBar";
 import BackDrop from "./BackDrop";
 
-import NewTransaction from "../../transactions/NewTransaction/NewTransaction";
+import NewTransactionPopup from "../../transactions/NewTransactionPopup/NewTransactionPopup";
+import LogoutPopup from "../LogoutPopup/LogoutPopup";
 
 const Layout = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -26,7 +27,9 @@ const Layout = (props) => {
       >
         <Outlet />
       </div>
-      <NewTransaction />
+
+      <NewTransactionPopup />
+      <LogoutPopup />
     </div>
   );
 };

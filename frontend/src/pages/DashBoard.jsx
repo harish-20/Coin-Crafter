@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Spinner from "../components/UI/Spinner";
-import Layout from "../components/shared/Layout/Layout";
 import Charts from "../components/dashboard/Charts/Charts";
 import ExpenseList from "../components/shared/ExpenseList/ExpenseList";
 import Filters from "../components/dashboard/Filters/Filters";

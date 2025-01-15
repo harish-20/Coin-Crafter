@@ -46,6 +46,7 @@ module.exports.verifyGoogleAccount = async (req, res, next) => {
       const token = jwt.sign(email, SECRET_KEY);
       res.status(200).send({
         token,
+        user: existingUser,
       });
     } else {
       const user = User({ name, email, hasGoogleAuth: true });
@@ -54,6 +55,7 @@ module.exports.verifyGoogleAccount = async (req, res, next) => {
       const token = jwt.sign(email, SECRET_KEY);
       res.status(200).send({
         token,
+        user,
       });
     }
   } catch (error) {
@@ -78,6 +80,7 @@ module.exports.signUp = async (req, res, next) => {
         errorCode: "googleAuthUser",
         message: "User had signed in with google auth",
       });
+      return;
     }
     if (existingUser) {
       res.status(409).send({
@@ -93,7 +96,7 @@ module.exports.signUp = async (req, res, next) => {
       email,
       password: hashedPassword,
     };
-    const user = User(userData);
+    const user = new User(userData);
     const invalidData = user.validateSync();
     if (invalidData) {
       const errorFields = getInvalidFields(REQUIRED_FIELDS, invalidData.errors);
@@ -109,6 +112,7 @@ module.exports.signUp = async (req, res, next) => {
     const token = jwt.sign(email, SECRET_KEY);
     res.status(200).send({
       token,
+      user,
     });
   } catch (error) {
     next(error);
@@ -138,5 +142,5 @@ module.exports.signIn = async (req, res, next) => {
   }
 
   const token = jwt.sign(email, SECRET_KEY);
-  res.status(200).send({ token });
+  res.status(200).send({ token, user: emailMatchedUser });
 };

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import TextInput from "../UI/InputElements/TextInput";
@@ -6,8 +7,12 @@ import PasswordInput from "../UI/InputElements/PasswordInput";
 import Button from "../UI/button";
 import LoginIcon from "../UI/Icons/LoginIcon";
 import Spinner from "../UI/Spinner";
-import { validateEmail, validatePassword } from "../../helpers/validations";
+
 import { emailSignin } from "../../api/auth";
+
+import { userActions } from "../../store/slices/user/userSlice";
+
+import { validateEmail, validatePassword } from "../../helpers/validations";
 
 const LoginIconWithText = () => (
   <div className="flex items-center justify-center gap-2 text-zinc-800">
@@ -27,6 +32,7 @@ const SigninForm = () => {
   });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -67,9 +73,10 @@ const SigninForm = () => {
     if (!isValidForm) return setIsSigningIn(false);
 
     try {
-      const response = await emailSignin(email, password);
-      if (response) {
-        navigate("/dashboard");
+      const data = await emailSignin(email, password);
+      if (data) {
+        dispatch(userActions.setUser(data.user));
+        navigate("/dashboard", { replace: true });
       }
 
       setIsSigningIn(false);

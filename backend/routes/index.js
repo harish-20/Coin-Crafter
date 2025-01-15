@@ -38,8 +38,8 @@ router.post(
   categoryController.createCategory
 );
 
+router.get("/user/getUser", authMiddleware, userController.getUser);
 router.post("/user/signup", authController.signUp);
 router.post("/user/signin", authController.signIn);
-router.post("/user/find", authMiddleware, userController.findUser);
 
 module.exports = router;

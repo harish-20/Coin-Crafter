@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import userReducer from "./slices/userSlice";
-import popupMenuReducer from "./slices/popupSlice";
+import userReducer from "./slices/user/userSlice";
+import popupReducer from "./slices/popup/popupSlice";
 import categoryReducer from "./slices/category/categorySlice";
 import expenseReducer from "./slices/expense/expenseSlice";
 import chartReducer from "./slices/chart/chartSlice";
@@ -9,7 +9,7 @@ import chartReducer from "./slices/chart/chartSlice";
 const store = configureStore({
   reducer: {
     user: userReducer,
-    popupMenu: popupMenuReducer,
+    popup: popupReducer,
     category: categoryReducer,
     expense: expenseReducer,
     chart: chartReducer,

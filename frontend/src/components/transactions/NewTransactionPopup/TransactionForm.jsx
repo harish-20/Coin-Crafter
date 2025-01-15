@@ -8,7 +8,7 @@ import DateInput from "../../UI/InputElements/DateInput";
 import TimeInput from "../../UI/InputElements/TimeInput";
 import Button from "../../UI/Button";
 
-import { popupActions } from "../../../store/slices/popupSlice";
+import { popupActions } from "../../../store/slices/popup/popupSlice";
 
 import * as categoryThunks from "../../../store/slices/category/thunks";
 import * as expenseThunks from "../../../store/slices/expense/thunks";
@@ -75,6 +75,7 @@ const TransactionForm = (props) => {
       className={`p-4 min-w-[500px] overflow-auto bg-gray-900 rounded-lg ${
         className || ""
       }`}
+      {...otherProps}
     >
       <form className="" onSubmit={handleSubmit}>
         <ExpenseDropDown

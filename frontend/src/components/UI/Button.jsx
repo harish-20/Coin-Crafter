@@ -3,11 +3,23 @@ import { Link } from "react-router-dom";
 const white =
   "bg-white text-zinc-900 focus:shadow-white focus:shadow-md transition-all duration-200 hover:bg-gray-200";
 
-const Button = (props) => {
-  const { className, href, children, disabled, isLoading, ...otherProps } =
-    props;
+const outlined =
+  "bg-transparent text-white border-2 border-white focus:shadow-white focus:shadow-md transition-all duration-200 hover:bg-white hover:text-black";
 
-  const classList = `relative mt-8 py-2 px-4 w-full text-center font-bold rounded-full ${white} focus:outline-none disabled:bg-gray-300 ${className}`;
+const Button = (props) => {
+  const {
+    className,
+    href,
+    children,
+    disabled,
+    isLoading,
+    variant = "default",
+    ...otherProps
+  } = props;
+
+  const variantClass = variant === "outlined" ? outlined : white;
+
+  const classList = `relative mt-8 py-2 px-4 w-full text-center font-bold rounded-full ${variantClass} focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:border-gray-300 ${className}`;
 
   if (href) {
     return (
