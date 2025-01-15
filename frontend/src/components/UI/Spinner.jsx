@@ -1,18 +1,19 @@
 import React from "react";
 
 const Spinner = (props) => {
+  const { className, size, hideText } = props;
   return (
     <div
       className={`flex flex-col gap-3 items-center justify-center animate-pulse ${
-        props.className || ""
+        className || ""
       }`}
     >
       <div
         style={{
-          ...(props.size
+          ...(size
             ? {
-                height: `${props.size}px`,
-                width: `${props.size}px`,
+                height: `${size}px`,
+                width: `${size}px`,
               }
             : {
                 height: "10px",
@@ -21,7 +22,7 @@ const Spinner = (props) => {
         }}
         className="aspect-square rounded-full border-[6px] border-white border-l-transparent animate-spin"
       ></div>
-      <div className="font-bold">Loading...</div>
+      {!hideText && <div className="font-bold">Loading...</div>}
     </div>
   );
 };

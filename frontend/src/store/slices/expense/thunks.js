@@ -33,9 +33,18 @@ export const createTransaction = createAsyncThunk(
         time,
         tags,
       } = args;
-      await createExpense({ category, amount, shortNote, tags, date, time });
+      const response = await createExpense({
+        category,
+        amount,
+        shortNote,
+        tags,
+        date,
+        time,
+      });
 
       thunkApi.dispatch(getAllTransaction());
+
+      return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error);
     }
@@ -55,7 +64,7 @@ export const updateTransaction = createAsyncThunk(
         time,
         tags,
       } = args;
-      await updateExpense({
+      const response = await updateExpense({
         _id,
         category,
         amount,
@@ -64,6 +73,8 @@ export const updateTransaction = createAsyncThunk(
         time,
         tags,
       });
+
+      return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error);
     }

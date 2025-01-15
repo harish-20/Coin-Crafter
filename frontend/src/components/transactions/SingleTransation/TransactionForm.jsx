@@ -86,15 +86,15 @@ const TransactionForm = () => {
     if (hasError) {
       setFormErrors(collectedFormErrors);
     } else {
-      updateExpense({
+      const updatedExpense = {
         _id: expenseOnEditMode,
         category: formData.category,
         amount: formData.amount,
-        shortNote: formData.description,
+        description: formData.description,
         date: formData.date,
         time: formData.time,
-      });
-      dispatch(expenseThunks.getAllTransaction());
+      };
+      dispatch(expenseThunks.updateTransaction(updatedExpense));
     }
   };
 

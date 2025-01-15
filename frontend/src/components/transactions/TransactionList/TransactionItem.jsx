@@ -8,6 +8,7 @@ import SpentIcon from "../../UI/Icons/SpentIcon";
 import IncomeIcon from "../../UI/Icons/IncomeIcon";
 import FakeIcon from "../../categories/fakeIcon";
 import icons from "../../UI/CategoryIcon";
+import Spinner from "../../UI/Spinner";
 
 const expenseTypeClasses = {
   spend: "text-red-500",
@@ -23,10 +24,12 @@ const TransactionItem = (props) => {
   const expenseOnEditMode = useSelector(
     (state) => state.expense.expenseOnEditMode
   );
+  const expensesUpdating = useSelector(
+    (state) => state.expense.loadingState.expensesUpdating
+  );
 
   const dispatch = useDispatch();
 
-  const isSelectedTransaction = expenseOnEditMode === id;
   const Icon = icons[category.icon] || FakeIcon;
 
   const readableDate = new Date(date).toLocaleDateString("en-US", {
@@ -41,6 +44,8 @@ const TransactionItem = (props) => {
     : null;
 
   const ExpenseIcon = expenseIcon[category.expenseType];
+  const isSelectedTransaction = expenseOnEditMode === id;
+  const isExpenseUpdating = expensesUpdating.includes(id);
   return (
     <div
       style={style}
@@ -52,9 +57,14 @@ const TransactionItem = (props) => {
       <div className="flex justify-between items-start min-h-[50px] flex-wrap">
         <div
           style={{ background: category.backgroundColor }}
-          className="bg-gray-100 rounded-full p-2"
+          className="relative overflow-hidden bg-gray-100 rounded-full p-2"
         >
           <Icon className="h-6 w-6" />
+          {isExpenseUpdating && (
+            <div className="absolute top-0 left-0 flex items-center justify-center h-full w-full bg-black/80">
+              <Spinner size="20" hideText />
+            </div>
+          )}
         </div>
 
         <div className="w-4/12 flex gap-2 items-center">

@@ -16,6 +16,7 @@ const initialState = {
   loadingState: {
     isExpensesLoading: false,
     isExpenseAdding: false,
+    expensesUpdating: [],
   },
 };
 
@@ -47,9 +48,16 @@ const expenseSlice = createSlice({
       .addCase(
         thunks.createTransaction.fulfilled,
         thunkHandlers.createTransactionFulfilled
+      )
+      // edit transaction
+      .addCase(
+        thunks.updateTransaction.pending,
+        thunkHandlers.updateTrasactionPending
+      )
+      .addCase(
+        thunks.updateTransaction.fulfilled,
+        thunkHandlers.updateTrasactionFulfilled
       ),
-  // edit transaction
-  // .addCase(),
 });
 
 export const expenseActions = expenseSlice.actions;
