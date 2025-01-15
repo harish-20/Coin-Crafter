@@ -23,7 +23,9 @@ const ProblemItem = (props) => {
           <div>
             <ol className="flex flex-col gap-2 text-green-800 list-decimal mt-3 p-2 pl-7">
               {list.map((item) => (
-                <li className="text-green-800">{item}</li>
+                <li className="text-green-800" key={item}>
+                  {item}
+                </li>
               ))}
             </ol>
           </div>

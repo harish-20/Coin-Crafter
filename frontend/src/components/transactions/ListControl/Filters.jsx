@@ -27,7 +27,12 @@ const Filters = () => {
   };
 
   const handleExpenseTypeChange = (expenseType) => {
-    dispatch(expenseActions.toggleFilter({ expenseType }));
+    const isSelectedFilter = filters.expenseType === expenseType;
+    dispatch(
+      expenseActions.toggleFilter({
+        expenseType: isSelectedFilter ? "" : expenseType,
+      })
+    );
   };
 
   const resetFilters = () => dispatch(expenseActions.toggleFilter({}));
