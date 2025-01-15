@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import Popup from "../components/popup/Popup";
-import Layout from "../components/shared/Layout/Layout";
 import CategoryList from "../components/categories/categoryList";
 import AddCategoryForm from "../components/categories/AddCategoryForm";
 
@@ -12,11 +11,11 @@ const Categories = (props) => {
     setIsFormOpen((prev) => !prev);
   };
   return (
-    <Layout>
+    <>
       <CategoryList toggleForm={toggleForm} />
 
       {isFormOpen && <Popup closeModal={toggleForm} Modal={AddCategoryForm} />}
-    </Layout>
+    </>
   );
 };
 

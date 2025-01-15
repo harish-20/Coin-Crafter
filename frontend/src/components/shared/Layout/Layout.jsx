@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 import SidePanel from "./SidePanel/SidePanel";
 import NavBar from "./NavBar";
 import BackDrop from "./BackDrop";
+
 import NewTransaction from "../../transactions/NewTransaction/NewTransaction";
 
 const Layout = (props) => {
@@ -22,7 +24,7 @@ const Layout = (props) => {
       <div
         className={`flex-1 m-4 ml-0 bg-dark rounded-2xl overflow-y-auto ${props.className}`}
       >
-        {props.children}
+        <Outlet />
       </div>
       <NewTransaction />
     </div>

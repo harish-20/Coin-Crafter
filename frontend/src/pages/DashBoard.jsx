@@ -24,17 +24,17 @@ const DashBoard = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       {isExpensesLoading && <Spinner size="50" className="my-auto h-full" />}
 
       {!isExpensesLoading && (
         <>
           <Filters />
           <Charts />
-          <ExpenseList expenses={expenses.slice(0, 5)} />
+          <ExpenseList expenses={expenses?.slice(0, 5)} />
         </>
       )}
-    </Layout>
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Layout from "../components/shared/Layout/Layout";
 import SearchBar from "../components/transactions/SearchBar/SearchBar";
 
 import ListControl from "../components/transactions/ListControl/ListControl";
@@ -57,12 +56,12 @@ const Transactions = () => {
     dispatch(expenseActions.toggleEditMode(null));
   };
   return (
-    <Layout className="px-8 flex flex-col">
+    <div className="px-8 flex flex-col h-full">
       <SearchBar />
       <ListControl />
       <TransactionList />
       <SingleTransaction isOpen={!!expenseOnEditMode} onClose={handleClose} />
-    </Layout>
+    </div>
   );
 };
 

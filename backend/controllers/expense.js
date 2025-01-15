@@ -126,6 +126,7 @@ module.exports.availableFiltersMonth = async (req, res) => {
           _id: 0,
         },
       },
+      { $sort: { "_id.year": 1 } },
     ]);
 
     res.status(200).send(availableMonthsByYear);

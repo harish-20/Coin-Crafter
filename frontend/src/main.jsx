@@ -5,8 +5,9 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import App from "./App.jsx";
 
-import "./index.css";
 import store from "./store/store.js";
+
+import "./index.css";
 
 const CLIENT_ID =
   "787616944380-ukbuj9q4bnh6tr6rqa9vo38ic7erb5cv.apps.googleusercontent.com";
