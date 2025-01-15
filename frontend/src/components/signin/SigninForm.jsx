@@ -111,7 +111,11 @@ const SigninForm = () => {
       <p className="text-sm mt-2 text-gray-400">Forget password?</p>
 
       <Button disabled={isSigningIn}>
-        {isSigningIn ? <Spinner size={22} /> : <LoginIconWithText />}
+        {isSigningIn ? (
+          <Spinner color="black" size={22} hideText />
+        ) : (
+          <LoginIconWithText />
+        )}
       </Button>
     </form>
   );

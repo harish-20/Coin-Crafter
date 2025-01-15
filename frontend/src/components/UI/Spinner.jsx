@@ -1,26 +1,24 @@
 import React from "react";
 
 const Spinner = (props) => {
-  const { className, size, hideText } = props;
+  const {
+    className = "",
+    size = 10,
+    hideText = false,
+    color = "white",
+  } = props;
   return (
     <div
-      className={`flex flex-col gap-3 items-center justify-center animate-pulse ${
-        className || ""
-      }`}
+      className={`flex flex-col gap-3 items-center justify-center animate-pulse ${className}`}
     >
       <div
         style={{
-          ...(size
-            ? {
-                height: `${size}px`,
-                width: `${size}px`,
-              }
-            : {
-                height: "10px",
-                width: "10px",
-              }),
+          height: `${size}px`,
+          width: `${size}px`,
+          borderColor: color,
+          borderLeftColor: "transparent",
         }}
-        className="aspect-square rounded-full border-[6px] border-white border-l-transparent animate-spin"
+        className="aspect-square rounded-full border-[6px] border-l-transparent animate-spin"
       ></div>
       {!hideText && <div className="font-bold">Loading...</div>}
     </div>

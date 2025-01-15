@@ -155,7 +155,11 @@ const SignupForm = () => {
       />
 
       <Button disabled={isSigningUp}>
-        {isSigningUp ? <Spinner size={22} /> : <SigninIconWithText />}
+        {isSigningUp ? (
+          <Spinner color="black" size={22} hideText />
+        ) : (
+          <SigninIconWithText />
+        )}
       </Button>
     </form>
   );
