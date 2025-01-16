@@ -19,9 +19,14 @@ export const getAvailableFilter = {
 export const getFilteredData = {
   pending: (state, action) => {
     state.loadingState.isFilteredDataLoading = true;
+    state.errorState.isDataLoadingError = false;
   },
   fulfilled: (state, action) => {
     state.loadingState.isFilteredDataLoading = false;
     state.data = action.payload;
+  },
+  rejected: (state, action) => {
+    state.loadingState.isFilteredDataLoading = false;
+    state.errorState.isDataLoadingError = true;
   },
 };

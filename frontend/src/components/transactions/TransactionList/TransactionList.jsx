@@ -1,11 +1,13 @@
 import { useRef, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import List from "react-virtualized/dist/commonjs/List";
 
 import Spinner from "../../UI/Spinner";
+import ErrorView from "../../UI/ErrorView";
 import EmptyTransaction from "./EmptyTransaction";
 import EmptyData from "../../UI/EmptyData/EmptyData";
 import TransactionItem from "./TransactionItem";
+import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
 const THROTTLE_INTERVAL = 300;
 const TransactionList = () => {
@@ -17,9 +19,14 @@ const TransactionList = () => {
   const isTransactionsLoading = useSelector(
     (state) => state.expense.loadingState.isExpensesLoading
   );
+  const isTransactionsLoadingError = useSelector(
+    (state) => state.expense.errorState.isExpensesLoadingError
+  );
 
   const timerRef = useRef(null);
   const containerRef = useRef(null);
+
+  const dispatch = useDispatch();
 
   const updateDimensions = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -59,23 +66,39 @@ const TransactionList = () => {
     );
   };
 
-  const isTransactionEmpty = transactions.length === 0;
+  const handleRetry = () => {
+    dispatch(expenseThunks.getAllTransaction());
+  };
+
+  const isTransactionEmpty = transactions?.length === 0;
 
   const isFiltersApplied = Object.values(filters).some((filter) => !!filter);
   const isNoTransactionAdded =
     !search &&
     !isFiltersApplied &&
     isTransactionEmpty &&
-    !isTransactionsLoading;
+    !isTransactionsLoading &&
+    !isTransactionsLoadingError;
+
   const isFilteredResultEmpty =
     (search || isFiltersApplied) &&
     isTransactionEmpty &&
     !isTransactionsLoading;
 
   const shouldShowTransactionList =
-    !isTransactionsLoading && !isTransactionEmpty && !isFilteredResultEmpty;
+    !isTransactionsLoading &&
+    !isTransactionEmpty &&
+    !isFilteredResultEmpty &&
+    !isTransactionsLoadingError;
+
+  const shouldShowError = !isTransactionsLoading && isTransactionsLoadingError;
+
   return (
     <div ref={containerRef} className="flex-1 flex flex-col my-6 gap-3">
+      {shouldShowError && (
+        <ErrorView message="Cannot fetch transactions!" onRetry={handleRetry} />
+      )}
+
       {isTransactionsLoading && (
         <div className="h-full flex items-center justify-center">
           <Spinner size={50} />
@@ -91,7 +114,7 @@ const TransactionList = () => {
           height={dimensions.height}
           rowHeight={160}
           width={dimensions.width}
-          rowCount={transactions.length}
+          rowCount={transactions?.length}
           rowRenderer={rowRenderer}
         />
       )}

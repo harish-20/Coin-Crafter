@@ -18,6 +18,9 @@ const initialState = {
     isExpenseAdding: false,
     expensesUpdating: [],
   },
+  errorState: {
+    isExpensesLoadingError: false,
+  },
 };
 
 const expenseSlice = createSlice({
@@ -39,10 +42,12 @@ const expenseSlice = createSlice({
       .addCase(
         thunks.getAllTransaction.fulfilled,
         thunkHandlers.getAllTransaction.fulfilled
-      );
-
-    // Create transaction
-    builder
+      )
+      .addCase(
+        thunks.getAllTransaction.rejected,
+        thunkHandlers.getAllTransaction.rejected
+      )
+      // Create transaction
       .addCase(
         thunks.createTransaction.pending,
         thunkHandlers.createTransaction.pending
@@ -50,10 +55,8 @@ const expenseSlice = createSlice({
       .addCase(
         thunks.createTransaction.fulfilled,
         thunkHandlers.createTransaction.fulfilled
-      );
-
-    // Update transaction
-    builder
+      )
+      // Update transaction
       .addCase(
         thunks.updateTransaction.pending,
         thunkHandlers.updateTransaction.pending

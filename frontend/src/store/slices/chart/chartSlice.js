@@ -17,6 +17,9 @@ const initialState = {
     isAvailableFilterLoading: false,
     isFilteredDataLoading: false,
   },
+  errorState: {
+    isDataLoadingError: false,
+  },
 };
 
 const chartSlice = createSlice({
@@ -44,6 +47,10 @@ const chartSlice = createSlice({
       .addCase(
         thunks.getFilteredData.fulfilled,
         thunkHandlers.getFilteredData.fulfilled
+      )
+      .addCase(
+        thunks.getFilteredData.rejected,
+        thunkHandlers.getFilteredData.rejected
       );
   },
 });

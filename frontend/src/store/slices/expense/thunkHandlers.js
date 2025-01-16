@@ -1,18 +1,26 @@
 export const getAllTransaction = {
   pending: (state, action) => {
+    state.errorState.isExpensesLoadingError = false;
     state.loadingState.isExpensesLoading = true;
   },
   fulfilled: (state, action) => {
     state.loadingState.isExpensesLoading = false;
     state.expenses = action.payload;
   },
+  rejected: (state, action) => {
+    state.errorState.isExpensesLoadingError = true;
+    state.loadingState.isExpensesLoading = false;
+  },
 };
 
 export const createTransaction = {
   pending: (state, action) => {
-    state.loadingState.isExpenseAdding = true;
+    state.errorState.isExpenseAddingError = false;
   },
   fulfilled: (state, action) => {
+    state.loadingState.isExpenseAdding = false;
+  },
+  rejected: (state, action) => {
     state.loadingState.isExpenseAdding = false;
   },
 };

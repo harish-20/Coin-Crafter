@@ -1,9 +1,33 @@
+import { useDispatch, useSelector } from "react-redux";
+
 import Title from "../../UI/Title";
 import BarChart from "./BarChart";
 import MultiSeriesBarChart from "./MultiSeriesBarChart";
 import Pie from "./Pie";
+import ErrorView from "../../UI/ErrorView";
+
+import { chartThunks } from "../../../store/slices/chart/chartSlice";
 
 const Charts = () => {
+  const isChartDataLoading = useSelector(
+    (state) => state.chart.loadingState.isFilteredDataLoading
+  );
+  const isChartDataLoadingError = useSelector(
+    (state) => state.chart.errorState.isDataLoadingError
+  );
+
+  const dispatch = useDispatch();
+
+  const handleRetry = () => dispatch(chartThunks.getFilteredData());
+
+  if (!isChartDataLoading && isChartDataLoadingError)
+    return (
+      <ErrorView
+        message="Cannot fetch transactions data!"
+        onRetry={handleRetry}
+      />
+    );
+
   return (
     <div className="grid grid-cols-1 p-4 md:grid-cols-2 gap-x-8 gap-y-8">
       {/* chart for income and expense in day wise */}

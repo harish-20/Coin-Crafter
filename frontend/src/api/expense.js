@@ -1,16 +1,12 @@
 import { api } from ".";
 
 export const getAllExpense = async (data) => {
-  try {
-    const params = new URLSearchParams(data);
-    const result = await api.get(
-      `/expense${params ? `?${params.toString()}` : ""}`
-    );
+  const params = new URLSearchParams(data);
+  const result = await api.get(
+    `/expense${params ? `?${params.toString()}` : ""}`
+  );
 
-    return result.data;
-  } catch (error) {
-    console.log(error);
-  }
+  return result.data;
 };
 
 export const getSingleExpense = async (id) => {

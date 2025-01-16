@@ -11,8 +11,8 @@ import { chartThunks } from "../store/slices/chart/chartSlice";
 
 const DashBoard = () => {
   const expenses = useSelector((state) => state.expense.expenses);
-  const isExpensesLoading = useSelector(
-    (state) => state.expense.loadingState.isExpensesLoading
+  const isAvailableFilterLoading = useSelector(
+    (state) => state.chart.isAvailableFilterLoading
   );
 
   const dispatch = useDispatch();
@@ -24,9 +24,11 @@ const DashBoard = () => {
 
   return (
     <>
-      {isExpensesLoading && <Spinner size="50" className="my-auto h-full" />}
+      {isAvailableFilterLoading && (
+        <Spinner size="50" className="my-auto h-full" />
+      )}
 
-      {!isExpensesLoading && (
+      {!isAvailableFilterLoading && (
         <>
           <Filters />
           <Charts />

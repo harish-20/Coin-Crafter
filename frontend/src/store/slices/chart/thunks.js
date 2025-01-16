@@ -9,7 +9,7 @@ export const getAvailableFilter = createAsyncThunk(
 
       return filters;
     } catch (error) {
-      thunkApi.rejectWithValue(error);
+      return thunkApi.rejectWithValue(error);
     }
   }
 );
@@ -18,14 +18,15 @@ export const getFilteredData = createAsyncThunk(
   "get-filtered-data",
   async (args, thunkApi) => {
     try {
+      const { month, year } = thunkApi.getState().chart.filters;
       const filteredData = await expenseApi.getAllExpense({
-        month: args.month,
-        year: args.year,
+        month,
+        year,
       });
 
       return filteredData;
     } catch (error) {
-      thunkApi.rejectWithValue(error);
+      return thunkApi.rejectWithValue(error);
     }
   }
 );
