@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 
-import { googleSignin } from "../../api/auth";
-import { useDispatch } from "react-redux";
-import { userActions } from "../../store/slices/user/userSlice";
 import ErrorText from "../UI/ErrorText";
+
+import { userActions } from "../../store/slices/user/userSlice";
+
+import { googleSignin } from "../../api/auth";
 
 const GoogleLoginButton = () => {
   const [error, setError] = useState(false);
@@ -24,6 +26,7 @@ const GoogleLoginButton = () => {
       setError(true);
     }
   };
+
   return (
     <div className="mx-auto w-fit mt-5 text-center">
       <GoogleLogin

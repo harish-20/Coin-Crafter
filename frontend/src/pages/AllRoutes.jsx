@@ -24,18 +24,12 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route
-        path="/signin"
-        element={withPageGuard(<Signin />, "without-auth")}
-      />
-      <Route
-        path="/signup"
-        element={withPageGuard(<Signup />, "without-auth")}
-      />
+      <Route path="/signin" element={withPageGuard(Signin, "without-auth")} />
+      <Route path="/signup" element={withPageGuard(Signup, "without-auth")} />
       <Route path="/" element={<Layout />}>
-        <Route path="/dashboard" element={withPageGuard(<DashBoard />)} />
-        <Route path="/transactions" element={withPageGuard(<Transactions />)} />
-        <Route path="/categories" element={withPageGuard(<Categories />)} />
+        <Route path="/dashboard" element={withPageGuard(DashBoard)} />
+        <Route path="/transactions" element={withPageGuard(Transactions)} />
+        <Route path="/categories" element={withPageGuard(Categories)} />
       </Route>
     </Routes>
   );

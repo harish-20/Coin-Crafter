@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import Spinner from "../components/UI/Spinner";
 
-const withPageGuard = (component, protection = "with-auth") => {
+const withPageGuard = (Component, protection = "with-auth") => {
   const isUserLoading = useSelector((state) => state.user.isUserLoading);
   const userDetails = useSelector((state) => state.user.userDetails);
 
@@ -17,7 +17,7 @@ const withPageGuard = (component, protection = "with-auth") => {
 
   if (protection === "with-auth") {
     if (userDetails) {
-      return component;
+      return <Component />;
     } else {
       return <Navigate to="/signin" replace />;
     }
@@ -27,7 +27,7 @@ const withPageGuard = (component, protection = "with-auth") => {
     if (userDetails) {
       return <Navigate to="/dashboard" replace />;
     } else {
-      return component;
+      return <Component />;
     }
   }
 };
