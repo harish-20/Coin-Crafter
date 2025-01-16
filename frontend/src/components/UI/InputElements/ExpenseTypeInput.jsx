@@ -8,7 +8,7 @@ const expenseTypes = [
     bgColor: "#3ad747a8",
   },
   {
-    type: "spent",
+    type: "spend",
     Icon: SpentIcon,
     bgColor: "#ff0000a7",
   },
