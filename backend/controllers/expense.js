@@ -108,7 +108,7 @@ module.exports.availableFiltersMonth = async (req, res) => {
           },
         },
       },
-      { $sort: { "_id.year": -1, "_id.month": 1 } },
+      { $sort: { "_id.year": 1, "_id.month": 1 } },
       {
         $group: {
           _id: "$_id.year",
@@ -122,7 +122,7 @@ module.exports.availableFiltersMonth = async (req, res) => {
           _id: 0,
         },
       },
-      { $sort: { "_id.year": 1 } },
+      { $sort: { year: -1 } },
     ]);
 
     return res.status(200).send(availableMonthsByYear);
