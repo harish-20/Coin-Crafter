@@ -7,9 +7,11 @@ import ListControl from "../components/transactions/ListControl/ListControl";
 import TransactionList from "../components/transactions/TransactionList/TransactionList";
 import SingleTransaction from "../components/transactions/SingleTransation/SingleTransaction";
 
-import { expenseActions } from "../store/slices/expense/expenseSlice";
-import * as expenseThunks from "../store/slices/expense/thunks";
-import * as categoryThunks from "../store/slices/category/thunks";
+import {
+  expenseActions,
+  expenseThunks,
+} from "../store/slices/expense/expenseSlice";
+import { categoryThunks } from "../store/slices/category/categorySlice";
 
 let debounceTimer = null;
 const debounceDelay = 400;

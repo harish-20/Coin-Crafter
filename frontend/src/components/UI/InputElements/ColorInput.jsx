@@ -9,6 +9,18 @@ const availableColors = [
   "#7071E8",
   "#7FC7D9",
   "#C5E898",
+  "#FF6F61",
+  "#6D597A",
+  "#98C1D9",
+  "#FFCB77",
+  "#4A4E69",
+  "#81B29A",
+  "#F2A65A",
+  "#84A59D",
+  "#B8A1D9",
+  "#D56062",
+  "#6B705C",
+  "#A7C957",
 ];
 
 const ColorInput = (props) => {
