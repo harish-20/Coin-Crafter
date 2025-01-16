@@ -21,7 +21,7 @@ const corsOptions = {
 };
 const limiter = rateLimit({
   windowMs: minutesToMilliseconds(5),
-  max: 100,
+  max: 300,
   message: "Too many requests from this IP, please try again later.",
 });
 
