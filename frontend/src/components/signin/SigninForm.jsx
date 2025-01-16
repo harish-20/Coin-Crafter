@@ -67,12 +67,12 @@ const SigninForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsFormSubmitted(true);
-    setIsSigningIn(true);
 
     const isValidForm = validateForm();
-    if (!isValidForm) return setIsSigningIn(false);
+    if (!isValidForm) return;
 
     try {
+      setIsSigningIn(true);
       const data = await emailSignin(email, password);
       if (data) {
         dispatch(userActions.setUser(data.user));
@@ -80,9 +80,8 @@ const SigninForm = () => {
       }
 
       setIsSigningIn(false);
-    } catch (err) {
-      console.log(err);
-      setIsSigningIn(false);
+    } catch (error) {
+      console.log(error);
     }
   };
 

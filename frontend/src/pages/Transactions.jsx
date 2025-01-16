@@ -15,9 +15,6 @@ let debounceTimer = null;
 const debounceDelay = 400;
 
 const Transactions = () => {
-  const expenseOnEditMode = useSelector(
-    (state) => state.expense.expenseOnEditMode
-  );
   const filters = useSelector((state) => state.expense.filters);
   const sorts = useSelector((state) => state.expense.sorts);
   const search = useSelector((state) => state.expense.search);
@@ -31,6 +28,7 @@ const Transactions = () => {
     dispatch(categoryThunks.getCustomCategories());
 
     return () => {
+      // reset search sort and filter option after user click other page
       dispatch(expenseActions.setSearch(""));
       dispatch(expenseActions.toggleFilter({}));
       dispatch(expenseActions.toggleSort({}));
@@ -42,25 +40,22 @@ const Transactions = () => {
   }, [filters, sorts]);
 
   useEffect(() => {
-    if (!firstRenderRef.current) {
+    if (!firstRenderRef.current)
       debounceTimer = setTimeout(() => {
         dispatch(expenseThunks.getAllTransaction());
       }, debounceDelay);
-    }
+
     firstRenderRef.current = false;
 
     return () => clearTimeout(debounceTimer);
   }, [search]);
 
-  const handleClose = () => {
-    dispatch(expenseActions.toggleEditMode(null));
-  };
   return (
     <div className="px-8 flex flex-col h-full">
       <SearchBar />
       <ListControl />
       <TransactionList />
-      <SingleTransaction isOpen={!!expenseOnEditMode} onClose={handleClose} />
+      <SingleTransaction />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+
 import Spinner from "../components/UI/Spinner";
 
 const withPageGuard = (component, protection = "with-auth") => {

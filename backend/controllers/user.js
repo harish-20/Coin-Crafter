@@ -9,13 +9,12 @@ module.exports.getUser = async (req, res, next) => {
       "expenses",
     ]);
     if (!result) {
-      res.status(404).send({
+      return res.status(404).send({
         message: "User not found.",
       });
-      return;
     }
 
-    res.status(200).send({ user: result });
+    return res.status(200).send({ user: result });
   } catch (error) {
     next(error);
   }

@@ -8,6 +8,11 @@ module.exports.getAllExpense = async (req, res) => {
       req.query;
 
     const user = await User.findOne({ email });
+    if (!user)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
 
     const filter = { user: user._id };
     let sort = { date: -1, time: -1 };
@@ -61,10 +66,10 @@ module.exports.getAllExpense = async (req, res) => {
       );
     }
 
-    res.status(200).send(expenses);
+    return res.status(200).send(expenses);
   } catch (error) {
     console.log(error);
-    res.status(500).send({
+    return res.status(500).send({
       message: "Something went wrong.",
       error,
     });
@@ -76,21 +81,26 @@ module.exports.getSigleExpense = async (req, res) => {
     const id = req.params.id;
     const { email } = req.body;
     const user = await User.findOne({ email });
+    if (!user)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
 
     const expense = await Expense.findById(id);
 
     if (expense.user.equals(user._id)) {
       const { user, ...otherFields } = expense.toObject();
-      res.status(200).send(otherFields);
+      return res.status(200).send(otherFields);
     } else {
-      res.status(403).send({
+      return res.status(403).send({
         error: "Forbidden",
         message: "You do not have permission to access this expense record.",
       });
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send({
+    return res.status(500).send({
       message: "Something went wrong.",
       error,
     });
@@ -101,6 +111,11 @@ module.exports.availableFiltersMonth = async (req, res) => {
   try {
     const { email } = req.body;
     const user = await User.findOne({ email });
+    if (!user)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
 
     const availableMonthsByYear = await Expense.aggregate([
       { $match: { user: user._id } },
@@ -129,12 +144,11 @@ module.exports.availableFiltersMonth = async (req, res) => {
       { $sort: { "_id.year": 1 } },
     ]);
 
-    res.status(200).send(availableMonthsByYear);
+    return res.status(200).send(availableMonthsByYear);
   } catch (error) {
     console.log(error);
-    res.status(500).send({
+    return res.status(500).send({
       message: "Something went wrong.",
-      error,
     });
   }
 };
@@ -154,9 +168,13 @@ module.exports.addExpense = async (req, res) => {
       res.status(400).send({
         message: "invalid or missing parameters",
       });
-      return;
     }
     const user = await User.findOne({ email });
+    if (!user)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
 
     const expense = new Expense({
       user: user._id,
@@ -170,11 +188,10 @@ module.exports.addExpense = async (req, res) => {
 
     const invalidData = expense.validateSync();
     if (invalidData) {
-      res.status(400).send({
+      return res.status(400).send({
         message: "invalid data",
         error: invalidData.errors,
       });
-      return;
     }
 
     const savedExpense = await expense.save();
@@ -183,10 +200,10 @@ module.exports.addExpense = async (req, res) => {
       "user",
     ]);
 
-    res.status(200).send({ expense: populatedExpense });
+    return res.status(200).send({ expense: populatedExpense });
   } catch (error) {
     console.log(error);
-    res.status(500).send({
+    return res.status(500).send({
       message: "Something went wrong.",
       error,
     });
@@ -206,12 +223,16 @@ module.exports.updateExpense = async (req, res) => {
       tags = [],
     } = req.body;
     if (!category || !amount || !shortNote || !date || !time) {
-      res.status(400).send({
+      return res.status(400).send({
         message: "invalid or missing parameters",
       });
-      return;
     }
     const user = await User.findOne({ email });
+    if (!user)
+      return res.status(400).send({
+        errorMessage: "noUserFound",
+        message: "no user found for this email",
+      });
 
     await Expense.findByIdAndUpdate(
       _id,
@@ -234,10 +255,10 @@ module.exports.updateExpense = async (req, res) => {
       "user",
     ]);
 
-    res.status(200).send({ expense: populatedExpense });
+    return res.status(200).send({ expense: populatedExpense });
   } catch (error) {
     console.log(error);
-    res.status(500).send({
+    return res.status(500).send({
       message: "Something went wrong.",
       error,
     });

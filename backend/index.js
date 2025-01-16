@@ -35,7 +35,7 @@ app.use("/api", router);
 
 app.use("/", (err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send({
+  return res.status(500).send({
     errorCode: "serverError",
     message: "Something went wrong in server",
   });

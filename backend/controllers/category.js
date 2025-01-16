@@ -25,11 +25,11 @@ module.exports.createCategory = async (req, res) => {
 
     const invalidData = category.validateSync();
     if (invalidData) {
-      res.status(400).send({
+      return res.status(400).send({
+        errorCode: "invalidData",
         message: "Invalid data. Please check the data once",
         error: invalidData.errors,
       });
-      return;
     }
 
     const savedCategory = await category.save();
@@ -38,13 +38,16 @@ module.exports.createCategory = async (req, res) => {
       $push: { categories: savedCategory._id },
     });
 
-    res.status(200).send({
+    return res.status(200).send({
       message: "category created successfully!",
       category: savedCategory,
     });
-  } catch (err) {
-    console.log("Error:", err);
-    res.status(500).send("Something went wrong");
+  } catch (error) {
+    console.log("Error:", error);
+    return res.status(500).send({
+      errorCode: "cannotCreateCategory",
+      message: "cannot create category",
+    });
   }
 };
 
@@ -57,10 +60,13 @@ module.exports.getDefaultCategories = async (req, res) => {
         message: "no category found for now add some.",
       });
     }
-    res.status(200).send({ categories: defaultCategories });
+    return res.status(200).send({ categories: defaultCategories });
   } catch (err) {
     console.log("Error:", err);
-    res.status(500).send("Something went wrong");
+    return res.status(500).send({
+      errorCode: "cannotGetCategory",
+      message: "cannot get category",
+    });
   }
 };
 
@@ -69,15 +75,17 @@ module.exports.getCustomCategories = async (req, res) => {
     const owner = await User.findOne({ email: req.body.email });
     if (!owner)
       return res.status(400).send({
-        errorMessage: "noUserFound",
+        errorCode: "noUserFound",
         message: "no user found for this email",
       });
 
     const customCategories = await Category.find({ ownedBy: owner._id });
 
-    res.status(200).send({ categories: customCategories });
+    return res.status(200).send({ categories: customCategories });
   } catch (err) {
     console.log("Error:", err);
-    res.status(500).send("Something went wrong");
+    return res
+      .status(500)
+      .send({ errorCode: "cannotGetCategory", message: "cannot get category" });
   }
 };

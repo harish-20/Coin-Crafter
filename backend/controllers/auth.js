@@ -33,18 +33,17 @@ module.exports.verifyGoogleAccount = async (req, res, next) => {
 
     const userData = await getUserFromToken(token);
     if (!userData) {
-      res.status(401).send({
+      return res.status(401).send({
         errorCode: "invalidToken",
         message: "Invalid token",
       });
-      return;
     }
 
     const { name, email } = userData;
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       const token = jwt.sign(email, SECRET_KEY);
-      res.status(200).send({
+      return res.status(200).send({
         token,
         user: existingUser,
       });
@@ -53,7 +52,7 @@ module.exports.verifyGoogleAccount = async (req, res, next) => {
       await user.save();
 
       const token = jwt.sign(email, SECRET_KEY);
-      res.status(200).send({
+      return res.status(200).send({
         token,
         user,
       });
@@ -67,27 +66,24 @@ module.exports.signUp = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
     if (!name || !email || !password) {
-      res.status(400).send({
+      return res.status(400).send({
         errorCode: "invalidParameters",
         message: "invalid or parameter missing",
       });
-      return;
     }
 
     const existingUser = await User.findOne({ email });
     if (existingUser && existingUser.hasGoogleAuth) {
-      res.status(409).send({
+      return res.status(409).send({
         errorCode: "googleAuthUser",
         message: "User had signed in with google auth",
       });
-      return;
     }
     if (existingUser) {
-      res.status(409).send({
+      return res.status(409).send({
         errorCode: "userAlreadyExists",
         message: "User already exists",
       });
-      return;
     }
 
     const hashedPassword = bcrypt.hashSync(password, 5);
@@ -100,17 +96,16 @@ module.exports.signUp = async (req, res, next) => {
     const invalidData = user.validateSync();
     if (invalidData) {
       const errorFields = getInvalidFields(REQUIRED_FIELDS, invalidData.errors);
-      res.status(400).send({
+      return res.status(400).send({
         errorCode: "invalidInputs",
         message: "Invalid data.",
         errorFields,
       });
-      return;
     }
 
     await user.save();
     const token = jwt.sign(email, SECRET_KEY);
-    res.status(200).send({
+    return res.status(200).send({
       token,
       user,
     });
@@ -124,23 +119,28 @@ module.exports.signIn = async (req, res, next) => {
 
   const emailMatchedUser = await User.findOne({ email });
   if (!emailMatchedUser) {
-    res.status(404).send({
+    return res.status(404).send({
       statusCode: "emailNotExists",
       message: "email not exists",
     });
-    return;
+  }
+
+  if (emailMatchedUser.hasGoogleAuth) {
+    return res.status(409).send({
+      statusCode: "alreadyLoggedWithGoogle",
+      message: "user already login with google login",
+    });
   }
 
   const hashedPassword = emailMatchedUser.password;
   const isValidPassword = bcrypt.compareSync(password, hashedPassword);
   if (!isValidPassword) {
-    res.status(401).send({
+    return res.status(401).send({
       statusCode: "incorrectPassword",
       message: "email and password not matched",
     });
-    return;
   }
 
   const token = jwt.sign(email, SECRET_KEY);
-  res.status(200).send({ token, user: emailMatchedUser });
+  return res.status(200).send({ token, user: emailMatchedUser });
 };
