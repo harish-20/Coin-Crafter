@@ -9,9 +9,9 @@ import TimeInput from "../../UI/InputElements/TimeInput";
 import Spinner from "../../UI/Spinner";
 import Button from "../../UI/Button";
 
-import * as expenseThunks from "../../../store/slices/expense/thunks";
+import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
-import { getSingleExpense, updateExpense } from "../../../api/expense";
+import { getSingleExpense } from "../../../api/expense";
 
 // used this form for both update and creating an expense
 const TransactionForm = () => {

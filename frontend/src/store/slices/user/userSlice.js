@@ -18,11 +18,13 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(thunks.getUser.pending, thunkHandlers.getUserPending)
-      .addCase(thunks.getUser.fulfilled, thunkHandlers.getUserFulfilled);
+      // get user
+      .addCase(thunks.getUser.pending, thunkHandlers.getUser.pending)
+      .addCase(thunks.getUser.fulfilled, thunkHandlers.getUser.fulfilled);
   },
 });
 
 export const userActions = userSlice.actions;
+export const userThunks = thunks;
 
 export default userSlice.reducer;

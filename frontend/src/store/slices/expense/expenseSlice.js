@@ -29,37 +29,43 @@ const expenseSlice = createSlice({
     toggleSort: actionHandlers.toggleSort,
     setSearch: actionHandlers.setSearch,
   },
-  extraReducers: (builder) =>
+  extraReducers: (builder) => {
+    // Get all transactions
     builder
-      // get transactions
       .addCase(
         thunks.getAllTransaction.pending,
-        thunkHandlers.getAllTransactionPending
+        thunkHandlers.getAllTransaction.pending
       )
       .addCase(
         thunks.getAllTransaction.fulfilled,
-        thunkHandlers.getAllTransactionFulfilled
-      )
-      // create transaction
+        thunkHandlers.getAllTransaction.fulfilled
+      );
+
+    // Create transaction
+    builder
       .addCase(
         thunks.createTransaction.pending,
-        thunkHandlers.createTransactionPending
+        thunkHandlers.createTransaction.pending
       )
       .addCase(
         thunks.createTransaction.fulfilled,
-        thunkHandlers.createTransactionFulfilled
-      )
-      // edit transaction
+        thunkHandlers.createTransaction.fulfilled
+      );
+
+    // Update transaction
+    builder
       .addCase(
         thunks.updateTransaction.pending,
-        thunkHandlers.updateTrasactionPending
+        thunkHandlers.updateTransaction.pending
       )
       .addCase(
         thunks.updateTransaction.fulfilled,
-        thunkHandlers.updateTrasactionFulfilled
-      ),
+        thunkHandlers.updateTransaction.fulfilled
+      );
+  },
 });
 
 export const expenseActions = expenseSlice.actions;
+export const expenseThunks = thunks;
 
 export default expenseSlice.reducer;

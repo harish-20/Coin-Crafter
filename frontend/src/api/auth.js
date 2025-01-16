@@ -11,23 +11,15 @@ export const googleSignin = async (googleToken) => {
 };
 
 export const emailSignin = async (email, password) => {
-  try {
-    const response = await api.post("/user/signin", { email, password });
-    localStorage.setItem("access-token", response.data.token);
-    return response.data;
-  } catch (err) {
-    console.log("Cannot Login", err);
-  }
+  const response = await api.post("/user/signin", { email, password });
+  localStorage.setItem("access-token", response.data.token);
+  return response.data;
 };
 
 export const emailSignup = async (name, email, password) => {
-  try {
-    const response = await api.post("/user/signup", { name, email, password });
-    localStorage.setItem("access-token", response.data.token);
-    return response.data;
-  } catch (err) {
-    console.log("Cannot Login", err);
-  }
+  const response = await api.post("/user/signup", { name, email, password });
+  localStorage.setItem("access-token", response.data.token);
+  return response.data;
 };
 
 export const getUser = async () => {

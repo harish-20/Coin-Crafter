@@ -20,25 +20,28 @@ const categorySlice = createSlice({
     addCategory: actionHandlers.addCategory,
   },
   extraReducers: (builder) => {
+    // get default category
     builder.addCase(
       thunks.getDefaultCategories.pending,
-      thunkHandlers.getDefaultCategoriesPending
+      thunkHandlers.getDefaultCategories.pending
     );
     builder.addCase(
       thunks.getDefaultCategories.fulfilled,
-      thunkHandlers.getDefaultCategoriesFulfilled
+      thunkHandlers.getDefaultCategories.fulfilled
     );
+    // get custom category
     builder.addCase(
       thunks.getCustomCategories.pending,
-      thunkHandlers.getCustomCategoriesPending
+      thunkHandlers.getCustomCategories.pending
     );
     builder.addCase(
       thunks.getCustomCategories.fulfilled,
-      thunkHandlers.getCustomCategoriesFulfilled
+      thunkHandlers.getCustomCategories.fulfilled
     );
   },
 });
 
 export const categoryActions = categorySlice.actions;
+export const categoryThunks = thunks;
 
 export default categorySlice.reducer;

@@ -6,8 +6,8 @@ import Charts from "../components/dashboard/Charts/Charts";
 import ExpenseList from "../components/shared/ExpenseList/ExpenseList";
 import Filters from "../components/dashboard/Filters/Filters";
 
-import * as expenseThunks from "../store/slices/expense/thunks";
-import * as chartThunks from "../store/slices/chart/thunks";
+import { expenseThunks } from "../store/slices/expense/expenseSlice";
+import { chartThunks } from "../store/slices/chart/chartSlice";
 
 const DashBoard = () => {
   const expenses = useSelector((state) => state.expense.expenses);

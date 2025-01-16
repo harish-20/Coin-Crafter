@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import DropDown from "../../UI/DropDown";
 
-import * as chartThunks from "../../../store/slices/chart/thunks";
-import { chartActions } from "../../../store/slices/chart/chartSlice";
+import {
+  chartActions,
+  chartThunks,
+} from "../../../store/slices/chart/chartSlice";
 
 import { monthKeys } from "../../../helpers/monthKeys";
 import AddExpenseButton from "../../shared/AddExpense/AddExpenseButton";

@@ -6,12 +6,14 @@ import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
 import Button from "../UI/button";
 import LoginIcon from "../UI/Icons/LoginIcon";
+import ErrorText from "../UI/ErrorText";
 import Spinner from "../UI/Spinner";
 
 import { emailSignin } from "../../api/auth";
 
 import { userActions } from "../../store/slices/user/userSlice";
 
+import getErrorMessage from "../../helpers/getErrorMessage";
 import { validateEmail, validatePassword } from "../../helpers/validations";
 
 const LoginIconWithText = () => (
@@ -25,6 +27,7 @@ const SigninForm = () => {
   const [password, setPassword] = useState("");
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
 
   const [invalidState, setInvalidState] = useState({
     email: false,
@@ -78,10 +81,13 @@ const SigninForm = () => {
         dispatch(userActions.setUser(data.user));
         navigate("/dashboard", { replace: true });
       }
-
-      setIsSigningIn(false);
     } catch (error) {
-      console.log(error);
+      const errorCode = error?.response?.data?.code;
+      const errorMessage = getErrorMessage(errorCode);
+
+      setFormError(errorMessage || "Something went wrong. Cannot Signin");
+    } finally {
+      setIsSigningIn(false);
     }
   };
 
@@ -109,13 +115,17 @@ const SigninForm = () => {
       />
       <p className="text-sm mt-2 text-gray-400">Forget password?</p>
 
-      <Button disabled={isSigningIn}>
-        {isSigningIn ? (
-          <Spinner color="black" size={22} hideText />
-        ) : (
-          <LoginIconWithText />
-        )}
-      </Button>
+      <div className="mt-6 text-center">
+        {formError && <ErrorText className="mb-2">{formError}</ErrorText>}
+
+        <Button className="mt-0" disabled={isSigningIn}>
+          {isSigningIn ? (
+            <Spinner color="black" size={22} hideText />
+          ) : (
+            <LoginIconWithText />
+          )}
+        </Button>
+      </div>
     </form>
   );
 };

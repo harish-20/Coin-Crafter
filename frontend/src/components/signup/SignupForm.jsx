@@ -9,10 +9,12 @@ import PasswordInput from "../UI/InputElements/PasswordInput";
 import PoliciesCheckbox from "../UI/InputElements/PoliciesCheckbox";
 import Button from "../UI/button";
 import SigninIcon from "../UI/Icons/SigninIcon";
+import ErrorText from "../UI/ErrorText";
 import Spinner from "../UI/Spinner";
 
 import { userActions } from "../../store/slices/user/userSlice";
 
+import getErrorMessage from "../../helpers/getErrorMessage";
 import { validateEmail, validatePassword } from "../../helpers/validations";
 
 const initialFormData = {
@@ -39,12 +41,13 @@ const SignupForm = () => {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isSigningUp, setIsSigningUp] = useState(false);
+  const [formError, setFormError] = useState("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const validateForm = () => {
-    const isValidName = !!formData.name.trim();
+    const isValidName = !!formData.name?.trim();
     const isValidEmail = validateEmail(formData.email);
     const isValidPassword = validatePassword(formData.password);
     const isValidConfirmPassword =
@@ -79,16 +82,17 @@ const SignupForm = () => {
     }));
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
     setIsFormSubmitted(true);
     setIsSigningUp(true);
+    setFormError("");
 
     const isValidForm = validateForm();
     if (!isValidForm) return setIsSigningUp(false);
 
     try {
-      const data = emailSignup(
+      const data = await emailSignup(
         formData.name,
         formData.email,
         formData.password
@@ -97,12 +101,14 @@ const SignupForm = () => {
         dispatch(userActions.setUser(data.user));
         navigate("/dashboard", { replace: true });
       }
-    } catch (err) {
-      setIsSigningUp(false);
-      console.log("cannot signup", err);
-    }
+    } catch (error) {
+      const errorCode = error?.response?.data?.code;
+      const errorMessage = getErrorMessage(errorCode);
 
-    setIsSigningUp(false);
+      setFormError(errorMessage || "Something went wrong. Cannot Signin");
+    } finally {
+      setIsSigningUp(false);
+    }
   };
 
   return (
@@ -154,13 +160,16 @@ const SignupForm = () => {
         }
       />
 
-      <Button disabled={isSigningUp}>
-        {isSigningUp ? (
-          <Spinner color="black" size={22} hideText />
-        ) : (
-          <SigninIconWithText />
-        )}
-      </Button>
+      <div className="mt-6 text-center">
+        {formError && <ErrorText className="mb-2">{formError}</ErrorText>}
+        <Button className="mt-0" disabled={isSigningUp}>
+          {isSigningUp ? (
+            <Spinner color="black" size={22} hideText />
+          ) : (
+            <SigninIconWithText />
+          )}
+        </Button>
+      </div>
     </form>
   );
 };

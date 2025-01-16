@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import * as categoryThunks from "../../store/slices/category/thunks";
-
 import CategoryItem from "./CategoryItem";
 import CategoryListWithHeading from "./CategoryListWithHeading";
 import AddCategoryButton from "./AddCategoryButton";
+
+import { categoryThunks } from "../../store/slices/category/categorySlice";
 
 const CategoryList = (props) => {
   const defaultCategories = useSelector(

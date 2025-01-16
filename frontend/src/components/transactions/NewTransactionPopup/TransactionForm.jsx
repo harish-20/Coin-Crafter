@@ -9,12 +9,11 @@ import TimeInput from "../../UI/InputElements/TimeInput";
 import Button from "../../UI/Button";
 
 import { popupActions } from "../../../store/slices/popup/popupSlice";
-
-import * as categoryThunks from "../../../store/slices/category/thunks";
-import * as expenseThunks from "../../../store/slices/expense/thunks";
+import { categoryThunks } from "../../../store/slices/category/categorySlice";
+import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
 const TransactionForm = (props) => {
-  const { className, ...otherProps } = props;
+  const { className, closeModal, ...otherProps } = props;
 
   const defaultCategories = useSelector(
     (state) => state.category.defaultCategories

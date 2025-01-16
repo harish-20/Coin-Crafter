@@ -30,24 +30,25 @@ const chartSlice = createSlice({
       // get available filter
       .addCase(
         thunks.getAvailableFilter.pending,
-        thunkHandlers.getAvailableFilterPending
+        thunkHandlers.getAvailableFilter.pending
       )
       .addCase(
         thunks.getAvailableFilter.fulfilled,
-        thunkHandlers.getAvailableFilterFulFilled
+        thunkHandlers.getAvailableFilter.fulfilled
       )
       // get filtered data
       .addCase(
         thunks.getFilteredData.pending,
-        thunkHandlers.getFilteredDataPending
+        thunkHandlers.getFilteredData.pending
       )
       .addCase(
         thunks.getFilteredData.fulfilled,
-        thunkHandlers.getFilteredDataFulfilled
+        thunkHandlers.getFilteredData.fulfilled
       );
   },
 });
 
 export const chartActions = chartSlice.actions;
+export const chartThunks = thunks;
 
 export default chartSlice.reducer;

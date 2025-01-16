@@ -12,7 +12,7 @@ import Layout from "../components/shared/Layout/Layout";
 
 import withPageGuard from "../HOCs/WithAuth";
 
-import * as userThunks from "../store/slices/user/thunks";
+import { userThunks } from "../store/slices/user/userSlice";
 
 const AllRoutes = () => {
   const dispatch = useDispatch();
