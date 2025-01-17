@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Popup from "../components/popup/Popup";
-import CategoryList from "../components/categories/categoryList";
+import CategoryList from "../components/categories/CategoryList";
 import AddCategoryForm from "../components/categories/AddCategoryForm";
 
 const Categories = (props) => {

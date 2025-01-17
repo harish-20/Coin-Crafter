@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
-import App from "./App.jsx";
+import App from "./App";
 
 import store from "./store/store.js";
 
