@@ -52,7 +52,6 @@ const AddCategoryForm = (props) => {
 
     if (!isFormValid) {
       setIsSubmitting(false);
-      console.log("form is invalid");
       return;
     }
     try {

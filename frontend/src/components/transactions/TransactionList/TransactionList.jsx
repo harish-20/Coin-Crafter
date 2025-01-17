@@ -7,6 +7,7 @@ import ErrorView from "../../UI/ErrorView";
 import EmptyTransaction from "./EmptyTransaction";
 import EmptyData from "../../UI/EmptyData/EmptyData";
 import TransactionItem from "./TransactionItem";
+
 import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
 const THROTTLE_INTERVAL = 300;
@@ -36,7 +37,6 @@ const TransactionList = () => {
     timerRef.current = setTimeout(() => {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight - 200;
-      console.log(windowWidth);
       const isSmallScreen = windowWidth <= 768;
 
       if (containerRef.current) {

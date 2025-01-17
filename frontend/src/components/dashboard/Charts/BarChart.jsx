@@ -52,7 +52,7 @@ function getOptionsWithData(dataPoints) {
     backgroundColor: "#0000",
     animationEnabled: true,
     zoomEnabled: true,
-    zoomType: "xy",
+    zoomType: "x",
     toolTip: {
       shared: true,
     },
