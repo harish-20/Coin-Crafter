@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const productionAPI = "";
+const productionAPI = "https://api-coin-crafter.onrender.com/api";
 const developmentAPI = "http://localhost:8080/api";
 
 const baseURL =

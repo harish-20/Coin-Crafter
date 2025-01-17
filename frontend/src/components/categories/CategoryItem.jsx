@@ -1,7 +1,7 @@
 import icons from "../UI/CategoryIcon";
 import IncomeIcon from "../UI/Icons/IncomeIcon";
 import SpentIcon from "../UI/Icons/SpentIcon";
-import FakeIcon from "./fakeIcon";
+import FakeIcon from "./FakeIcon";
 
 const CategoryItem = (props) => {
   const { title, icon, backgroundColor, expenseType } = props;

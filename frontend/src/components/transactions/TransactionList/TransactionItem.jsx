@@ -6,7 +6,7 @@ import { expenseActions } from "../../../store/slices/expense/expenseSlice";
 
 import SpentIcon from "../../UI/Icons/SpentIcon";
 import IncomeIcon from "../../UI/Icons/IncomeIcon";
-import FakeIcon from "../../categories/fakeIcon";
+import FakeIcon from "../../categories/FakeIcon";
 import icons from "../../UI/CategoryIcon";
 import Spinner from "../../UI/Spinner";
 
