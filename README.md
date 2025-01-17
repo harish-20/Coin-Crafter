@@ -1,4 +1,5 @@
 # [Coin Crafter - Live Demo](https://coin-crafter.onrender.com)
+**[demo video](https://www.linkedin.com/posts/harish-kumar-418a47237_reactproject-mernproject-expensetracker-activity-7285990393928654848-s0U0?utm_source=share&utm_medium=member_desktop)**
 
 **Coin Crafter** is a personal expense tracker that helps users monitor their spending with interactive visual graphs. The app allows users to track their expenses and provides a clear, visual overview of their financial data.
 
