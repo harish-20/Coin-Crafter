@@ -20,6 +20,11 @@ router.get(
 router.get("/expense/:id", authMiddleware, expenseController.getSigleExpense);
 router.delete("/expense/:id", expenseController.deleteExpense);
 router.post("/expense/create", authMiddleware, expenseController.addExpense);
+router.post(
+  "/expense/createMany",
+  authMiddleware,
+  expenseController.addBulkExpenses
+);
 router.post("/expense/update", authMiddleware, expenseController.updateExpense);
 
 router.get("/category/getAll", () => {});

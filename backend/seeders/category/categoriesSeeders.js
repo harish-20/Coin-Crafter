@@ -1,8 +1,8 @@
 const { categories } = require("./categories");
 
-const dbConnection = require("../dbConnection");
+const dbConnection = require("../../dbConnection");
 
-const category = require("../models/category");
+const category = require("../../models/category");
 
 dbConnection();
 

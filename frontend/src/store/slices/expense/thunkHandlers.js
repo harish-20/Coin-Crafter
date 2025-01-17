@@ -52,3 +52,15 @@ export const updateTransaction = {
       );
   },
 };
+
+export const autoFillExpense = {
+  pending: (state, action) => {
+    state.loadingState.isAutoFilling = true;
+  },
+  fulfilled: (state, action) => {
+    state.loadingState.isAutoFilling = false;
+  },
+  rejected: (state, action) => {
+    state.loadingState.isAutoFilling = false;
+  },
+};

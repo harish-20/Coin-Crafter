@@ -16,9 +16,6 @@ const BarChart = (props) => {
   const isFilteredDataLoading = useSelector(
     (state) => state.chart.loadingState.isFilteredDataLoading
   );
-  const isAvailableFilterLoading = useSelector(
-    (state) => state.chart.loadingState.isAvailableFilterLoading
-  );
 
   const dataPoints = expensesToCategoryDataPoints(filteredData);
 
@@ -28,20 +25,19 @@ const BarChart = (props) => {
 
   const options = getOptionsWithData(filteredDataPoints);
 
-  const isNoExpenseAdded = filteredData.length === 0;
+  const isNoExpenseAdded = dataPoints.length === 0;
   const isDataEmpty = !isNoExpenseAdded && filteredDataPoints.length === 0;
-  const isChartLoading = isFilteredDataLoading || isAvailableFilterLoading;
 
   return (
     <div className="w-full min-h-[400px]">
-      {isChartLoading && (
+      {isFilteredDataLoading && (
         <Spinner className="h-full flex justify-center" size={50} />
       )}
 
-      {isNoExpenseAdded && isChartLoading && <EmptyData />}
-      {isDataEmpty && !isChartLoading && <EmptyTransaction />}
+      {isNoExpenseAdded && !isFilteredDataLoading && <EmptyData />}
+      {isDataEmpty && !isFilteredDataLoading && <EmptyTransaction />}
 
-      {!isChartLoading && !isNoExpenseAdded && !isDataEmpty && (
+      {!isFilteredDataLoading && !isNoExpenseAdded && !isDataEmpty && (
         <CanvasJSChart options={options} />
       )}
     </div>

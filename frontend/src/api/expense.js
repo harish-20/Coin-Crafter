@@ -67,3 +67,13 @@ export const updateExpense = async (data) => {
     console.log(error);
   }
 };
+
+export const autoFillExpense = async () => {
+  try {
+    const result = await api.post("/expense/createMany");
+
+    return result.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

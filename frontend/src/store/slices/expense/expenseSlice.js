@@ -17,6 +17,7 @@ const initialState = {
     isExpensesLoading: false,
     isExpenseAdding: false,
     expensesUpdating: [],
+    isAutoFilling: false,
   },
   errorState: {
     isExpensesLoadingError: false,
@@ -64,6 +65,19 @@ const expenseSlice = createSlice({
       .addCase(
         thunks.updateTransaction.fulfilled,
         thunkHandlers.updateTransaction.fulfilled
+      )
+      // auto fill transaction
+      .addCase(
+        thunks.autoFillTransactions.pending,
+        thunkHandlers.autoFillExpense.pending
+      )
+      .addCase(
+        thunks.autoFillTransactions.fulfilled,
+        thunkHandlers.autoFillExpense.fulfilled
+      )
+      .addCase(
+        thunks.autoFillTransactions.rejected,
+        thunkHandlers.autoFillExpense.rejected
       );
   },
 });

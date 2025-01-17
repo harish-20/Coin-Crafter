@@ -13,9 +13,6 @@ const MultiSeriesBarChart = () => {
   const isFilteredDataLoading = useSelector(
     (state) => state.chart.loadingState.isFilteredDataLoading
   );
-  const isAvailableFilterLoading = useSelector(
-    (state) => state.chart.loadingState.isAvailableFilterLoading
-  );
 
   const { incomeDataPoints, spendDataPoints } =
     expensesToDailyDataPoints(filteredData);
@@ -24,17 +21,15 @@ const MultiSeriesBarChart = () => {
 
   const isNoExpenseAdded = filteredData.length === 0;
 
-  const isChartLoading = isFilteredDataLoading || isAvailableFilterLoading;
-
   return (
     <div className="min-h-[400px] w-full overflow-x-auto md:col-span-2">
-      {isChartLoading && (
+      {isFilteredDataLoading && (
         <Spinner className="h-full flex justify-center" size={50} />
       )}
 
-      {isNoExpenseAdded && !isChartLoading && <EmptyData />}
+      {isNoExpenseAdded && !isFilteredDataLoading && <EmptyData />}
 
-      {!isChartLoading && !isNoExpenseAdded && (
+      {!isFilteredDataLoading && !isNoExpenseAdded && (
         <div className="min-w-[1000px]">
           <CanvasJSChart options={options} />
         </div>

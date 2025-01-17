@@ -22,3 +22,12 @@ module.exports.getInvalidFields = (requiredFields, errors) => {
 
   return errorFields;
 };
+
+module.exports.getFormattedTime = (time) => {
+  const formatedTime = new Date(0);
+  const timeDate = new Date(time);
+  formatedTime.setHours(timeDate.getHours());
+  formatedTime.setMinutes(timeDate.getMinutes());
+
+  return formatedTime;
+};

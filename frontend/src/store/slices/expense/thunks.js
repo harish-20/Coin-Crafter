@@ -4,7 +4,10 @@ import {
   createExpense,
   getAllExpense,
   updateExpense,
+  autoFillExpense,
 } from "../../../api/expense";
+
+import { chartThunks } from "../chart/chartSlice";
 
 export const getAllTransaction = createAsyncThunk(
   "get-all-transaction",
@@ -73,6 +76,25 @@ export const updateTransaction = createAsyncThunk(
         time,
         tags,
       });
+
+      return response;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error);
+    }
+  }
+);
+
+export const autoFillTransactions = createAsyncThunk(
+  "auto-fill-transaction",
+  async (args, thunkApi) => {
+    try {
+      const response = await autoFillExpense();
+
+      if (response.success) {
+        thunkApi.dispatch(getAllTransaction());
+        await thunkApi.dispatch(chartThunks.getAvailableFilter()).unwrap();
+        thunkApi.dispatch(chartThunks.getFilteredData());
+      }
 
       return response;
     } catch (error) {

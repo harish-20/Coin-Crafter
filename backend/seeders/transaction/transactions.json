@@ -1,0 +1,2683 @@
+[
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1978,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T04:43:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 799,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T13:02:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["food", "entertainment", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1892,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T20:38:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["bills", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1193,
+    "date": "2024-11-03T00:00:00",
+    "time": "2024-11-03T18:20:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["income", "entertainment", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1495,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T19:23:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["income", "fuel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 537,
+    "date": "2024-11-22T00:00:00",
+    "time": "2024-11-22T09:27:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 805,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T00:32:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["fuel", "essentials", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 730,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T09:25:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["bills", "fuel", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1591,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T06:30:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1703.34,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T15:48:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["food", "essentials"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 102.47,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T21:51:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["weekend", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 325.96,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T00:28:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["checkup", "essentials"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1996.56,
+    "date": "2024-11-15T00:00:00",
+    "time": "2024-11-15T15:26:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup", "fuel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1606.48,
+    "date": "2024-11-15T00:00:00",
+    "time": "2024-11-15T17:00:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["income", "entertainment", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 699.86,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T12:28:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1224.49,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T14:17:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["travel", "subscription", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1146.22,
+    "date": "2024-11-20T00:00:00",
+    "time": "2024-11-20T10:43:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1128.24,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T16:51:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["entertainment", "income", "weekend"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1760.79,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T14:37:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1727.54,
+    "date": "2024-11-07T00:00:00",
+    "time": "2024-11-07T19:36:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["bills", "essentials", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 203.35,
+    "date": "2024-11-03T00:00:00",
+    "time": "2024-11-03T14:52:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["travel", "side-project", "subscription"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1060.49,
+    "date": "2024-11-07T00:00:00",
+    "time": "2024-11-07T01:43:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1533.58,
+    "date": "2024-11-26T00:00:00",
+    "time": "2024-11-26T10:16:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["weekend", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1477.54,
+    "date": "2024-11-22T00:00:00",
+    "time": "2024-11-22T20:21:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 273.96,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T12:09:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["entertainment", "essentials", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1469.37,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T22:53:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["entertainment", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1388.17,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T17:34:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["subscription", "fuel", "bills"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 467.25,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T04:03:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 801.39,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T22:51:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["checkup", "entertainment", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 160.44,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T19:50:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["entertainment", "essentials", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1987.76,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T04:13:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1229.46,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T16:13:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["bills", "weekend", "food"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 131.25,
+    "date": "2024-11-17T00:00:00",
+    "time": "2024-11-17T23:18:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 627.28,
+    "date": "2024-11-01T00:00:00",
+    "time": "2024-11-01T09:25:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1131.02,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T00:17:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["bills", "subscription", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 658.76,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T00:17:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 718.4,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T12:38:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["income", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 672.1,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T09:18:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1074.18,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T02:41:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["food", "income", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 369.63,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T19:03:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1845.88,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T09:20:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["travel", "entertainment", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 445.45,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T00:46:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["checkup", "essentials", "travel"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1803.59,
+    "date": "2024-11-13T00:00:00",
+    "time": "2024-11-13T22:27:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["side-project", "weekend", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1321.96,
+    "date": "2024-11-15T00:00:00",
+    "time": "2024-11-15T05:40:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1935.01,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T18:54:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1979.3,
+    "date": "2024-11-09T00:00:00",
+    "time": "2024-11-09T09:45:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["entertainment", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1238.58,
+    "date": "2024-11-19T00:00:00",
+    "time": "2024-11-19T16:38:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["weekend", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 289.01,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T12:07:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 425.18,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T12:35:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1413.39,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T09:39:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["checkup", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1406.2,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T12:40:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 250.21,
+    "date": "2024-11-17T00:00:00",
+    "time": "2024-11-17T14:10:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["bills", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1887.88,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T23:34:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["food", "income"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1702.9,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T14:53:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["food", "entertainment", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 815.84,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T12:47:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 916.45,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T16:33:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 408.61,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T17:10:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["checkup", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 314.06,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T06:28:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["weekend", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 549.35,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T16:24:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["weekend", "side-project", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 937.6,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T15:28:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["side-project", "food", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1008.01,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T01:56:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 877.52,
+    "date": "2024-11-25T00:00:00",
+    "time": "2024-11-25T12:53:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["entertainment", "fuel", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1214.84,
+    "date": "2024-11-26T00:00:00",
+    "time": "2024-11-26T21:34:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1504.62,
+    "date": "2024-11-16T00:00:00",
+    "time": "2024-11-16T00:45:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1501.32,
+    "date": "2024-11-22T00:00:00",
+    "time": "2024-11-22T01:52:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 754.87,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T23:37:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["checkup", "side-project", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1847.41,
+    "date": "2024-11-15T00:00:00",
+    "time": "2024-11-15T20:51:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["checkup", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 46.96,
+    "date": "2024-11-13T00:00:00",
+    "time": "2024-11-13T20:01:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1309.99,
+    "date": "2024-11-09T00:00:00",
+    "time": "2024-11-09T14:06:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["entertainment", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1083.44,
+    "date": "2024-11-07T00:00:00",
+    "time": "2024-11-07T06:14:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["bills", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 264.95,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T15:51:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1694.81,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T23:16:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1011.37,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T06:54:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["travel", "weekend", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 522.48,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T17:14:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 961.03,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T03:23:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["entertainment", "side-project"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 652.84,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T10:24:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["bills", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1294.71,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T02:57:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["food"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 868.7,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T14:22:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["travel", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1148.77,
+    "date": "2024-11-22T00:00:00",
+    "time": "2024-11-22T16:40:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["entertainment", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1131.67,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T02:28:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["essentials", "travel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 896.37,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T16:03:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1856.58,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T16:26:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["income"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1973.64,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T17:42:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["income", "fuel", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1767.55,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T15:54:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 931.42,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T05:56:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["income", "essentials", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 558.8,
+    "date": "2024-11-19T00:00:00",
+    "time": "2024-11-19T18:09:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["income", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1953.88,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T23:29:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["travel", "fuel", "essentials"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1260.29,
+    "date": "2024-11-29T00:00:00",
+    "time": "2024-11-29T03:18:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["side-project", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 511.92,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T00:17:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["subscription", "essentials", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 539.3,
+    "date": "2024-11-17T00:00:00",
+    "time": "2024-11-17T00:26:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["income", "travel"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1584.99,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T10:39:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["travel", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1497.75,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T02:19:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["subscription", "food", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1512.22,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T07:39:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend", "fuel"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1273.52,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T23:51:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["weekend", "subscription", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1735.62,
+    "date": "2024-11-01T00:00:00",
+    "time": "2024-11-01T08:36:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["bills", "travel", "entertainment"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 789.98,
+    "date": "2024-11-07T00:00:00",
+    "time": "2024-11-07T17:18:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup", "essentials", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 454.09,
+    "date": "2024-11-19T00:00:00",
+    "time": "2024-11-19T18:12:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["fuel", "entertainment", "side-project"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 936.54,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T16:10:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1139.25,
+    "date": "2024-11-27T00:00:00",
+    "time": "2024-11-27T03:28:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["weekend", "food", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1551.21,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T08:40:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1064.02,
+    "date": "2024-10-04T00:00:00",
+    "time": "2024-10-04T23:25:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["income"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1929.75,
+    "date": "2024-10-22T00:00:00",
+    "time": "2024-10-22T13:03:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["bills", "subscription", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 167.42,
+    "date": "2024-10-20T00:00:00",
+    "time": "2024-10-20T14:31:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["food", "entertainment"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 183.26,
+    "date": "2024-10-02T00:00:00",
+    "time": "2024-10-02T15:25:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["travel", "fuel", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 815.78,
+    "date": "2024-10-09T00:00:00",
+    "time": "2024-10-09T08:39:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["subscription", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1549.95,
+    "date": "2024-10-03T00:00:00",
+    "time": "2024-10-03T10:54:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["side-project", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 676.16,
+    "date": "2024-10-25T00:00:00",
+    "time": "2024-10-25T03:10:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 50.65,
+    "date": "2024-10-02T00:00:00",
+    "time": "2024-10-02T01:22:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["checkup", "income"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1665.5,
+    "date": "2024-10-05T00:00:00",
+    "time": "2024-10-05T06:34:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["fuel", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 347.73,
+    "date": "2024-10-09T00:00:00",
+    "time": "2024-10-09T14:00:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["checkup", "subscription"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 837.35,
+    "date": "2024-10-11T00:00:00",
+    "time": "2024-10-11T09:17:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 727.01,
+    "date": "2024-10-14T00:00:00",
+    "time": "2024-10-14T05:05:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["essentials", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1277.52,
+    "date": "2024-10-06T00:00:00",
+    "time": "2024-10-06T15:51:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["travel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 600.72,
+    "date": "2024-10-23T00:00:00",
+    "time": "2024-10-23T16:30:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 382.0,
+    "date": "2024-10-21T00:00:00",
+    "time": "2024-10-21T11:25:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 527.55,
+    "date": "2024-10-11T00:00:00",
+    "time": "2024-10-11T20:51:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1546.34,
+    "date": "2024-10-29T00:00:00",
+    "time": "2024-10-29T09:53:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 181.71,
+    "date": "2024-10-06T00:00:00",
+    "time": "2024-10-06T17:39:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1339.19,
+    "date": "2024-10-18T00:00:00",
+    "time": "2024-10-18T15:00:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup", "bills", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 907.52,
+    "date": "2024-10-06T00:00:00",
+    "time": "2024-10-06T11:04:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["weekend", "income", "subscription"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 822.72,
+    "date": "2024-10-26T00:00:00",
+    "time": "2024-10-26T23:41:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 643.81,
+    "date": "2024-10-17T00:00:00",
+    "time": "2024-10-17T20:58:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["side-project", "fuel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 801.59,
+    "date": "2024-10-14T00:00:00",
+    "time": "2024-10-14T04:17:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend", "subscription", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1170.53,
+    "date": "2024-10-27T00:00:00",
+    "time": "2024-10-27T09:36:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["travel", "subscription", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1006.72,
+    "date": "2024-10-03T00:00:00",
+    "time": "2024-10-03T17:45:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["entertainment", "fuel", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1992.62,
+    "date": "2024-10-27T00:00:00",
+    "time": "2024-10-27T11:15:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["food", "subscription", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1485.96,
+    "date": "2024-10-16T00:00:00",
+    "time": "2024-10-16T14:28:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1580.7,
+    "date": "2024-10-20T00:00:00",
+    "time": "2024-10-20T15:46:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 576.19,
+    "date": "2024-10-12T00:00:00",
+    "time": "2024-10-12T12:57:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["bills", "essentials"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 453.48,
+    "date": "2024-10-27T00:00:00",
+    "time": "2024-10-27T00:55:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 57.51,
+    "date": "2024-10-19T00:00:00",
+    "time": "2024-10-19T09:35:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["food", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1195.56,
+    "date": "2024-10-21T00:00:00",
+    "time": "2024-10-21T09:36:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["income", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 355.42,
+    "date": "2024-10-04T00:00:00",
+    "time": "2024-10-04T18:16:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["entertainment", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1925.3,
+    "date": "2024-10-29T00:00:00",
+    "time": "2024-10-29T17:54:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["income"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1551.0,
+    "date": "2024-10-04T00:00:00",
+    "time": "2024-10-04T08:48:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["side-project", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1755.95,
+    "date": "2024-10-01T00:00:00",
+    "time": "2024-10-01T05:19:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["fuel", "checkup", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 399.33,
+    "date": "2024-10-18T00:00:00",
+    "time": "2024-10-18T17:56:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend", "bills"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 848.46,
+    "date": "2024-10-22T00:00:00",
+    "time": "2024-10-22T16:46:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["side-project", "bills", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1325.4,
+    "date": "2024-10-07T00:00:00",
+    "time": "2024-10-07T07:22:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["travel", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 430.64,
+    "date": "2024-10-04T00:00:00",
+    "time": "2024-10-04T22:35:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["checkup", "essentials", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 396.81,
+    "date": "2024-10-12T00:00:00",
+    "time": "2024-10-12T22:53:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["side-project", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 409.21,
+    "date": "2024-10-23T00:00:00",
+    "time": "2024-10-23T19:22:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["fuel", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1950.14,
+    "date": "2024-10-18T00:00:00",
+    "time": "2024-10-18T21:27:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["checkup", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 154.95,
+    "date": "2024-10-18T00:00:00",
+    "time": "2024-10-18T10:19:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 359.13,
+    "date": "2024-10-16T00:00:00",
+    "time": "2024-10-16T18:34:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["side-project", "subscription", "entertainment"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 518.41,
+    "date": "2024-10-01T00:00:00",
+    "time": "2024-10-01T20:15:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["weekend", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1558.81,
+    "date": "2024-10-31T00:00:00",
+    "time": "2024-10-31T12:21:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1266.89,
+    "date": "2024-10-27T00:00:00",
+    "time": "2024-10-27T12:08:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["side-project", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 425.79,
+    "date": "2024-10-20T00:00:00",
+    "time": "2024-10-20T02:25:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["checkup", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 206.34,
+    "date": "2024-10-28T00:00:00",
+    "time": "2024-10-28T02:24:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 413.82,
+    "date": "2024-10-14T00:00:00",
+    "time": "2024-10-14T18:07:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["bills", "side-project", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1329.2,
+    "date": "2024-10-15T00:00:00",
+    "time": "2024-10-15T20:58:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1992.12,
+    "date": "2024-10-20T00:00:00",
+    "time": "2024-10-20T10:44:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["weekend", "essentials", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1753.75,
+    "date": "2024-10-05T00:00:00",
+    "time": "2024-10-05T09:09:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1904.97,
+    "date": "2024-10-15T00:00:00",
+    "time": "2024-10-15T05:31:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["entertainment", "checkup"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1120.57,
+    "date": "2024-10-21T00:00:00",
+    "time": "2024-10-21T21:20:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["bills", "entertainment", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1990.63,
+    "date": "2024-10-03T00:00:00",
+    "time": "2024-10-03T07:24:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["bills", "subscription", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 261.95,
+    "date": "2024-10-08T00:00:00",
+    "time": "2024-10-08T19:06:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["food"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1164.26,
+    "date": "2024-10-14T00:00:00",
+    "time": "2024-10-14T16:06:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["travel", "food"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1512.81,
+    "date": "2024-10-09T00:00:00",
+    "time": "2024-10-09T02:07:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["fuel", "food", "travel"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 184.01,
+    "date": "2024-10-11T00:00:00",
+    "time": "2024-10-11T21:28:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["subscription", "essentials", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 656.94,
+    "date": "2024-10-11T00:00:00",
+    "time": "2024-10-11T17:52:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend", "entertainment", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 698.2,
+    "date": "2024-10-16T00:00:00",
+    "time": "2024-10-16T21:22:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 876.37,
+    "date": "2024-10-01T00:00:00",
+    "time": "2024-10-01T05:18:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["weekend", "bills", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1338.8,
+    "date": "2024-10-01T00:00:00",
+    "time": "2024-10-01T12:12:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 181.93,
+    "date": "2024-10-08T00:00:00",
+    "time": "2024-10-08T20:04:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["bills", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1421.39,
+    "date": "2024-10-02T00:00:00",
+    "time": "2024-10-02T05:27:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 965.87,
+    "date": "2024-10-07T00:00:00",
+    "time": "2024-10-07T16:07:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["income", "travel", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1990.24,
+    "date": "2024-10-30T00:00:00",
+    "time": "2024-10-30T06:24:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["food", "subscription", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1137.35,
+    "date": "2024-10-06T00:00:00",
+    "time": "2024-10-06T03:56:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 110.78,
+    "date": "2024-10-11T00:00:00",
+    "time": "2024-10-11T09:16:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 732.18,
+    "date": "2024-10-20T00:00:00",
+    "time": "2024-10-20T06:39:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["fuel", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 662.76,
+    "date": "2024-10-04T00:00:00",
+    "time": "2024-10-04T05:11:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1580.45,
+    "date": "2024-10-21T00:00:00",
+    "time": "2024-10-21T14:03:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["checkup", "essentials", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1540.06,
+    "date": "2024-10-31T00:00:00",
+    "time": "2024-10-31T17:33:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["essentials", "side-project"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1416.67,
+    "date": "2024-10-21T00:00:00",
+    "time": "2024-10-21T15:36:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["essentials", "fuel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1529.82,
+    "date": "2024-10-13T00:00:00",
+    "time": "2024-10-13T07:53:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1313.61,
+    "date": "2024-10-28T00:00:00",
+    "time": "2024-10-28T15:28:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 764.19,
+    "date": "2024-10-02T00:00:00",
+    "time": "2024-10-02T06:33:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["weekend", "fuel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1521.59,
+    "date": "2024-10-29T00:00:00",
+    "time": "2024-10-29T00:04:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["essentials", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 689.57,
+    "date": "2024-10-30T00:00:00",
+    "time": "2024-10-30T09:09:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 818.18,
+    "date": "2024-10-12T00:00:00",
+    "time": "2024-10-12T11:40:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["travel", "side-project"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1638.0,
+    "date": "2024-10-18T00:00:00",
+    "time": "2024-10-18T14:49:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1501.74,
+    "date": "2024-10-03T00:00:00",
+    "time": "2024-10-03T05:46:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 834.65,
+    "date": "2024-10-30T00:00:00",
+    "time": "2024-10-30T17:59:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["side-project", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 729.08,
+    "date": "2024-10-09T00:00:00",
+    "time": "2024-10-09T10:00:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["food", "bills", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 579.61,
+    "date": "2024-10-28T00:00:00",
+    "time": "2024-10-28T04:34:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["income", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1282.03,
+    "date": "2024-10-05T00:00:00",
+    "time": "2024-10-05T00:08:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 842.48,
+    "date": "2024-10-21T00:00:00",
+    "time": "2024-10-21T11:44:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 970.62,
+    "date": "2024-10-24T00:00:00",
+    "time": "2024-10-24T07:10:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 952.47,
+    "date": "2024-10-05T00:00:00",
+    "time": "2024-10-05T06:42:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["entertainment", "fuel", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 39.2,
+    "date": "2024-10-04T00:00:00",
+    "time": "2024-10-04T00:32:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["fuel", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 991.97,
+    "date": "2024-10-08T00:00:00",
+    "time": "2024-10-08T17:56:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["food"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1806.61,
+    "date": "2024-10-31T00:00:00",
+    "time": "2024-10-31T17:48:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["weekend", "checkup", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 88.72,
+    "date": "2024-10-16T00:00:00",
+    "time": "2024-10-16T01:02:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["income", "checkup", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 499.14,
+    "date": "2024-10-18T00:00:00",
+    "time": "2024-10-18T07:09:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["entertainment"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 970.29,
+    "date": "2024-10-14T00:00:00",
+    "time": "2024-10-14T16:23:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["checkup", "food", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 699.36,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T03:01:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["side-project", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1538.48,
+    "date": "2024-11-13T00:00:00",
+    "time": "2024-11-13T03:12:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1852.56,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T17:44:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["entertainment", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 744.98,
+    "date": "2024-11-24T00:00:00",
+    "time": "2024-11-24T12:47:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["bills", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1268.27,
+    "date": "2024-11-09T00:00:00",
+    "time": "2024-11-09T03:26:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["checkup", "bills", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 48.23,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T06:19:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["subscription", "weekend", "entertainment"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 189.35,
+    "date": "2024-11-26T00:00:00",
+    "time": "2024-11-26T14:58:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["bills", "subscription", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 752.97,
+    "date": "2024-11-07T00:00:00",
+    "time": "2024-11-07T18:23:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["bills", "subscription"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1706.92,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T08:44:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1955.32,
+    "date": "2024-11-17T00:00:00",
+    "time": "2024-11-17T20:16:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1126.23,
+    "date": "2024-11-01T00:00:00",
+    "time": "2024-11-01T18:58:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["side-project", "income", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1047.41,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T18:48:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["food", "subscription", "income"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1874.4,
+    "date": "2024-11-09T00:00:00",
+    "time": "2024-11-09T09:46:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["food", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1722.45,
+    "date": "2024-11-24T00:00:00",
+    "time": "2024-11-24T07:35:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["essentials", "food", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 670.09,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T03:22:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 701.88,
+    "date": "2024-11-25T00:00:00",
+    "time": "2024-11-25T11:40:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1254.53,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T10:20:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["bills", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 328.44,
+    "date": "2024-11-05T00:00:00",
+    "time": "2024-11-05T16:55:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["bills", "income", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1649.1,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T21:20:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["essentials", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1010.24,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T21:05:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 762.89,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T06:18:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1583.33,
+    "date": "2024-11-01T00:00:00",
+    "time": "2024-11-01T13:58:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1207.22,
+    "date": "2024-11-17T00:00:00",
+    "time": "2024-11-17T01:29:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["food", "subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1396.01,
+    "date": "2024-11-27T00:00:00",
+    "time": "2024-11-27T08:03:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1628.31,
+    "date": "2024-11-09T00:00:00",
+    "time": "2024-11-09T04:26:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["fuel", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 966.57,
+    "date": "2024-11-16T00:00:00",
+    "time": "2024-11-16T10:03:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["subscription", "bills", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 664.1,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T16:03:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend", "bills", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 79.01,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T15:05:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["fuel", "travel", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1812.79,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T07:37:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 482.44,
+    "date": "2024-11-01T00:00:00",
+    "time": "2024-11-01T21:40:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["weekend", "entertainment", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 681.3,
+    "date": "2024-11-20T00:00:00",
+    "time": "2024-11-20T20:18:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["subscription", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 408.64,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T01:07:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["essentials", "weekend", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 1163.58,
+    "date": "2024-11-19T00:00:00",
+    "time": "2024-11-19T16:39:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1712.61,
+    "date": "2024-11-01T00:00:00",
+    "time": "2024-11-01T07:26:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["travel", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1121.3,
+    "date": "2024-11-20T00:00:00",
+    "time": "2024-11-20T04:19:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 1002.26,
+    "date": "2024-11-20T00:00:00",
+    "time": "2024-11-20T09:23:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["side-project", "essentials", "travel"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 947.44,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T16:24:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["essentials", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 439.6,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T06:45:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["checkup", "bills", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1262.19,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T05:59:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["essentials", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1650.35,
+    "date": "2024-11-10T00:00:00",
+    "time": "2024-11-10T18:49:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["bills", "essentials"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 1826.22,
+    "date": "2024-11-27T00:00:00",
+    "time": "2024-11-27T04:17:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 984.5,
+    "date": "2024-11-08T00:00:00",
+    "time": "2024-11-08T00:33:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 792.85,
+    "date": "2024-11-18T00:00:00",
+    "time": "2024-11-18T09:18:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1912.12,
+    "date": "2024-11-24T00:00:00",
+    "time": "2024-11-24T10:04:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["travel", "bills", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1676.95,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T20:26:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["side-project", "income", "fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 316.44,
+    "date": "2024-11-02T00:00:00",
+    "time": "2024-11-02T12:56:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["income", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1379.0,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T06:44:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["weekend", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 477.09,
+    "date": "2024-11-13T00:00:00",
+    "time": "2024-11-13T11:10:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["checkup", "side-project", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 960.05,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T17:13:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 632.84,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T19:47:00",
+    "shortNote": "Transaction for travel.",
+    "tags": ["fuel", "travel", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 844.98,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T05:37:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["travel", "essentials", "income"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 1594.49,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T10:54:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["food", "entertainment", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 358.11,
+    "date": "2024-11-27T00:00:00",
+    "time": "2024-11-27T12:51:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 687.35,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T21:52:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["income", "essentials"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 229.5,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T14:54:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["income"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1580.78,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T21:00:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1557.06,
+    "date": "2024-11-28T00:00:00",
+    "time": "2024-11-28T10:40:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 501.35,
+    "date": "2024-11-14T00:00:00",
+    "time": "2024-11-14T15:15:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 345.96,
+    "date": "2024-11-26T00:00:00",
+    "time": "2024-11-26T15:57:00",
+    "shortNote": "Transaction for freelancing.",
+    "tags": ["bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 1995.84,
+    "date": "2024-11-26T00:00:00",
+    "time": "2024-11-26T15:30:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1858.03,
+    "date": "2024-11-03T00:00:00",
+    "time": "2024-11-03T10:05:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["subscription", "checkup"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 385.51,
+    "date": "2024-11-23T00:00:00",
+    "time": "2024-11-23T03:18:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["fuel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 677.9,
+    "date": "2024-11-30T00:00:00",
+    "time": "2024-11-30T19:02:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["side-project", "bills", "weekend"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 994.7,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T17:20:00",
+    "shortNote": "Transaction for second income.",
+    "tags": ["fuel", "income", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 856.78,
+    "date": "2024-11-12T00:00:00",
+    "time": "2024-11-12T15:13:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["food", "fuel", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 793.08,
+    "date": "2024-11-27T00:00:00",
+    "time": "2024-11-27T00:53:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["travel", "weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 1110.72,
+    "date": "2024-11-15T00:00:00",
+    "time": "2024-11-15T20:04:00",
+    "shortNote": "Transaction for groceries.",
+    "tags": ["income", "entertainment", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 1422.24,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T01:54:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["income", "entertainment", "travel"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1753.11,
+    "date": "2024-11-24T00:00:00",
+    "time": "2024-11-24T22:40:00",
+    "shortNote": "Transaction for rent.",
+    "tags": ["fuel", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 820.61,
+    "date": "2024-11-04T00:00:00",
+    "time": "2024-11-04T21:17:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["checkup", "entertainment", "side-project"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 253.9,
+    "date": "2024-11-27T00:00:00",
+    "time": "2024-11-27T18:34:00",
+    "shortNote": "Transaction for utilities.",
+    "tags": ["subscription"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 1341.85,
+    "date": "2024-11-26T00:00:00",
+    "time": "2024-11-26T17:41:00",
+    "shortNote": "Transaction for salary.",
+    "tags": ["checkup", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 690.09,
+    "date": "2024-11-11T00:00:00",
+    "time": "2024-11-11T05:12:00",
+    "shortNote": "Transaction for entertainment.",
+    "tags": ["income", "weekend", "checkup"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 308.78,
+    "date": "2024-11-06T00:00:00",
+    "time": "2024-11-06T13:09:00",
+    "shortNote": "Transaction for healthcare.",
+    "tags": ["bills", "food", "entertainment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 104.32,
+    "date": "2024-11-21T00:00:00",
+    "time": "2024-11-21T09:55:00",
+    "shortNote": "Transaction for dining out.",
+    "tags": ["weekend"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 120.5,
+    "date": "2024-12-01T10:15:00.000Z",
+    "time": "2024-12-01T10:15:00.000Z",
+    "shortNote": "Grocery shopping at Walmart.",
+    "tags": ["groceries", "essentials"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 55.75,
+    "date": "2024-12-03T18:30:00.000Z",
+    "time": "2024-12-03T18:30:00.000Z",
+    "shortNote": "Dinner at The Olive Garden.",
+    "tags": ["dining", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 950,
+    "date": "2024-12-05T09:00:00.000Z",
+    "time": "2024-12-05T09:00:00.000Z",
+    "shortNote": "Paid rent for December.",
+    "tags": ["rent", "apartment"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 250,
+    "date": "2024-12-07T14:00:00.000Z",
+    "time": "2024-12-07T14:00:00.000Z",
+    "shortNote": "Travel expenses for trip to Miami.",
+    "tags": ["travel", "vacation"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 80,
+    "date": "2024-12-08T10:00:00.000Z",
+    "time": "2024-12-08T10:00:00.000Z",
+    "shortNote": "Utility bill payment for December.",
+    "tags": ["utilities", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 3000,
+    "date": "2024-12-09T09:00:00.000Z",
+    "time": "2024-12-09T09:00:00.000Z",
+    "shortNote": "Salary for the month of December.",
+    "tags": ["income", "salary"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 150,
+    "date": "2024-12-10T20:00:00.000Z",
+    "time": "2024-12-10T20:00:00.000Z",
+    "shortNote": "Movie night with friends.",
+    "tags": ["entertainment", "social"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 220,
+    "date": "2024-12-12T11:00:00.000Z",
+    "time": "2024-12-12T11:00:00.000Z",
+    "shortNote": "Doctor's appointment and consultation.",
+    "tags": ["healthcare", "medical"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 400,
+    "date": "2024-12-14T15:00:00.000Z",
+    "time": "2024-12-14T15:00:00.000Z",
+    "shortNote": "Received second income from freelance work.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 500,
+    "date": "2024-12-15T10:00:00.000Z",
+    "time": "2024-12-15T10:00:00.000Z",
+    "shortNote": "Freelancing payment received for project.",
+    "tags": ["income", "freelancing"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 135.5,
+    "date": "2024-12-16T11:30:00.000Z",
+    "time": "2024-12-16T11:30:00.000Z",
+    "shortNote": "Grocery shopping at Costco.",
+    "tags": ["groceries", "bulk"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 75.2,
+    "date": "2024-12-17T19:00:00.000Z",
+    "time": "2024-12-17T19:00:00.000Z",
+    "shortNote": "Dinner at a local restaurant.",
+    "tags": ["dining", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1200,
+    "date": "2024-12-18T08:30:00.000Z",
+    "time": "2024-12-18T08:30:00.000Z",
+    "shortNote": "Paid December rent.",
+    "tags": ["rent", "housing"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 300,
+    "date": "2024-12-20T16:00:00.000Z",
+    "time": "2024-12-20T16:00:00.000Z",
+    "shortNote": "Booking for New Year travel.",
+    "tags": ["travel", "vacation"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 100,
+    "date": "2024-12-22T14:30:00.000Z",
+    "time": "2024-12-22T14:30:00.000Z",
+    "shortNote": "Electricity bill payment for December.",
+    "tags": ["utilities", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 3500,
+    "date": "2024-12-23T10:00:00.000Z",
+    "time": "2024-12-23T10:00:00.000Z",
+    "shortNote": "December salary payment.",
+    "tags": ["income", "salary"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 200,
+    "date": "2024-12-25T21:00:00.000Z",
+    "time": "2024-12-25T21:00:00.000Z",
+    "shortNote": "Christmas party expenses.",
+    "tags": ["entertainment", "social"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 250,
+    "date": "2024-12-27T09:00:00.000Z",
+    "time": "2024-12-27T09:00:00.000Z",
+    "shortNote": "Physiotherapy session.",
+    "tags": ["healthcare", "medical"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 400,
+    "date": "2024-12-28T11:30:00.000Z",
+    "time": "2024-12-28T11:30:00.000Z",
+    "shortNote": "Freelancing income from website project.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 550,
+    "date": "2024-12-30T08:45:00.000Z",
+    "time": "2024-12-30T08:45:00.000Z",
+    "shortNote": "Payment for freelance app development.",
+    "tags": ["income", "freelancing"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 99.99,
+    "date": "2024-12-02T12:00:00.000Z",
+    "time": "2024-12-02T12:00:00.000Z",
+    "shortNote": "Grocery shopping at Target.",
+    "tags": ["groceries", "shopping"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 45.0,
+    "date": "2024-12-04T19:15:00.000Z",
+    "time": "2024-12-04T19:15:00.000Z",
+    "shortNote": "Dinner with friends at a cafe.",
+    "tags": ["dining", "friends"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 980,
+    "date": "2024-12-06T08:30:00.000Z",
+    "time": "2024-12-06T08:30:00.000Z",
+    "shortNote": "Paid December rent to landlord.",
+    "tags": ["rent", "housing"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 500,
+    "date": "2024-12-08T10:00:00.000Z",
+    "time": "2024-12-08T10:00:00.000Z",
+    "shortNote": "Airline ticket for New Year trip.",
+    "tags": ["travel", "vacation"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 60.5,
+    "date": "2024-12-10T14:00:00.000Z",
+    "time": "2024-12-10T14:00:00.000Z",
+    "shortNote": "Water bill payment for December.",
+    "tags": ["utilities", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 3200,
+    "date": "2024-12-11T09:30:00.000Z",
+    "time": "2024-12-11T09:30:00.000Z",
+    "shortNote": "Received December salary.",
+    "tags": ["income", "salary"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 150,
+    "date": "2024-12-13T19:45:00.000Z",
+    "time": "2024-12-13T19:45:00.000Z",
+    "shortNote": "Concert ticket purchase.",
+    "tags": ["entertainment", "music"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 180,
+    "date": "2024-12-14T11:00:00.000Z",
+    "time": "2024-12-14T11:00:00.000Z",
+    "shortNote": "Medical check-up at clinic.",
+    "tags": ["healthcare", "medical"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 600,
+    "date": "2024-12-16T08:00:00.000Z",
+    "time": "2024-12-16T08:00:00.000Z",
+    "shortNote": "Freelance graphic design project payment.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 450,
+    "date": "2024-12-18T14:30:00.000Z",
+    "time": "2024-12-18T14:30:00.000Z",
+    "shortNote": "Payment received for mobile app development.",
+    "tags": ["income", "freelancing"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 70.25,
+    "date": "2024-12-01T13:45:00.000Z",
+    "time": "2024-12-01T13:45:00.000Z",
+    "shortNote": "Weekly grocery shopping at Walmart.",
+    "tags": ["groceries", "shopping"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 85.75,
+    "date": "2024-12-03T20:30:00.000Z",
+    "time": "2024-12-03T20:30:00.000Z",
+    "shortNote": "Dinner date at Italian restaurant.",
+    "tags": ["dining", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1100,
+    "date": "2024-12-05T08:00:00.000Z",
+    "time": "2024-12-05T08:00:00.000Z",
+    "shortNote": "Paid rent for December.",
+    "tags": ["rent", "housing"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 450,
+    "date": "2024-12-07T15:00:00.000Z",
+    "time": "2024-12-07T15:00:00.000Z",
+    "shortNote": "Flight booking for year-end trip.",
+    "tags": ["travel", "vacation"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 120,
+    "date": "2024-12-09T14:00:00.000Z",
+    "time": "2024-12-09T14:00:00.000Z",
+    "shortNote": "Paid electricity bill for December.",
+    "tags": ["utilities", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 3500,
+    "date": "2024-12-10T10:30:00.000Z",
+    "time": "2024-12-10T10:30:00.000Z",
+    "shortNote": "Salary payment for December.",
+    "tags": ["income", "salary"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 220,
+    "date": "2024-12-12T18:00:00.000Z",
+    "time": "2024-12-12T18:00:00.000Z",
+    "shortNote": "Holiday party tickets for friends.",
+    "tags": ["entertainment", "social"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 150,
+    "date": "2024-12-14T09:00:00.000Z",
+    "time": "2024-12-14T09:00:00.000Z",
+    "shortNote": "Physiotherapy consultation.",
+    "tags": ["healthcare", "medical"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1000,
+    "date": "2024-12-16T08:45:00.000Z",
+    "time": "2024-12-16T08:45:00.000Z",
+    "shortNote": "Freelance project payment for web design.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 750,
+    "date": "2024-12-18T16:30:00.000Z",
+    "time": "2024-12-18T16:30:00.000Z",
+    "shortNote": "Payment for freelance software development.",
+    "tags": ["income", "freelancing"]
+  },
+
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 135.5,
+    "date": "2025-01-01T10:00:00.000Z",
+    "time": "2025-01-01T10:00:00.000Z",
+    "shortNote": "New Year's grocery shopping.",
+    "tags": ["groceries", "shopping"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 950,
+    "date": "2025-01-02T09:00:00.000Z",
+    "time": "2025-01-02T09:00:00.000Z",
+    "shortNote": "Paid rent for January.",
+    "tags": ["rent", "housing"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 50,
+    "date": "2025-01-04T20:30:00.000Z",
+    "time": "2025-01-04T20:30:00.000Z",
+    "shortNote": "Dinner with friends at a cafe.",
+    "tags": ["dining", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 500,
+    "date": "2025-01-05T14:00:00.000Z",
+    "time": "2025-01-05T14:00:00.000Z",
+    "shortNote": "Flight booking for business trip.",
+    "tags": ["travel", "business"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 180,
+    "date": "2025-01-06T12:15:00.000Z",
+    "time": "2025-01-06T12:15:00.000Z",
+    "shortNote": "Paid electricity bill for January.",
+    "tags": ["utilities", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 3500,
+    "date": "2025-01-07T09:00:00.000Z",
+    "time": "2025-01-07T09:00:00.000Z",
+    "shortNote": "Salary payment for January.",
+    "tags": ["income", "salary"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 120,
+    "date": "2025-01-08T16:45:00.000Z",
+    "time": "2025-01-08T16:45:00.000Z",
+    "shortNote": "Concert tickets for the weekend.",
+    "tags": ["entertainment", "music"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 75,
+    "date": "2025-01-10T11:30:00.000Z",
+    "time": "2025-01-10T11:30:00.000Z",
+    "shortNote": "Doctor's appointment consultation fee.",
+    "tags": ["healthcare", "medical"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1000,
+    "date": "2025-01-11T09:00:00.000Z",
+    "time": "2025-01-11T09:00:00.000Z",
+    "shortNote": "Payment for freelance web development project.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 850,
+    "date": "2025-01-12T18:15:00.000Z",
+    "time": "2025-01-12T18:15:00.000Z",
+    "shortNote": "Payment for freelancing graphic design project.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 250,
+    "date": "2025-01-13T10:45:00.000Z",
+    "time": "2025-01-13T10:45:00.000Z",
+    "shortNote": "Grocery shopping for the week.",
+    "tags": ["groceries", "shopping"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 1000,
+    "date": "2025-01-14T08:30:00.000Z",
+    "time": "2025-01-14T08:30:00.000Z",
+    "shortNote": "Paid rent for January, second installment.",
+    "tags": ["rent", "housing"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 85,
+    "date": "2025-01-15T19:30:00.000Z",
+    "time": "2025-01-15T19:30:00.000Z",
+    "shortNote": "Dinner at a local bistro.",
+    "tags": ["dining", "food"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023d",
+    "amount": 400,
+    "date": "2025-01-16T15:00:00.000Z",
+    "time": "2025-01-16T15:00:00.000Z",
+    "shortNote": "Hotel booking for weekend trip.",
+    "tags": ["travel", "vacation"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300239",
+    "amount": 100,
+    "date": "2025-01-17T09:15:00.000Z",
+    "time": "2025-01-17T09:15:00.000Z",
+    "shortNote": "Paid internet bill for January.",
+    "tags": ["utilities", "bills"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300236",
+    "amount": 4000,
+    "date": "2025-01-18T11:00:00.000Z",
+    "time": "2025-01-18T11:00:00.000Z",
+    "shortNote": "Salary payment for January, second part.",
+    "tags": ["income", "salary"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023b",
+    "amount": 60,
+    "date": "2025-01-19T19:00:00.000Z",
+    "time": "2025-01-19T19:00:00.000Z",
+    "shortNote": "Movie night tickets.",
+    "tags": ["entertainment", "movies"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023c",
+    "amount": 130,
+    "date": "2025-01-20T09:45:00.000Z",
+    "time": "2025-01-20T09:45:00.000Z",
+    "shortNote": "Paid for health insurance renewal.",
+    "tags": ["healthcare", "insurance"]
+  },
+  {
+    "category": "6788c69b19e4ae74db4b84d8",
+    "amount": 1200,
+    "date": "2025-01-21T12:30:00.000Z",
+    "time": "2025-01-21T12:30:00.000Z",
+    "shortNote": "Payment for website development project.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "6788c6c719e4ae74db4b84dc",
+    "amount": 650,
+    "date": "2025-01-22T16:15:00.000Z",
+    "time": "2025-01-22T16:15:00.000Z",
+    "shortNote": "Payment for freelance writing project.",
+    "tags": ["income", "freelance"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300237",
+    "amount": 180,
+    "date": "2025-01-23T11:00:00.000Z",
+    "time": "2025-01-23T11:00:00.000Z",
+    "shortNote": "Grocery shopping at the local market.",
+    "tags": ["groceries", "shopping"]
+  },
+  {
+    "category": "66fff06decb2bb9c16300238",
+    "amount": 950,
+    "date": "2025-01-24T08:45:00.000Z",
+    "time": "2025-01-24T08:45:00.000Z",
+    "shortNote": "Paid rent for January, third installment.",
+    "tags": ["rent", "housing"]
+  },
+  {
+    "category": "66fff06decb2bb9c1630023a",
+    "amount": 65,
+    "date": "2025-01-25T20:30:00.000Z",
+    "time": "2025-01-25T20:30:00.000Z",
+    "shortNote": "Dinner with family at a restaurant.",
+    "tags": ["dining", "food"]
+  }
+]

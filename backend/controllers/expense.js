@@ -1,7 +1,12 @@
 const Expense = require("../models/expense");
 const User = require("../models/user");
 
+const {
+  getDummyTransactions,
+} = require("../seeders/transaction/transactionSeeder");
+
 const { ERROR_CODES } = require("../utils/errorCodes");
+const { getFormattedTime } = require("../utils/helper");
 
 module.exports.getAllExpense = async (req, res) => {
   try {
@@ -20,7 +25,7 @@ module.exports.getAllExpense = async (req, res) => {
       const allQueries = [];
       const words = search.split(" ");
       words.forEach((word) => {
-        allQueries.push({ shortNote: { $regex: word } });
+        allQueries.push({ shortNote: { $regex: word, $options: "i" } });
       });
 
       filter.$or = allQueries;
@@ -31,11 +36,6 @@ module.exports.getAllExpense = async (req, res) => {
       filter.date = {
         $gte: new Date(year, month - 1, 1),
         $lt: new Date(year, month, 1),
-      };
-    } else if (year) {
-      filter.date = {
-        $gte: new Date(year, 0, 1),
-        $lt: new Date(year + 1, 0, 1),
       };
     }
 
@@ -155,7 +155,7 @@ module.exports.addExpense = async (req, res) => {
       amount,
       shortNote,
       date,
-      time,
+      time: getFormattedTime(time),
       tags,
     });
 
@@ -171,6 +171,25 @@ module.exports.addExpense = async (req, res) => {
     ]);
 
     return res.status(200).send({ expense: populatedExpense });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send(ERROR_CODES.CANNOT_ADD_EXPENSE);
+  }
+};
+
+module.exports.addBulkExpenses = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) return res.status(400).send(ERROR_CODES.NO_USER_FOUND);
+
+    const dummyExpenses = getDummyTransactions(user._id.toString());
+    const result = await Expense.insertMany(dummyExpenses);
+
+    return res
+      .status(200)
+      .send({ success: true, message: "dummy expenses added" });
   } catch (error) {
     console.log(error);
     return res.status(500).send(ERROR_CODES.CANNOT_ADD_EXPENSE);
@@ -204,7 +223,7 @@ module.exports.updateExpense = async (req, res) => {
         shortNote,
         tags,
         date,
-        time,
+        time: getFormattedTime(time),
       },
       {
         upsert: 1,
