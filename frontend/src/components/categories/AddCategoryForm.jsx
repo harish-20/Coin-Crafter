@@ -8,6 +8,7 @@ import IconInput from "../UI/InputElements/IconInput";
 import TextInput from "../UI/InputElements/TextInput";
 import ColorInput from "../UI/InputElements/ColorInput";
 import ExpenseTypeInput from "../UI/InputElements/ExpenseTypeInput";
+
 import { categoryActions } from "../../store/slices/category/categorySlice";
 
 const intialFormData = {
