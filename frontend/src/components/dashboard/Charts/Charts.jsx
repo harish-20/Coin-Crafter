@@ -25,6 +25,7 @@ const Charts = () => {
           onRetry={handleRetry}
         />
       )}
+
       {!isChartDataLoadingError && (
         <>
           {/* chart for income and expense in day wise */}

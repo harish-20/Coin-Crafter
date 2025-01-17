@@ -1,41 +1,34 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Spinner from "../components/UI/Spinner";
 import Charts from "../components/dashboard/Charts/Charts";
 import ExpenseList from "../components/shared/ExpenseList/ExpenseList";
 import Filters from "../components/dashboard/Filters/Filters";
 
-import { expenseThunks } from "../store/slices/expense/expenseSlice";
-import { chartThunks } from "../store/slices/chart/chartSlice";
-
 const DashBoard = () => {
   const expenses = useSelector((state) => state.expense.expenses);
+
+  const isExpenseLoading = useSelector(
+    (state) => state.expense.loadingState.isExpenseLoading
+  );
   const isAvailableFilterLoading = useSelector(
     (state) => state.chart.isAvailableFilterLoading
   );
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(expenseThunks.getAllTransaction());
-    dispatch(chartThunks.getAvailableFilter());
-  }, []);
+  const isDashboardLoading = isExpenseLoading || isAvailableFilterLoading;
 
   return (
-    <>
-      {isAvailableFilterLoading && (
-        <Spinner size="50" className="my-auto h-full" />
-      )}
+    <div className="p-4 md:p-8 md:py-4">
+      {isDashboardLoading && <Spinner size="50" className="my-auto h-full" />}
 
-      {!isAvailableFilterLoading && (
+      {!isDashboardLoading && (
         <>
           <Filters />
           <Charts />
           <ExpenseList expenses={expenses?.slice(0, 5)} />
         </>
       )}
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import NavLinks from "./NavLinks";
 import LogoutButton from "./LogoutButton";
 
 const SidePanel = (props) => {
-  const { isOpen } = props;
+  const { isOpen, closeNav } = props;
 
   return (
     <div
@@ -12,9 +12,9 @@ const SidePanel = (props) => {
       } duration-300 fixed top-0 left-0 md:static md:translate-x-0 md:h-auto`}
     >
       <ProfileImage />
-      <NavLinks />
+      <NavLinks closeNav={closeNav} />
 
-      <LogoutButton />
+      <LogoutButton closeNav={closeNav} />
     </div>
   );
 };

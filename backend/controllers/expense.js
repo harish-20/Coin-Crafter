@@ -167,7 +167,6 @@ module.exports.addExpense = async (req, res) => {
     const savedExpense = await expense.save();
     const populatedExpense = await Expense.findById(savedExpense._id).populate([
       "category",
-      "user",
     ]);
 
     return res.status(200).send({ expense: populatedExpense });

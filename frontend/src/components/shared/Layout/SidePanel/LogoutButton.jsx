@@ -10,10 +10,15 @@ import getAvailablePopups from "../../../../helpers/getAvailablePopups";
 
 const { logoutPopup } = getAvailablePopups();
 
-const LogoutButton = () => {
+const LogoutButton = (props) => {
+  const { closeNav } = props;
+
   const dispatch = useDispatch();
 
-  const openLogoutPopup = () => dispatch(popupActions.togglePopup(logoutPopup));
+  const openLogoutPopup = () => {
+    closeNav();
+    dispatch(popupActions.togglePopup(logoutPopup));
+  };
   return (
     <Button onClick={openLogoutPopup}>
       <div className="flex gap-3 justify-center text-inherit">

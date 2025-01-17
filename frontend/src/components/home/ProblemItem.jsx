@@ -4,8 +4,8 @@ const ProblemItem = (props) => {
   const { title, content, list, solution } = props;
   return (
     <div
-      className={`flex flex-col gap-8 w-5/12 ${
-        solution ? "flex-col-reverse" : ""
+      className={`flex-1 flex flex-col gap-8 px-4 ${
+        solution ? "md:flex-col-reverse" : ""
       }`}
     >
       <h2 className="text-2xl text-green-800 font-bold">{title}</h2>

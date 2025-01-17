@@ -10,7 +10,7 @@ const ExpenseTypeFilters = (props) => {
   ];
 
   return (
-    <div className="flex items-center gap-4 mt-8 ml-4">
+    <div className="mt-2 flex items-center justify-center gap-4 md:justify-stretch md:mt-8 md:ml-4">
       {expenseTypes.map((expense) => (
         <div
           key={expense.expenseType}

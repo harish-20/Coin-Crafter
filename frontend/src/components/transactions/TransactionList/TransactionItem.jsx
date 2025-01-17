@@ -54,7 +54,7 @@ const TransactionItem = (props) => {
       }`}
       onClick={() => dispatch(expenseActions.toggleEditMode(id))}
     >
-      <div className="flex justify-between items-start min-h-[50px] flex-wrap">
+      <div className="flex justify-between items-start min-h-[50px] flex-wrap gap-4">
         <div
           style={{ background: category.backgroundColor }}
           className="relative overflow-hidden bg-gray-100 rounded-full p-2"
@@ -79,8 +79,9 @@ const TransactionItem = (props) => {
           data={amount}
         />
       </div>
+
       <div>
-        <h2 className="text-sm font-semibold">Description</h2>
+        <h2 className="text-sm font-semibold mt-2">Description</h2>
         <p className="mt-2 text-sm text-gray-400 whitespace-pre-wrap">
           {description}
         </p>

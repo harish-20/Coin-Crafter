@@ -68,8 +68,11 @@ const AddCategoryForm = (props) => {
   };
 
   return (
-    <form className={`py-2 ${props.className || ""}`} onSubmit={handleSubmit}>
-      <div className="px-4 max-h-[500px] overflow-y-scroll">
+    <form
+      className={`flex flex-col gap-2 overflow-y-auto ${props.className || ""}`}
+      onSubmit={handleSubmit}
+    >
+      <div className="flex-1 py-4 px-4 overflow-y-auto">
         <TextInput
           value={formData.title}
           onChange={handleChange}
@@ -101,7 +104,7 @@ const AddCategoryForm = (props) => {
         />
       </div>
 
-      <div className="px-4">
+      <div className="px-4 my-4">
         <Button isLoading={isSubmitting} className="rounded-lg bg-dark">
           Add Category
         </Button>

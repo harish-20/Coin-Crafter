@@ -71,64 +71,72 @@ const TransactionForm = (props) => {
   };
   return (
     <div
-      className={`p-4 min-w-[500px] overflow-auto bg-gray-900 rounded-lg ${
-        className || ""
-      }`}
+      className={`bg-gray-900 rounded-lg flex flex-col ${className || ""}`}
       {...otherProps}
     >
-      <form className="" onSubmit={handleSubmit}>
-        <ExpenseDropDown
-          label="Category"
-          value={formData.category}
-          onChange={(value) => handleChange("category", value)}
-          expenseList={[...defaultCategories, ...customCategories]}
-          errorMessage={
-            isFormSubmitted && formErrors.expense && "Select a expense type"
-          }
-        />
+      <form className="flex flex-col overflow-y-auto" onSubmit={handleSubmit}>
+        <div className="px-4 flex-1 overflow-y-auto">
+          <ExpenseDropDown
+            label="Category"
+            value={formData.category}
+            onChange={(value) => handleChange("category", value)}
+            expenseList={[...defaultCategories, ...customCategories]}
+            errorMessage={
+              isFormSubmitted && formErrors.expense && "Select a expense type"
+            }
+          />
 
-        <TextInput
-          id="amount"
-          label="Amount"
-          onChange={(event) => handleChange("amount", event.target.value)}
-          errorMessage={
-            isFormSubmitted && formErrors.amount && "Enter a valid amount"
-          }
-        />
+          <TextInput
+            id="amount"
+            label="Amount"
+            onChange={(event) => handleChange("amount", event.target.value)}
+            errorMessage={
+              isFormSubmitted && formErrors.amount && "Enter a valid amount"
+            }
+          />
 
-        <TextAreaInput
-          id="description"
-          label="Description"
-          rows={5}
-          value={formData.description}
-          onChange={(event) => handleChange("description", event.target.value)}
-          errorMessage={
-            isFormSubmitted &&
-            formErrors.description &&
-            "Enter a valid description"
-          }
-        />
+          <TextAreaInput
+            id="description"
+            label="Description"
+            rows={5}
+            value={formData.description}
+            onChange={(event) =>
+              handleChange("description", event.target.value)
+            }
+            errorMessage={
+              isFormSubmitted &&
+              formErrors.description &&
+              "Enter a valid description"
+            }
+          />
 
-        <DateInput
-          id="date"
-          label="Date"
-          value={formData.date}
-          onChange={(event) => handleChange("date", event.target.value)}
-        />
+          <DateInput
+            id="date"
+            label="Date"
+            value={formData.date}
+            onChange={(event) => handleChange("date", event.target.value)}
+          />
 
-        <TimeInput
-          id="time"
-          label="Time"
-          value={formData.time}
-          onChange={(event) => {
-            const [hours, minutes] = event.target.value.split(":");
-            const updatedTime = new Date();
-            updatedTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
-            handleChange("time", updatedTime.toISOString());
-          }}
-        />
+          <TimeInput
+            id="time"
+            label="Time"
+            value={formData.time}
+            onChange={(event) => {
+              const [hours, minutes] = event.target.value.split(":");
+              const updatedTime = new Date();
+              updatedTime.setHours(
+                parseInt(hours, 10),
+                parseInt(minutes, 10),
+                0
+              );
+              handleChange("time", updatedTime.toISOString());
+            }}
+          />
+        </div>
 
-        <Button className="">Add Expense</Button>
+        <div className="m-4">
+          <Button>Add Expense</Button>
+        </div>
       </form>
     </div>
   );

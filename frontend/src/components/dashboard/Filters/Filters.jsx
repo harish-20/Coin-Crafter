@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import DropDown from "../../UI/DropDown";
+import AddExpenseButton from "../../shared/AddExpense/AddExpenseButton";
 
 import {
   chartActions,
@@ -9,13 +10,9 @@ import {
 } from "../../../store/slices/chart/chartSlice";
 
 import { monthKeys } from "../../../helpers/monthKeys";
-import AddExpenseButton from "../../shared/AddExpense/AddExpenseButton";
 
 const Filters = () => {
   const filters = useSelector((state) => state.chart.filters);
-  const isAvailableFilterLoading = useSelector(
-    (state) => state.chart.loadingState.isAvailableFilterLoading
-  );
   const yearFilters = useSelector(
     (state) => state.chart.availableFilters.yearFilters
   );
@@ -59,24 +56,22 @@ const Filters = () => {
   const isFiltersEmpty = yearFilters.length === 0;
 
   return (
-    <div className="flex items-center justify-between mx-6 my-4">
+    <div className="mx-6 my-4 flex flex-col items-center justify-between gap-4 md:flex-row">
       {isFiltersEmpty && <div>Add Expense by clicking "+ Add New"</div>}
 
       {!isFiltersEmpty && (
-        <div className="flex gap-3">
+        <div className="w-full flex gap-3">
           <DropDown
             label="Year"
             value={filters.year}
             options={availableYearOptions || []}
             onChange={setYear}
-            disabled={isAvailableFilterLoading}
           />
           <DropDown
             label="Month"
             value={filters.month}
             options={availableMonthOptions || []}
             onChange={setMonth}
-            disabled={isAvailableFilterLoading}
           />
         </div>
       )}

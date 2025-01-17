@@ -160,7 +160,7 @@ const TransactionForm = () => {
           }}
         />
 
-        <Button className="">Edit Expense</Button>
+        <Button className="mt-4">Edit Expense</Button>
       </form>
     </div>
   );

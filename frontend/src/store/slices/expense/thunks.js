@@ -46,6 +46,7 @@ export const createTransaction = createAsyncThunk(
       });
 
       thunkApi.dispatch(getAllTransaction());
+      thunkApi.dispatch(chartThunks.getAvailableFilter());
 
       return response;
     } catch (error) {

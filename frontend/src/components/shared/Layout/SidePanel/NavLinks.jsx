@@ -25,12 +25,14 @@ const linkList = [
   },
 ];
 
-const NavLinks = () => {
+const NavLinks = (props) => {
+  const { closeNav } = props;
+
   return (
     <nav className="w-full">
       <ul className="flex flex-col gap-5 w-full">
         {linkList.map((link) => (
-          <NavLinkItem key={link.id} {...link} />
+          <NavLinkItem key={link.id} {...link} onClick={closeNav} />
         ))}
       </ul>
     </nav>

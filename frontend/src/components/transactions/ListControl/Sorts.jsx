@@ -41,7 +41,7 @@ const Sorts = () => {
     setIsSortOptionOpen(!isSortOptionOpen);
   };
   return (
-    <div className="relative mt-6 flex items-center cursor-pointer">
+    <div className="mt-2 ml-auto relative flex items-center cursor-pointer md:mt-6">
       <div
         ref={sortIconRef}
         className="flex gap-2"

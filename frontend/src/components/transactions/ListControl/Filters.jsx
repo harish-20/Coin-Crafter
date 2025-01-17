@@ -40,8 +40,8 @@ const Filters = () => {
   const isFilterAdded = Object.values(filters).some((filter) => filter);
 
   return (
-    <div className="flex items-center">
-      <h3 className="text-lg mt-6 mr-6">Filters :</h3>
+    <div className="flex items-center flex-wrap">
+      <h3 className="text-lg mt-2 md:mt-6 mr-6">Filters :</h3>
       <ExpenseDropDown
         className={`min-w-[300px] ${filters.category ? "bg-green-900" : ""}`}
         label=""

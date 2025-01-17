@@ -14,11 +14,11 @@ const SearchBar = () => {
     dispatch(expenseActions.setSearch(value));
   };
   return (
-    <div className="flex w-full items-center">
+    <div className="flex flex-col-reverse w-full items-center justify-center md:flex-row">
       <AddExpenseButton />
 
       <input
-        className="flex-1 mx-4 my-5 px-5 py-3 bg-gray-800 rounded-md placeholder:text-center placeholder:tracking-wider focus:outline-none"
+        className="w-full flex-1 mx-4 my-5 px-5 py-3 bg-gray-800 rounded-md placeholder:text-center placeholder:tracking-wider focus:outline-none"
         placeholder="🔍 Search for transaction"
         type="text"
         value={search}

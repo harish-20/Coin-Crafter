@@ -1,14 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import Button from "../UI/Button";
 
 const CTA = () => {
   return (
-    <Link
-      className="bg-green-900 px-10 py-3 rounded-lg text-white text-xl font-semibold tracking-wider mt-8 duration-300 hover:bg-green-700 hover:shadow-green-600 hover:shadow-lg"
-      to="/signin"
-    >
+    <Button className="mt-8 w-max rounded-md min-w-[200px]" href="/signin">
       Login
-    </Link>
+    </Button>
   );
 };
 

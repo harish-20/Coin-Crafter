@@ -53,7 +53,7 @@ const Transactions = () => {
   }, [search]);
 
   return (
-    <div className="px-8 flex flex-col h-full">
+    <div className="px-4 flex flex-col h-full md:px-8">
       <SearchBar />
       <ListControl />
       <TransactionList />

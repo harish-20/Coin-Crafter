@@ -25,7 +25,7 @@ const Pie = (props) => {
 
   const options = getOptionsWithData(filteredDataPoints);
 
-  const isNoExpenseAdded = dataPoints.length === 0;
+  const isNoExpenseAdded = !isFilteredDataLoading && dataPoints.length === 0;
   const isDataEmpty = !isNoExpenseAdded && filteredDataPoints.length === 0;
 
   return (
@@ -34,7 +34,7 @@ const Pie = (props) => {
         <Spinner className="h-full flex justify-center" size={50} />
       )}
 
-      {isNoExpenseAdded && !isFilteredDataLoading && <EmptyData />}
+      {isNoExpenseAdded && <EmptyData />}
       {isDataEmpty && !isFilteredDataLoading && <EmptyTransaction />}
 
       {!isFilteredDataLoading && !isNoExpenseAdded && !isDataEmpty && (

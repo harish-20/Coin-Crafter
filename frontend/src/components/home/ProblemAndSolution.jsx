@@ -25,7 +25,7 @@ const problemSolution = {
 const ProblemAndSolution = () => {
   const { problem, solution } = problemSolution;
   return (
-    <div className="bg-gray-100 pt-56 pb-10 flex justify-evenly items-strech ">
+    <div className="bg-gray-100 pt-10 pb-10 flex flex-col justify-evenly gap-4 md:pt-56 md:pb-10 md:flex-row">
       <ProblemItem
         title={problem.title}
         content={problem.content}

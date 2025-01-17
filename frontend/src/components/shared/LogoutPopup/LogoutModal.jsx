@@ -21,11 +21,13 @@ const LogoutModal = (props) => {
   };
 
   return (
-    <div className={`min-w-[300px] flex flex-col gap-4 p-6 ${className}`}>
+    <div
+      className={`min-w-[300px] flex flex-col justify-between p-6 ${className}`}
+    >
       <Title>Logout</Title>
-      <p>Are You Sure Want To Logout?</p>
+      <p className="mt-4">Are you sure want to logout?</p>
 
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between mt-12 gap-3">
         <Button onClick={handleLogout}>Yes</Button>
         <Button onClick={closeModal} variant="outlined">
           No

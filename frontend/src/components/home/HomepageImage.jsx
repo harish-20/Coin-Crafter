@@ -5,7 +5,7 @@ import homepageImage from "../../assets/homepage.png";
 const HomepageImage = () => (
   <Link to="/signin" className="w-9/12">
     <img
-      className="h-auto mt-10 rounded-[34px] shadow-lg shadow-green-200 float-animate"
+      className="w-full mt-10 rounded-xl shadow-lg shadow-green-600 float-animate md:w-[98vw]"
       src={homepageImage}
       alt="homepage image"
     />

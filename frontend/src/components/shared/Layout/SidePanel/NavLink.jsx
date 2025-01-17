@@ -11,6 +11,7 @@ const NavLinkItem = (props) => {
         }`
       }
       to={props.link}
+      onClick={props.onClick}
     >
       <img src={props.image} alt={props.text} />
 

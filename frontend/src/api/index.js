@@ -17,3 +17,9 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
+// for loading test
+// api.interceptors.response.use(async (response) => {
+//   await new Promise((res, rej) => setTimeout(res, 2000));
+//   return response;
+// });

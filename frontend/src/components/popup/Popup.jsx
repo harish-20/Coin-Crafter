@@ -25,9 +25,9 @@ const Popup = (props) => {
       <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
         <Modal
           closeModal={closeModalWithAnimation}
-          className={` ${
+          className={`bg-gray-900 max-h-[calc(100vh-70px)] rounded-lg min-w-[350px] md:min-w-[400px] ${
             closeAnimation ? "close-modal" : "open-modal"
-          } bg-gray-900  rounded-lg`}
+          }`}
         />
       </div>
     </div>

@@ -10,8 +10,10 @@ import TransactionItem from "./TransactionItem";
 import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
 const THROTTLE_INTERVAL = 300;
+
 const TransactionList = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [rowHeight, setRowHeight] = useState(160); // Default row height
 
   const transactions = useSelector((state) => state.expense.expenses);
   const search = useSelector((state) => state.expense.search);
@@ -32,11 +34,23 @@ const TransactionList = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
 
     timerRef.current = setTimeout(() => {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight - 200;
+      console.log(windowWidth);
+      const isSmallScreen = windowWidth <= 768;
+
       if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const containerHeight = isSmallScreen
+          ? windowHeight
+          : containerRef.current.offsetHeight;
+
         setDimensions({
-          width: containerRef.current.offsetWidth,
-          height: containerRef.current.offsetHeight,
+          width: containerWidth,
+          height: containerHeight,
         });
+
+        setRowHeight(isSmallScreen ? 200 : 160);
       }
     }, THROTTLE_INTERVAL);
   };
@@ -112,7 +126,7 @@ const TransactionList = () => {
       {shouldShowTransactionList && (
         <List
           height={dimensions.height}
-          rowHeight={160}
+          rowHeight={rowHeight}
           width={dimensions.width}
           rowCount={transactions?.length}
           rowRenderer={rowRenderer}

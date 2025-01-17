@@ -19,7 +19,7 @@ const MultiSeriesBarChart = () => {
 
   const options = getOptionsWithData(incomeDataPoints, spendDataPoints);
 
-  const isNoExpenseAdded = filteredData.length === 0;
+  const isNoExpenseAdded = !isFilteredDataLoading && filteredData.length === 0;
 
   return (
     <div className="min-h-[400px] w-full overflow-x-auto md:col-span-2">
@@ -27,7 +27,7 @@ const MultiSeriesBarChart = () => {
         <Spinner className="h-full flex justify-center" size={50} />
       )}
 
-      {isNoExpenseAdded && !isFilteredDataLoading && <EmptyData />}
+      {isNoExpenseAdded && <EmptyData />}
 
       {!isFilteredDataLoading && !isNoExpenseAdded && (
         <div className="min-w-[1000px]">

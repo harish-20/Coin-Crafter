@@ -3,16 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import EmptyData from "../../UI/EmptyData/EmptyData";
 import ExpenseItem from "./ExpenseItem";
 import ErrorView from "../../UI/ErrorView";
-import Spinner from "../../UI/Spinner";
 
 import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
 const ExpenseList = (props) => {
   const { expenses } = props;
 
-  const isTransactionsLoading = useSelector(
-    (state) => state.expense.loadingState.isExpensesLoading
-  );
   const isTransactionsLoadingError = useSelector(
     (state) => state.expense.errorState.isExpensesLoadingError
   );
@@ -23,12 +19,7 @@ const ExpenseList = (props) => {
     dispatch(expenseThunks.getAllTransaction());
   };
 
-  const shouldShowEmpty =
-    !isTransactionsLoading &&
-    !isTransactionsLoadingError &&
-    expenses.length === 0;
-
-  const shouldShowError = !isTransactionsLoading && isTransactionsLoadingError;
+  const shouldShowEmpty = !isTransactionsLoadingError && expenses.length === 0;
 
   return (
     <div className="m-8">
@@ -36,9 +27,7 @@ const ExpenseList = (props) => {
       <div className="mt-6 flex flex-col md:w-4/12">
         {shouldShowEmpty && <EmptyData />}
 
-        {isTransactionsLoading && <Spinner size={30} />}
-
-        {shouldShowError && (
+        {isTransactionsLoadingError && (
           <div className="mt-8">
             <ErrorView
               message="Cannot fetch recent transaction"
@@ -48,7 +37,7 @@ const ExpenseList = (props) => {
         )}
 
         {!shouldShowEmpty &&
-          !shouldShowError &&
+          !isTransactionsLoadingError &&
           expenses.map((expense) => (
             <ExpenseItem
               key={expense._id}

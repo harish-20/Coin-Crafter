@@ -19,7 +19,7 @@ const Button = (props) => {
 
   const variantClass = variant === "outlined" ? outlined : white;
 
-  const classList = `relative mt-8 py-2 px-4 w-full text-center font-bold rounded-full ${variantClass} focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:border-gray-300 ${className}`;
+  const classList = `relative py-2 px-4 w-full text-center font-bold rounded-full ${variantClass} focus:outline-none disabled:bg-gray-300 disabled:text-gray-500 disabled:border-gray-300 ${className}`;
 
   if (href) {
     return (

@@ -36,7 +36,7 @@ const CategoryList = (props) => {
   ));
 
   return (
-    <div className="flex flex-col gap-10 my-10  mx-[5%]">
+    <div className="flex flex-col gap-10 my-10">
       <CategoryListWithHeading
         list={defaultCategoryList}
         heading="Default Categories"
