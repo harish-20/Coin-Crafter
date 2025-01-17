@@ -2,6 +2,8 @@
 
 **Coin Crafter** is a personal expense tracker that helps users monitor their spending with interactive visual graphs. The app allows users to track their expenses and provides a clear, visual overview of their financial data.
 
+![image](https://github.com/user-attachments/assets/4d101d1f-fc6d-4dbf-90bb-e9be3f6af42c)
+
 ## Features
 
 - **Expense Tracking**: Easily track and categorize your expenses.
