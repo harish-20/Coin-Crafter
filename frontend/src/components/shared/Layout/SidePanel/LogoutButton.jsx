@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import Button from "../../../UI/button";
+import Button from "../../../UI/Button";
 
 import { popupActions } from "../../../../store/slices/popup/popupSlice";
 
