@@ -28,7 +28,7 @@ const ColorInput = (props) => {
 
   return (
     <>
-      <div className="grid grid-cols-5 gap-3">
+      <div className="grid grid-cols-5 gap-4 place-content-center place-items-center">
         {availableColors.map((availableColor, index) => (
           <div
             key={index}

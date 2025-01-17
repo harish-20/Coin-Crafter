@@ -32,7 +32,9 @@ const IconInput = (props) => {
 
   return (
     <>
-      <div className="grid grid-cols-5 gap-4">{selectableIcons}</div>
+      <div className="grid grid-cols-5 gap-4 place-content-center place-items-center">
+        {selectableIcons}
+      </div>
       {errorMessage && (
         <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
       )}
