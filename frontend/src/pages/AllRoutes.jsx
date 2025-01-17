@@ -10,7 +10,7 @@ import Transactions from "./Transactions";
 import Categories from "./Categories";
 import Layout from "../components/shared/Layout/Layout";
 
-import withPageGuard from "../HOCs/WithAuth";
+import withPageGuard from "../HOCs/withAuth";
 
 import { userThunks } from "../store/slices/user/userSlice";
 
