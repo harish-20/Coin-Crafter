@@ -7,7 +7,7 @@ import { emailSignup } from "../../api/auth";
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
 import PoliciesCheckbox from "../UI/InputElements/PoliciesCheckbox";
-import Button from "../UI/button";
+import Button from "../UI/Button";
 import SigninIcon from "../UI/Icons/SigninIcon";
 import ErrorText from "../UI/ErrorText";
 import Spinner from "../UI/Spinner";

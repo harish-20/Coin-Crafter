@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
-import Button from "../UI/button";
+import Button from "../UI/Button";
 import LoginIcon from "../UI/Icons/LoginIcon";
 import ErrorText from "../UI/ErrorText";
 import Spinner from "../UI/Spinner";
