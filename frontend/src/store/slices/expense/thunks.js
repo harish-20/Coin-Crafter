@@ -46,6 +46,9 @@ export const createTransaction = createAsyncThunk(
       });
 
       thunkApi.dispatch(getAllTransaction());
+      // If no expense there need to get filters too
+      if (!thunkApi.getState().chart.filters.year)
+        await thunkApi.dispatch(chartThunks.getAvailableFilter()).unwrap();
       thunkApi.dispatch(chartThunks.getFilteredData());
       thunkApi.dispatch(chartThunks.getAvailableFilter());
 
