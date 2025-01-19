@@ -1,5 +1,6 @@
 import Logo from "../UI/Icons/Logo";
 import Title from "../UI/Title";
+import SignupPrompt from "./SignupPrompt";
 
 const WelcomeText = () => (
   <div>
@@ -10,9 +11,12 @@ const WelcomeText = () => (
 
 const GreetTitle = () => {
   return (
-    <div className="flex gap-4">
-      <Logo />
-      <WelcomeText />
+    <div className="mt-16 flex justify-between flex-wrap gap-4">
+      <div className="flex items-center gap-4">
+        <Logo />
+        <WelcomeText />
+      </div>
+      <SignupPrompt />
     </div>
   );
 };

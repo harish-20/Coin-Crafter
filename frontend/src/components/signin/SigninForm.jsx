@@ -92,7 +92,7 @@ const SigninForm = () => {
   };
 
   return (
-    <form className="" onSubmit={handleSubmit}>
+    <form className="flex-1" onSubmit={handleSubmit}>
       <TextInput
         value={email}
         onChange={handleEmailChange}
@@ -105,12 +105,13 @@ const SigninForm = () => {
 
       <PasswordInput
         id="password"
+        label="Password"
         value={password}
         onChange={handlePasswordChange}
         placeholder="Enter your password"
         errorMessage={
           invalidState.password &&
-          "Enter a valid password (A-B a-b 0-9 length-8)"
+          "Enter a valid password (A-Z a-z 0-9 length-8 and 1 special character)"
         }
       />
       <p className="text-sm mt-2 text-gray-400">Forget password?</p>

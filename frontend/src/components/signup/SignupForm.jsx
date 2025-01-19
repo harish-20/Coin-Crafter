@@ -112,7 +112,7 @@ const SignupForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} autoComplete="on">
+    <form className="flex-1 mt-8" onSubmit={submitHandler} autoComplete="on">
       <TextInput
         label="Name"
         id="name"
@@ -122,8 +122,8 @@ const SignupForm = () => {
         errorMessage={invalidData.name && "Enter a valid name"}
       />
       <TextInput
-        label="email"
-        id="Email"
+        label="Email"
+        id="email"
         name="email"
         value={formData.email}
         onChange={changeHandler}

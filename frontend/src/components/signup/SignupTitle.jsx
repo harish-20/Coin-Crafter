@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const SignupTitle = () => {
   return (
-    <>
+    <div className="mt-6 md:mt-16">
       <Title>Sign up with your account</Title>
       <p className="mt-2 tracking-wide">
         Already have an account?{" "}
@@ -16,7 +16,7 @@ const SignupTitle = () => {
           Log in
         </Link>
       </p>
-    </>
+    </div>
   );
 };
 

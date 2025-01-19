@@ -10,7 +10,7 @@ const Signup = () => {
     <AuthContainer>
       <SignupTitle />
       <SignupForm />
-      <TermsAndPolicyLinks fixedBottom />
+      <TermsAndPolicyLinks />
     </AuthContainer>
   );
 };

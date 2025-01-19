@@ -45,8 +45,7 @@ const EyeIcon = (props) => {
   return (
     <div
       className="cursor-pointer mt-1 absolute right-2 h-full flex items-center justify-center"
-      onMouseDown={props.onClick}
-      onMouseUp={props.onClick}
+      onClick={props.onClick}
     >
       {props.isHidden ? (
         <HiddenEye isFocused={props.isFocused} />
