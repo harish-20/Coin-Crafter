@@ -12,7 +12,7 @@ import { userThunks } from "../store/slices/user/userSlice";
  * @param {{ element: React.ReactElement, protection: "with-auth" | "without-auth" }} props
  * @returns {React.ReactElement} The guarded page or a redirect.
  */
-const WithAuth = (props) => {
+const WithPageGuard = (props) => {
   const { element, protection } = props;
 
   const isUserLoading = useSelector((state) => state.user.isUserLoading);
@@ -41,9 +41,9 @@ const WithAuth = (props) => {
   return element;
 };
 
-WithAuth.propTypes = {
+WithPageGuard.propTypes = {
   element: PropTypes.element.isRequired,
   protection: PropTypes.oneOf(["with-auth", "without-auth"]),
 };
 
-export default WithAuth;
+export default WithPageGuard;

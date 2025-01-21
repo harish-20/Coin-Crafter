@@ -9,7 +9,7 @@ import Categories from "./Categories";
 
 import Layout from "../components/shared/Layout/Layout";
 
-import WithAuth from "../HOCs/WithAuth";
+import WithPageGuard from "../HOCs/WithPageGuard";
 
 const AllRoutes = () => {
   return (
@@ -17,26 +17,34 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route
         path="/signin"
-        element={<WithAuth element={<Signin />} protection="without-auth" />}
+        element={
+          <WithPageGuard element={<Signin />} protection="without-auth" />
+        }
       />
       <Route
         path="/signup"
-        element={<WithAuth element={<Signup />} protection="without-auth" />}
+        element={
+          <WithPageGuard element={<Signup />} protection="without-auth" />
+        }
       />
       <Route path="/" element={<Layout />}>
         <Route
           path="/dashboard"
-          element={<WithAuth element={<DashBoard />} protection="with-auth" />}
+          element={
+            <WithPageGuard element={<DashBoard />} protection="with-auth" />
+          }
         />
         <Route
           path="/transactions"
           element={
-            <WithAuth element={<Transactions />} protection="with-auth" />
+            <WithPageGuard element={<Transactions />} protection="with-auth" />
           }
         />
         <Route
           path="/categories"
-          element={<WithAuth element={<Categories />} protection="with-auth" />}
+          element={
+            <WithPageGuard element={<Categories />} protection="with-auth" />
+          }
         />
       </Route>
     </Routes>
