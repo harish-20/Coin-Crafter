@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./Home";
@@ -10,26 +8,43 @@ import Transactions from "./Transactions";
 import Categories from "./Categories";
 import Layout from "../components/shared/Layout/Layout";
 
-import withPageGuard from "../HOCs/withAuth";
-
-import { userThunks } from "../store/slices/user/userSlice";
+import WithPageGuard from "../HOCs/WithAuth";
 
 const AllRoutes = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(userThunks.getUser());
-  }, []);
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/signin" element={withPageGuard(Signin, "without-auth")} />
-      <Route path="/signup" element={withPageGuard(Signup, "without-auth")} />
+      <Route
+        path="/signin"
+        element={
+          <WithPageGuard element={<Signin />} protection="without-auth" />
+        }
+      />
+      <Route
+        path="/signup"
+        element={
+          <WithPageGuard element={<Signup />} protection="without-auth" />
+        }
+      />
       <Route path="/" element={<Layout />}>
-        <Route path="/dashboard" element={withPageGuard(DashBoard)} />
-        <Route path="/transactions" element={withPageGuard(Transactions)} />
-        <Route path="/categories" element={withPageGuard(Categories)} />
+        <Route
+          path="/dashboard"
+          element={
+            <WithPageGuard element={<DashBoard />} protection="with-auth" />
+          }
+        />
+        <Route
+          path="/transactions"
+          element={
+            <WithPageGuard element={<Transactions />} protection="with-auth" />
+          }
+        />
+        <Route
+          path="/categories"
+          element={
+            <WithPageGuard element={<Categories />} protection="with-auth" />
+          }
+        />
       </Route>
     </Routes>
   );
