@@ -1,5 +1,5 @@
-import HeroTitle from "./HeroTitle";
 import CTA from "./CTA";
+import HeroTitle from "./HeroTitle";
 import HomepageImage from "./HomepageImage";
 
 const HeroSection = () => {

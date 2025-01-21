@@ -18,7 +18,7 @@ const DashBoard = () => {
   const isDashboardLoading = isExpenseLoading || isAvailableFilterLoading;
 
   return (
-    <div className="p-4 md:p-8 md:py-4">
+    <div>
       {isDashboardLoading && <Spinner size="50" className="my-auto h-full" />}
 
       {!isDashboardLoading && (

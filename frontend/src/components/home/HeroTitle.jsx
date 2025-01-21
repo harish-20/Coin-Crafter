@@ -1,6 +1,5 @@
-import React from "react";
-
 import logoWithText from "../../assets/LogoText.svg";
+
 const HeroTitle = () => {
   return (
     <div className="flex flex-col items-center gap-5 mt-10 md:mt-52">

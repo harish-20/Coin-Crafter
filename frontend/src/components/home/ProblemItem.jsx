@@ -1,11 +1,11 @@
 import React from "react";
 
 const ProblemItem = (props) => {
-  const { title, content, list, solution } = props;
+  const { title, content, list, reversed } = props;
   return (
     <div
       className={`flex-1 flex flex-col gap-8 px-4 ${
-        solution ? "md:flex-col-reverse" : ""
+        reversed ? "md:flex-col-reverse" : ""
       }`}
     >
       <h2 className="text-2xl text-green-800 font-bold">{title}</h2>
@@ -13,7 +13,7 @@ const ProblemItem = (props) => {
       <div className="rounded-lg flex-1 shadow-lg mx-auto bg-white">
         <div
           className={`${
-            solution ? "bg-gray-200" : "bg-gray-50"
+            reversed ? "bg-gray-200" : "bg-gray-50"
           } m-2 p-3 rounded-lg`}
         >
           <div className="text-green-800 font-semibold px-4 py-5">

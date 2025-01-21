@@ -1,5 +1,3 @@
-import React from "react";
-
 import AuthContainer from "../components/UI/AuthContainer";
 import SignupTitle from "../components/signup/SignupTitle";
 import SignupForm from "../components/signup/SignupForm";

@@ -11,6 +11,7 @@ import { googleSignin } from "../../api/auth";
 
 const GoogleLoginButton = () => {
   const [error, setError] = useState(false);
+
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const GoogleLoginButton = () => {
         onSuccess={handleGoogleSignin}
         useOneTap
       />
+
       {error && <ErrorText>Login failed. Try again</ErrorText>}
     </div>
   );

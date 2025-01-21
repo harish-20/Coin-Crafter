@@ -1,10 +1,9 @@
-import GoogleLoginButton from "../components/signin/GoogleLogin";
 import GreetTitle from "../components/signin/GreetTitle";
+import GoogleLoginButton from "../components/signin/GoogleLogin";
+import Divider from "../components/UI/Divider";
 import SigninForm from "../components/signin/SigninForm";
 import AuthContainer from "../components/UI/AuthContainer";
 import TermsDetails from "../components/signin/TermsDetails";
-
-const Divider = () => <hr className="mt-4 mb-8 border-white" />;
 
 const Signin = (props) => {
   return (

@@ -1,6 +1,8 @@
-import { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import List from "react-virtualized/dist/commonjs/List";
+
+import useWindowResize from "../../../hooks/useWindowResize";
+import useDimensions from "../../../hooks/useDimensions";
 
 import Spinner from "../../UI/Spinner";
 import ErrorView from "../../UI/ErrorView";
@@ -10,12 +12,7 @@ import TransactionItem from "./TransactionItem";
 
 import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 
-const THROTTLE_INTERVAL = 300;
-
 const TransactionList = () => {
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [rowHeight, setRowHeight] = useState(160); // Default row height
-
   const transactions = useSelector((state) => state.expense.expenses);
   const search = useSelector((state) => state.expense.search);
   const filters = useSelector((state) => state.expense.filters);
@@ -26,43 +23,12 @@ const TransactionList = () => {
     (state) => state.expense.errorState.isExpensesLoadingError
   );
 
-  const timerRef = useRef(null);
-  const containerRef = useRef(null);
-
   const dispatch = useDispatch();
 
-  const updateDimensions = () => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-
-    timerRef.current = setTimeout(() => {
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight - 200;
-      const isSmallScreen = windowWidth <= 768;
-
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.offsetWidth;
-        const containerHeight = isSmallScreen
-          ? windowHeight
-          : containerRef.current.offsetHeight;
-
-        setDimensions({
-          width: containerWidth,
-          height: containerHeight,
-        });
-
-        setRowHeight(isSmallScreen ? 200 : 160);
-      }
-    }, THROTTLE_INTERVAL);
-  };
-
-  useEffect(() => {
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
-  }, []);
+  // custom hooks
+  const { containerRef, dimensions, rowHeight, updateDimensions } =
+    useDimensions();
+  useWindowResize(updateDimensions);
 
   const rowRenderer = ({ index, style }) => {
     const transaction = transactions[index];
@@ -108,7 +74,7 @@ const TransactionList = () => {
   const shouldShowError = !isTransactionsLoading && isTransactionsLoadingError;
 
   return (
-    <div ref={containerRef} className="flex-1 flex flex-col my-6 gap-3">
+    <div ref={containerRef} className="flex-1 flex flex-col my-4 gap-3">
       {shouldShowError && (
         <ErrorView message="Cannot fetch transactions!" onRetry={handleRetry} />
       )}

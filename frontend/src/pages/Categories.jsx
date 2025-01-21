@@ -11,7 +11,7 @@ const Categories = (props) => {
     setIsFormOpen((prev) => !prev);
   };
   return (
-    <div className="px-4 md:px-8">
+    <div>
       <CategoryList toggleForm={toggleForm} />
 
       {isFormOpen && <Popup closeModal={toggleForm} Modal={AddCategoryForm} />}

@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { emailSignup } from "../../api/auth";
-
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
 import PoliciesCheckbox from "../UI/InputElements/PoliciesCheckbox";
 import Button from "../UI/Button";
 import SigninIcon from "../UI/Icons/SigninIcon";
 import ErrorText from "../UI/ErrorText";
-import Spinner from "../UI/Spinner";
 
 import { userActions } from "../../store/slices/user/userSlice";
+
+import { emailSignup } from "../../api/auth";
 
 import getErrorMessage from "../../helpers/getErrorMessage";
 import { validateEmail, validatePassword } from "../../helpers/validations";
@@ -88,8 +87,7 @@ const SignupForm = () => {
     setIsSigningUp(true);
     setFormError("");
 
-    const isValidForm = validateForm();
-    if (!isValidForm) return setIsSigningUp(false);
+    if (!validateForm()) return setIsSigningUp(false);
 
     try {
       const data = await emailSignup(
@@ -162,12 +160,9 @@ const SignupForm = () => {
 
       <div className="mt-6 text-center">
         {formError && <ErrorText className="mb-2">{formError}</ErrorText>}
-        <Button className="mt-0" disabled={isSigningUp}>
-          {isSigningUp ? (
-            <Spinner color="black" size={22} hideText />
-          ) : (
-            <SigninIconWithText />
-          )}
+
+        <Button className="mt-0" isLoading={isSigningUp}>
+          <SigninIconWithText />
         </Button>
       </div>
     </form>

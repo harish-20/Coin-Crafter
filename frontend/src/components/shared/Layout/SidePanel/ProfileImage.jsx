@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+
 import profile from "../../../../assets/profile.png";
 
 const ProfileImage = () => {
@@ -11,7 +12,7 @@ const ProfileImage = () => {
         <img src={profile} alt="Profile" />
       </div>
 
-      <h3>Hello, {firstName}</h3>
+      <h3>Hello, {firstName || "User"}</h3>
     </div>
   );
 };

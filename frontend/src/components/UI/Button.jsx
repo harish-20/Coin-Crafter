@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const white =
@@ -43,6 +44,24 @@ const Button = (props) => {
       {children}
     </button>
   );
+};
+
+Button.propTypes = {
+  className: PropTypes.string,
+  href: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  variant: PropTypes.oneOf(["default", "outlined"]),
+  otherProps: PropTypes.object,
+};
+
+Button.defaultProps = {
+  className: "",
+  href: null,
+  disabled: false,
+  isLoading: false,
+  variant: "default",
 };
 
 export default Button;

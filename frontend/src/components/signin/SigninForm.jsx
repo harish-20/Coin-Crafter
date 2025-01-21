@@ -7,11 +7,10 @@ import PasswordInput from "../UI/InputElements/PasswordInput";
 import Button from "../UI/Button";
 import LoginIcon from "../UI/Icons/LoginIcon";
 import ErrorText from "../UI/ErrorText";
-import Spinner from "../UI/Spinner";
-
-import { emailSignin } from "../../api/auth";
 
 import { userActions } from "../../store/slices/user/userSlice";
+
+import { emailSignin } from "../../api/auth";
 
 import getErrorMessage from "../../helpers/getErrorMessage";
 import { validateEmail, validatePassword } from "../../helpers/validations";
@@ -71,8 +70,7 @@ const SigninForm = () => {
     event.preventDefault();
     setIsFormSubmitted(true);
 
-    const isValidForm = validateForm();
-    if (!isValidForm) return;
+    if (!validateForm()) return;
 
     try {
       setIsSigningIn(true);
@@ -119,12 +117,8 @@ const SigninForm = () => {
       <div className="mt-6 text-center">
         {formError && <ErrorText className="mb-2">{formError}</ErrorText>}
 
-        <Button className="mt-0" disabled={isSigningIn}>
-          {isSigningIn ? (
-            <Spinner color="black" size={22} hideText />
-          ) : (
-            <LoginIconWithText />
-          )}
+        <Button className="mt-0" isLoading={isSigningIn}>
+          <LoginIconWithText />
         </Button>
       </div>
     </form>

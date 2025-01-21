@@ -3,10 +3,10 @@ import ProblemAndSolution from "../components/home/ProblemAndSolution";
 
 const Home = () => {
   return (
-    <div className="">
+    <>
       <HeroSection />
       <ProblemAndSolution />
-    </div>
+    </>
   );
 };
 

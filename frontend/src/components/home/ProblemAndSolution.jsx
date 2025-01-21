@@ -1,4 +1,3 @@
-import React from "react";
 import ProblemItem from "./ProblemItem";
 
 const problemSolution = {
@@ -35,7 +34,7 @@ const ProblemAndSolution = () => {
         title={solution.title}
         content={solution.content}
         list={solution.list}
-        solution
+        reversed
       />
     </div>
   );

@@ -21,7 +21,7 @@ const LogoutButton = (props) => {
   };
   return (
     <Button onClick={openLogoutPopup}>
-      <div className="flex gap-3 justify-center text-inherit">
+      <div className="flex gap-3 justify-center text-black">
         <img className="" src={logoutIcon} alt="logout" />
         Logout
       </div>
