@@ -6,9 +6,10 @@ import Signup from "./Signup";
 import DashBoard from "./DashBoard";
 import Transactions from "./Transactions";
 import Categories from "./Categories";
+
 import Layout from "../components/shared/Layout/Layout";
 
-import WithPageGuard from "../HOCs/WithAuth";
+import WithAuth from "../HOCs/WithAuth";
 
 const AllRoutes = () => {
   return (
@@ -16,34 +17,26 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route
         path="/signin"
-        element={
-          <WithPageGuard element={<Signin />} protection="without-auth" />
-        }
+        element={<WithAuth element={<Signin />} protection="without-auth" />}
       />
       <Route
         path="/signup"
-        element={
-          <WithPageGuard element={<Signup />} protection="without-auth" />
-        }
+        element={<WithAuth element={<Signup />} protection="without-auth" />}
       />
       <Route path="/" element={<Layout />}>
         <Route
           path="/dashboard"
-          element={
-            <WithPageGuard element={<DashBoard />} protection="with-auth" />
-          }
+          element={<WithAuth element={<DashBoard />} protection="with-auth" />}
         />
         <Route
           path="/transactions"
           element={
-            <WithPageGuard element={<Transactions />} protection="with-auth" />
+            <WithAuth element={<Transactions />} protection="with-auth" />
           }
         />
         <Route
           path="/categories"
-          element={
-            <WithPageGuard element={<Categories />} protection="with-auth" />
-          }
+          element={<WithAuth element={<Categories />} protection="with-auth" />}
         />
       </Route>
     </Routes>
