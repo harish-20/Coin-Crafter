@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+import Label from "../Label";
 import InputContainer from "./InputContainer";
 
 import icons from "../CategoryIcon";
@@ -61,7 +62,7 @@ const ExpenseDropDown = (props) => {
 
   return (
     <InputContainer>
-      <label className="">{label}</label>
+      <Label label={label} />
 
       <div className="relative mt-3">
         <div

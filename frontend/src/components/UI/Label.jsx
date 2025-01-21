@@ -1,5 +1,5 @@
 const Label = (props) => (
-  <label className="" htmlFor={props.id}>
+  <label className="font-semibold" htmlFor={props.id}>
     {props.label}
   </label>
 );

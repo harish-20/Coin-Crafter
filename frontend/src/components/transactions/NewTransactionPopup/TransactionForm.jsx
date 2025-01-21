@@ -11,6 +11,7 @@ import Button from "../../UI/Button";
 import { popupActions } from "../../../store/slices/popup/popupSlice";
 import { categoryThunks } from "../../../store/slices/category/categorySlice";
 import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
+import Title from "../../UI/Title";
 
 const TransactionForm = (props) => {
   const { className, closeModal, ...otherProps } = props;
@@ -71,11 +72,15 @@ const TransactionForm = (props) => {
   };
   return (
     <div
-      className={`bg-gray-900 rounded-lg flex flex-col ${className || ""}`}
+      className={`px-8 py-6 rounded-lg flex flex-col ${className || ""}`}
       {...otherProps}
     >
-      <form className="flex flex-col overflow-y-auto" onSubmit={handleSubmit}>
-        <div className="px-4 flex-1 overflow-y-auto">
+      <Title>Add Transaction</Title>
+      <form
+        className="pt-3 flex flex-col overflow-y-hidden"
+        onSubmit={handleSubmit}
+      >
+        <div className="flex-1 overflow-y-auto pr-2">
           <ExpenseDropDown
             label="Category"
             value={formData.category}
@@ -134,9 +139,7 @@ const TransactionForm = (props) => {
           />
         </div>
 
-        <div className="m-4">
-          <Button>Add Expense</Button>
-        </div>
+        <Button className="mt-4">Add Expense</Button>
       </form>
     </div>
   );

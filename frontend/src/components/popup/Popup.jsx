@@ -15,7 +15,7 @@ const Popup = (props) => {
 
     setTimeout(() => {
       closeModal();
-    }, 200);
+    }, 500);
   };
 
   const popupElement = (
@@ -25,7 +25,7 @@ const Popup = (props) => {
       <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
         <Modal
           closeModal={closeModalWithAnimation}
-          className={`bg-gray-900 max-h-[calc(100vh-70px)] rounded-lg min-w-[350px] md:min-w-[400px] ${
+          className={`bg-dark max-h-[calc(100vh-200px)] rounded-3xl min-w-[350px] md:min-w-[400px] ${
             closeAnimation ? "close-modal" : "open-modal"
           }`}
         />

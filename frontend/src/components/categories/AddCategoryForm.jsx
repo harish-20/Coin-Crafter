@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { createCategory } from "../../api/category";
 
+import Title from "../UI/Title";
 import Button from "../UI/Button";
 import IconInput from "../UI/InputElements/IconInput";
 import TextInput from "../UI/InputElements/TextInput";
@@ -69,10 +70,13 @@ const AddCategoryForm = (props) => {
 
   return (
     <form
-      className={`flex flex-col gap-2 overflow-y-auto ${props.className || ""}`}
+      className={`flex flex-col gap-2 pt-6 pb-4 px-8 overflow-y-auto ${
+        props.className || ""
+      }`}
       onSubmit={handleSubmit}
     >
-      <div className="flex-1 py-4 px-4 overflow-y-auto">
+      <Title>Add Category</Title>
+      <div className="flex-1 overflow-y-auto pr-2">
         <TextInput
           value={formData.title}
           onChange={handleChange}
@@ -82,30 +86,30 @@ const AddCategoryForm = (props) => {
           errorMessage={isFormSubmitted && formErrors.title}
         />
 
-        <h2 className="mt-4 mb-2">Expense Type</h2>
         <ExpenseTypeInput
+          label="Expense Type"
           expenseType={formData.expenseType}
           setExpenseType={(type) => updateFormData("expenseType", type)}
           errorMessage={isFormSubmitted && formErrors.expenseType}
         />
 
-        <h2 className="mt-4 mb-2 ">Display Icon</h2>
         <IconInput
+          label="Icon"
           icon={formData.icon}
           setIcon={(icon) => updateFormData("icon", icon)}
           errorMessage={isFormSubmitted && formErrors.icon}
         />
 
-        <h2 className="mt-4 mb-2">Color</h2>
         <ColorInput
+          label="Color"
           color={formData.backgroundColor}
           setColor={(color) => updateFormData("backgroundColor", color)}
           errorMessage={isFormSubmitted && formErrors.backgroundColor}
         />
       </div>
 
-      <div className="px-4 my-4">
-        <Button isLoading={isSubmitting} className="rounded-lg bg-dark">
+      <div className="my-4">
+        <Button isLoading={isSubmitting} className="rounded-full bg-dark">
           Add Category
         </Button>
       </div>

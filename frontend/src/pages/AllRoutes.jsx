@@ -27,7 +27,10 @@ const AllRoutes = () => {
           <WithPageGuard element={<Signup />} protection="without-auth" />
         }
       />
-      <Route path="/" element={<Layout />}>
+      <Route
+        path="/"
+        element={<WithPageGuard element={<Layout />} protection="with-auth" />}
+      >
         <Route
           path="/dashboard"
           element={

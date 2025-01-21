@@ -1,5 +1,6 @@
 import IncomeIcon from "../Icons/IncomeIcon";
 import SpentIcon from "../Icons/SpentIcon";
+import Label from "../Label";
 
 const expenseTypes = [
   {
@@ -14,11 +15,12 @@ const expenseTypes = [
   },
 ];
 const ExpenseTypeInput = (props) => {
-  const { expenseType, setExpenseType, errorMessage } = props;
+  const { expenseType, setExpenseType, label, errorMessage } = props;
 
   return (
-    <>
-      <div className="grid grid-cols-5 gap-3">
+    <div className="mt-3">
+      <Label label={label} />
+      <div className="grid grid-cols-5 gap-3 mt-2">
         {expenseTypes.map(({ type, Icon, bgColor }, index) => (
           <div
             key={index}
@@ -37,7 +39,7 @@ const ExpenseTypeInput = (props) => {
       {errorMessage && (
         <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
       )}
-    </>
+    </div>
   );
 };
 

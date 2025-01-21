@@ -1,8 +1,6 @@
-import React from "react";
-
 const Title = (props) => {
   return (
-    <h2 className={`font-bold text-xl md:text-2xl ${props.className || ""}`}>
+    <h2 className={`font-medium text-xl md:text-2xl ${props.className || ""}`}>
       {props.children}
     </h2>
   );

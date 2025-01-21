@@ -1,20 +1,19 @@
 .open-modal {
   opacity: 0;
-  animation: popup-open 400ms ease forwards;
+  animation: popup-open 500ms ease forwards;
 }
 
 .close-modal {
-  opacity: 1;
-  animation: popup-close 300ms ease-in forwards;
+  animation: popup-close 500ms ease-in forwards;
 }
 
 @keyframes popup-open {
   0% {
-    transform: translateY(80px);
+    transform: translateY(-200%);
     opacity: 0;
   }
-  70% {
-    transform: translateY(-20px);
+  60% {
+    transform: translateY(30px);
   }
   100% {
     transform: translateY(0px);
@@ -23,12 +22,15 @@
 }
 
 @keyframes popup-close {
-  from {
+  0% {
     transform: translateY(0px);
     opacity: 1;
   }
-  to {
-    transform: translateY(80px);
+  40% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-200%);
     opacity: 0;
   }
 }

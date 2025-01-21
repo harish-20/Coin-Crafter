@@ -1,4 +1,5 @@
 import icons from "../CategoryIcon";
+import Label from "../Label";
 
 const IconItem = ({ isSelected, Icon, toggleIcon }) => (
   <div
@@ -14,7 +15,7 @@ const IconItem = ({ isSelected, Icon, toggleIcon }) => (
 );
 
 const IconInput = (props) => {
-  const { icon, setIcon, errorMessage } = props;
+  const { icon, setIcon, label, errorMessage } = props;
 
   const toggleIcon = (selectedIcon) => {
     setIcon(selectedIcon);
@@ -31,14 +32,15 @@ const IconInput = (props) => {
   ));
 
   return (
-    <>
-      <div className="grid grid-cols-5 gap-4 place-content-center place-items-center">
+    <div className="mt-3">
+      <Label label={label} />
+      <div className="grid grid-cols-5 gap-4 place-content-center place-items-center mt-2">
         {selectableIcons}
       </div>
       {errorMessage && (
         <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
       )}
-    </>
+    </div>
   );
 };
 

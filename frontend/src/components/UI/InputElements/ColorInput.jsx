@@ -1,3 +1,5 @@
+import Label from "../Label";
+
 const availableColors = [
   "#756AB6",
   "#E36414",
@@ -24,11 +26,12 @@ const availableColors = [
 ];
 
 const ColorInput = (props) => {
-  const { color, setColor, errorMessage } = props;
+  const { color, setColor, label, errorMessage } = props;
 
   return (
-    <>
-      <div className="grid grid-cols-5 gap-4 place-content-center place-items-center">
+    <div className="mt-3">
+      <Label label={label} />
+      <div className="grid grid-cols-5 gap-4 place-content-center place-items-center mt-2">
         {availableColors.map((availableColor, index) => (
           <div
             key={index}
@@ -45,7 +48,7 @@ const ColorInput = (props) => {
       {errorMessage && (
         <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
       )}
-    </>
+    </div>
   );
 };
 
