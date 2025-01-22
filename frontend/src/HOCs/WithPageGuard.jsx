@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import Spinner from "../components/UI/Spinner";
+import SplashScreen from "../components/UI/SplashScreen/SplashScreen";
 
 import { userThunks } from "../store/slices/user/userSlice";
 
@@ -25,11 +25,7 @@ const WithPageGuard = (props) => {
   }, []);
 
   if (isUserLoading) {
-    return (
-      <div className="flex justify-center h-screen">
-        <Spinner size="50" />
-      </div>
-    );
+    return <SplashScreen />;
   }
 
   if (protection === "with-auth" && !userDetails)

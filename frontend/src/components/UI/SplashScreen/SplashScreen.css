@@ -1,0 +1,30 @@
+.inner-logo {
+  animation: pulse 2s ease infinite;
+}
+
+.outer-ring {
+  animation: spin-fade 2s ease infinite forwards;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin-fade {
+  0% {
+    transform: rotate(0);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-320deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-320deg) scale(1.4);
+  }
+}
