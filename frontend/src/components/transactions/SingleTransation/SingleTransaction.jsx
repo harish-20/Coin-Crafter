@@ -23,7 +23,7 @@ const SingleTransaction = () => {
           expenseOnEditMode ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <TransactionForm />
+        <TransactionForm closeModal={handleClose} />
       </div>
     </>
   );
