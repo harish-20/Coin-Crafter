@@ -11,7 +11,7 @@ const Categories = (props) => {
     setIsFormOpen((prev) => !prev);
   };
   return (
-    <div>
+    <div className="fade-in">
       <CategoryList toggleForm={toggleForm} />
 
       {isFormOpen && <Popup closeModal={toggleForm} Modal={AddCategoryForm} />}

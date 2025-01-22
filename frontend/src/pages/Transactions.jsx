@@ -5,7 +5,6 @@ import SearchBar from "../components/transactions/SearchBar/SearchBar";
 
 import ListControl from "../components/transactions/ListControl/ListControl";
 import TransactionList from "../components/transactions/TransactionList/TransactionList";
-import SingleTransaction from "../components/transactions/SingleTransation/SingleTransaction";
 
 import {
   expenseActions,
@@ -53,11 +52,10 @@ const Transactions = () => {
   }, [search]);
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="fade-in flex flex-col h-full">
       <SearchBar />
       <ListControl />
       <TransactionList />
-      <SingleTransaction />
     </div>
   );
 };

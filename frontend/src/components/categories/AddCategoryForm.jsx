@@ -20,6 +20,8 @@ const intialFormData = {
 };
 
 const AddCategoryForm = (props) => {
+  const { closeModal } = props;
+
   const [formData, setFormData] = useState(intialFormData);
   const [formErrors, setFormErrors] = useState(intialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -108,9 +110,12 @@ const AddCategoryForm = (props) => {
         />
       </div>
 
-      <div className="my-4">
+      <div className="mt-4 flex gap-2">
+        <Button variant="outlined" type="button" onClick={closeModal}>
+          Cancel
+        </Button>
         <Button isLoading={isSubmitting} className="rounded-full bg-dark">
-          Add Category
+          Add
         </Button>
       </div>
     </form>

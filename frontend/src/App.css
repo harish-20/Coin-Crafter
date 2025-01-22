@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body{
-  font-family:  'Noto Sans', sans-serif;
+body {
+  font-family: "Noto Sans", sans-serif;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: rgb(120, 120, 120);
   border-radius: 5px;
 }
@@ -12,27 +12,40 @@ body{
 ::-webkit-scrollbar {
   width: 5px;
   background-color: rgb(29, 29, 29);
-  border-radius: 10px
+  border-radius: 10px;
 }
 
-*{
+* {
   @apply text-white;
 }
 
-.float-animate{
+.float-animate {
   animation: float 2s alternate infinite ease-in-out;
 }
 
 /* to hide the cart credits */
-.canvasjs-chart-credit{
-display: none;
+.canvasjs-chart-credit {
+  display: none;
 }
 
-@keyframes float{
-  from{
+.fade-in {
+  animation: fade-in 700ms ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  from {
     transform: translateY(0);
   }
-  to{
+  to {
     transform: translateY(10px);
   }
 }

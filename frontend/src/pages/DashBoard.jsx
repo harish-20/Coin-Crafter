@@ -18,7 +18,7 @@ const DashBoard = () => {
   const isDashboardLoading = isExpenseLoading || isAvailableFilterLoading;
 
   return (
-    <div>
+    <div className="fade-in">
       {isDashboardLoading && <Spinner size="50" className="my-auto h-full" />}
 
       {!isDashboardLoading && (

@@ -14,7 +14,9 @@ import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 import { getSingleExpense } from "../../../api/expense";
 
 // used this form for both update and creating an expense
-const TransactionForm = () => {
+const TransactionForm = (props) => {
+  const { closeModal } = props;
+
   const defaultCategories = useSelector(
     (state) => state.category.defaultCategories
   );
@@ -107,60 +109,73 @@ const TransactionForm = () => {
 
   return (
     <div className="p-10 h-full overflow-auto">
-      <form className="" onSubmit={handleSubmit}>
-        <ExpenseDropDown
-          label="Category"
-          value={formData.category}
-          onChange={(value) => handleChange("category", value)}
-          expenseList={[...defaultCategories, ...customCategories]}
-          errorMessage={
-            isFormSubmitted && formErrors.expense && "Select a expense type"
-          }
-        />
+      <form className="flex flex-col h-full" onSubmit={handleSubmit}>
+        <div className="flex flex-1 flex-col">
+          <ExpenseDropDown
+            label="Category"
+            value={formData.category}
+            onChange={(value) => handleChange("category", value)}
+            expenseList={[...defaultCategories, ...customCategories]}
+            errorMessage={
+              isFormSubmitted && formErrors.expense && "Select a expense type"
+            }
+          />
 
-        <TextInput
-          id="amount"
-          label="Amount"
-          value={formData.amount}
-          onChange={(event) => handleChange("amount", event.target.value)}
-          errorMessage={
-            isFormSubmitted && formErrors.amount && "Enter a valid amount"
-          }
-        />
+          <TextInput
+            id="amount"
+            label="Amount"
+            value={formData.amount}
+            onChange={(event) => handleChange("amount", event.target.value)}
+            errorMessage={
+              isFormSubmitted && formErrors.amount && "Enter a valid amount"
+            }
+          />
 
-        <TextAreaInput
-          id="description"
-          label="Description"
-          rows={5}
-          value={formData.description}
-          onChange={(event) => handleChange("description", event.target.value)}
-          errorMessage={
-            isFormSubmitted &&
-            formErrors.description &&
-            "Enter a valid description"
-          }
-        />
+          <TextAreaInput
+            id="description"
+            label="Description"
+            rows={5}
+            value={formData.description}
+            onChange={(event) =>
+              handleChange("description", event.target.value)
+            }
+            errorMessage={
+              isFormSubmitted &&
+              formErrors.description &&
+              "Enter a valid description"
+            }
+          />
 
-        <DateInput
-          id="date"
-          label="Date"
-          value={formData.date}
-          onChange={(event) => handleChange("date", event.target.value)}
-        />
+          <DateInput
+            id="date"
+            label="Date"
+            value={formData.date}
+            onChange={(event) => handleChange("date", event.target.value)}
+          />
 
-        <TimeInput
-          id="time"
-          label="Time"
-          value={formData.time}
-          onChange={(event) => {
-            const [hours, minutes] = event.target.value.split(":");
-            const updatedTime = new Date();
-            updatedTime.setHours(parseInt(hours, 10), parseInt(minutes, 10), 0);
-            handleChange("time", updatedTime.toISOString());
-          }}
-        />
+          <TimeInput
+            id="time"
+            label="Time"
+            value={formData.time}
+            onChange={(event) => {
+              const [hours, minutes] = event.target.value.split(":");
+              const updatedTime = new Date();
+              updatedTime.setHours(
+                parseInt(hours, 10),
+                parseInt(minutes, 10),
+                0
+              );
+              handleChange("time", updatedTime.toISOString());
+            }}
+          />
+        </div>
 
-        <Button className="mt-4">Edit Expense</Button>
+        <div className="mt-4 flex gap-2">
+          <Button variant="outlined" onClick={closeModal} type="button">
+            Cancel
+          </Button>
+          <Button>Update</Button>
+        </div>
       </form>
     </div>
   );

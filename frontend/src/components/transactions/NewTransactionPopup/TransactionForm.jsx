@@ -72,7 +72,7 @@ const TransactionForm = (props) => {
   };
   return (
     <div
-      className={`px-8 py-6 rounded-lg flex flex-col ${className || ""}`}
+      className={`px-8 py-6 flex flex-col ${className || ""}`}
       {...otherProps}
     >
       <Title>Add Transaction</Title>
@@ -139,7 +139,12 @@ const TransactionForm = (props) => {
           />
         </div>
 
-        <Button className="mt-4">Add Expense</Button>
+        <div className="mt-4 flex gap-2">
+          <Button variant="outlined" type="button" onClick={closeModal}>
+            Cancel
+          </Button>
+          <Button>Add</Button>
+        </div>
       </form>
     </div>
   );

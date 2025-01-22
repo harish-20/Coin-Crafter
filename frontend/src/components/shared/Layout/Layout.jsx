@@ -6,6 +6,7 @@ import SidePanel from "./SidePanel/SidePanel";
 
 import NewTransactionPopup from "../../transactions/NewTransactionPopup/NewTransactionPopup";
 import LogoutPopup from "../LogoutPopup/LogoutPopup";
+import SingleTransaction from "../../transactions/SingleTransation/SingleTransaction";
 
 import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
 import { chartThunks } from "../../../store/slices/chart/chartSlice";
@@ -30,6 +31,7 @@ const Layout = () => {
       {/* popups */}
       <NewTransactionPopup />
       <LogoutPopup />
+      <SingleTransaction />
     </div>
   );
 };

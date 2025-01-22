@@ -7,6 +7,20 @@ const white =
 const outlined =
   "bg-transparent text-white border-2 border-white focus:shadow-white focus:shadow-md transition-all duration-200 hover:bg-white hover:text-black";
 
+/**
+ * Button component for handling both link and button elements with customizable styles and functionality.
+ *
+ * @param {Object} props - Props object for the Button component.
+ * @param {string} [props.className] - Additional CSS classes to apply to the button or link.
+ * @param {string} [props.href] - If provided, renders a `Link` component (React Router) instead of a `button`.
+ * @param {boolean} [props.disabled=false] - Disables the button, preventing user interaction.
+ * @param {boolean} [props.isLoading=false] - Shows a loading spinner overlay when `true`.
+ * @param {"default"|"outlined"} [props.variant="default"] - Style variant for the button.
+ * @param {React.ReactNode} props.children - The content to display inside the button or link.
+ * @param {Object} [props.otherProps] - Additional props to spread onto the button or link element.
+ *
+ * @returns {React.ReactElement} A styled `button` or `Link` element.
+ */
 const Button = (props) => {
   const {
     className,

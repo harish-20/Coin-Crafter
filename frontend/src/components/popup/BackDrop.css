@@ -1,13 +1,13 @@
 .backdrop {
-  animation: fade-in 200ms ease-in forwards;
+  animation: fade-in-backdrop 200ms ease-in forwards;
   opacity: 0;
 }
 
-@keyframes fade-in {
+@keyframes fade-in-backdrop {
   from {
     opacity: 0;
   }
   to {
-    opacity: 0.3;
+    opacity: 0.5;
   }
 }

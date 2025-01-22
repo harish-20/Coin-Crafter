@@ -19,7 +19,7 @@ const SingleTransaction = () => {
     <>
       {expenseOnEditMode && <BackDrop onClick={handleClose} />}
       <div
-        className={`z-50 h-screen w-[300px] md:w-[500px] duration-300 fixed top-0 right-0 bg-dark ease-in-out ${
+        className={`z-50 h-screen w-[300px] md:w-[500px] duration-500 fixed top-0 right-0 bg-dark ease-out ${
           expenseOnEditMode ? "translate-x-0" : "translate-x-full"
         }`}
       >
