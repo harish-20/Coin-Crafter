@@ -13,7 +13,6 @@ const useWindowResize = (callback) => {
       const windowHeight = window.innerHeight - 200;
       const isSmallScreen = windowWidth <= 768;
 
-      console.log("called");
       callback(windowWidth, windowHeight, isSmallScreen);
     }, THROTTLE_INTERVAL);
   };
