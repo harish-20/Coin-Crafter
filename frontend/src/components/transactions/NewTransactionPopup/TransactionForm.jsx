@@ -22,6 +22,12 @@ const TransactionForm = (props) => {
   const customCategories = useSelector(
     (state) => state.category.customCategories
   );
+  const isExpenseAdding = useSelector(
+    (state) => state.expense.loadingState.isExpenseAdding
+  );
+  const isExpenseAddingError = useSelector(
+    (state) => state.expense.errorState.isExpenseAddingError
+  );
 
   const [formData, setFormData] = useState({
     category: "",
@@ -52,7 +58,7 @@ const TransactionForm = (props) => {
     setFormErrors((prev) => ({ ...prev, [key]: !value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setIsFormSubmitted(true);
 
@@ -66,8 +72,12 @@ const TransactionForm = (props) => {
     if (hasError) {
       setFormErrors(collectedFormErrors);
     } else {
-      dispatch(expenseThunks.createTransaction(formData));
-      dispatch(popupActions.togglePopup("none"));
+      try {
+        await dispatch(expenseThunks.createTransaction(formData)).unwrap();
+        dispatch(popupActions.togglePopup("none"));
+      } catch (error) {
+        console.log("Cannot add transaction");
+      }
     }
   };
   return (
@@ -139,11 +149,18 @@ const TransactionForm = (props) => {
           />
         </div>
 
-        <div className="mt-4 flex gap-2">
-          <Button variant="outlined" type="button" onClick={closeModal}>
-            Cancel
-          </Button>
-          <Button>Add</Button>
+        <div className="mt-4">
+          {isExpenseAddingError && (
+            <p className="my-2 text-sm text-center text-red-500">
+              Cannot add transaction. Try again.
+            </p>
+          )}
+          <div className="flex gap-2">
+            <Button variant="outlined" type="button" onClick={closeModal}>
+              Cancel
+            </Button>
+            <Button isLoading={isExpenseAdding}>Add</Button>
+          </div>
         </div>
       </form>
     </div>

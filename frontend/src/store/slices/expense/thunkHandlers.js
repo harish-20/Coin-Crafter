@@ -16,12 +16,14 @@ export const getAllTransaction = {
 export const createTransaction = {
   pending: (state, action) => {
     state.errorState.isExpenseAddingError = false;
+    state.loadingState.isExpenseAdding = true;
   },
   fulfilled: (state, action) => {
     state.loadingState.isExpenseAdding = false;
   },
   rejected: (state, action) => {
     state.loadingState.isExpenseAdding = false;
+    state.errorState.isExpenseAddingError = true;
   },
 };
 

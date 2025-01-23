@@ -57,6 +57,10 @@ const expenseSlice = createSlice({
         thunks.createTransaction.fulfilled,
         thunkHandlers.createTransaction.fulfilled
       )
+      .addCase(
+        thunks.createTransaction.rejected,
+        thunkHandlers.createTransaction.rejected
+      )
       // Update transaction
       .addCase(
         thunks.updateTransaction.pending,

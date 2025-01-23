@@ -30,22 +30,18 @@ export const getAvailableFilter = async () => {
 };
 
 export const createExpense = async (data) => {
-  try {
-    const { user, category, amount, date, time, shortNote, tags } = data;
-    const result = await api.post("/expense/create", {
-      user,
-      category,
-      amount,
-      shortNote,
-      tags,
-      date,
-      time,
-    });
+  const { user, category, amount, date, time, shortNote, tags } = data;
+  const result = await api.post("/expense/create", {
+    user,
+    category,
+    amount,
+    shortNote,
+    tags,
+    date,
+    time,
+  });
 
-    return result.data;
-  } catch (error) {
-    console.log(error);
-  }
+  return result.data;
 };
 
 export const updateExpense = async (data) => {
