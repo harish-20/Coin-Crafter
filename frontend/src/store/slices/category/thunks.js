@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import * as categoryApi from "../../../api/category";
+import { categoryAPI } from "../../../api";
 
 export const getDefaultCategories = createAsyncThunk(
   "categories-getDefaultCategories",
   async (arg, thunkAPI) => {
     try {
-      const categories = await categoryApi.getDefaultCategories();
+      const categories = await categoryAPI.getDefaultCategories();
 
       return categories;
     } catch (err) {
@@ -19,7 +19,7 @@ export const getCustomCategories = createAsyncThunk(
   "categories-getCustomCategories",
   async (arg, thunkAPI) => {
     try {
-      const categories = await categoryApi.getCustomCategories();
+      const categories = await categoryAPI.getCustomCategories();
 
       return categories;
     } catch (err) {

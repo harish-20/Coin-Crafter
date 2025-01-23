@@ -1,11 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import * as expenseApi from "../../../api/expense";
+
+import { expenseAPI } from "../../../api";
 
 export const getAvailableFilter = createAsyncThunk(
   "get-available-filters",
   async (args, thunkApi) => {
     try {
-      const filters = await expenseApi.getAvailableFilter();
+      const filters = await expenseAPI.getAvailableFilter();
 
       return filters;
     } catch (error) {
@@ -19,7 +20,7 @@ export const getFilteredData = createAsyncThunk(
   async (args, thunkApi) => {
     try {
       const { month, year } = thunkApi.getState().chart.filters;
-      const filteredData = await expenseApi.getAllExpense({
+      const filteredData = await expenseAPI.getAllExpense({
         month,
         year,
       });

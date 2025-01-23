@@ -23,3 +23,10 @@ api.interceptors.request.use((config) => {
 //   await new Promise((res, rej) => setTimeout(res, 2000));
 //   return response;
 // });
+
+// Exporting all available APIs
+import * as authAPI from "./auth";
+import * as categoryAPI from "./category";
+import * as expenseAPI from "./expense";
+
+export { authAPI, categoryAPI, expenseAPI };

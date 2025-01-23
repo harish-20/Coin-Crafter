@@ -1,11 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import * as authApi from "../../../api/auth";
+
+import { authAPI } from "../../../api";
 
 export const getUser = createAsyncThunk("get-user", async (args, thunkApi) => {
   try {
     const token = localStorage.getItem("access-token");
     if (token) {
-      const data = await authApi.getUser();
+      const data = await authAPI.getUser();
       if (data) {
         return data.user;
       } else {
