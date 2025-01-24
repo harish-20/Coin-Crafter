@@ -24,7 +24,7 @@ const WithPageGuard = (props) => {
     if (!userDetails) dispatch(userThunks.getUser());
   }, []);
 
-  if (true) {
+  if (isUserLoading) {
     return <SplashScreen />;
   }
 
