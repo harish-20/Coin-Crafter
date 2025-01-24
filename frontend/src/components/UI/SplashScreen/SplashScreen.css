@@ -1,9 +1,14 @@
+.splash-screen > div {
+  animation: rise-up 800ms ease forwards;
+}
+
 .inner-logo {
   animation: pulse 2s ease infinite;
 }
 
 .outer-ring {
   animation: spin-fade 2s ease infinite forwards;
+  animation-delay: 800ms;
 }
 
 @keyframes pulse {
@@ -26,5 +31,16 @@
   100% {
     opacity: 0;
     transform: rotate(-320deg) scale(1.4);
+  }
+}
+
+@keyframes rise-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

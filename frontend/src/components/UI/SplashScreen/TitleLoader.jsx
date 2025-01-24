@@ -11,7 +11,10 @@ const TitleLoader = (props) => {
     };
 
     if (noOfLettersVisible >= title.length) return;
-    const interval = setInterval(increseLetters, 300);
+    const interval = setInterval(
+      increseLetters,
+      noOfLettersVisible === 1 ? 1000 : 300
+    );
 
     return () => {
       clearInterval(interval);
