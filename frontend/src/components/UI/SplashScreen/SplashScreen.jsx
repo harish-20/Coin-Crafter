@@ -6,7 +6,7 @@ import "./SplashScreen.css";
 
 const SplashScreen = () => {
   return (
-    <div className="h-screen translate-y-[-10%] w-full flex flex-col items-center justify-center">
+    <div className="fade-in h-screen translate-y-[-10%] w-full flex flex-col items-center justify-center">
       <LogoSpinner />
       <TitleLoader title="Coin Crafter" />
       <Hints />
