@@ -18,20 +18,20 @@ const PolicyLabel = (props) => (
 );
 
 const PoliciesCheckbox = (props) => {
+  const { register, id, errorMessage } = props;
   return (
     <>
       <div className="flex mt-4">
         <input
-          id={props.id}
-          value={props.value}
-          onChange={props.onChange}
+          id={id}
+          {...register}
           className="bg-transparent accent-slate-600"
           type="checkbox"
         />
-        <PolicyLabel id={props.id} />
+        <PolicyLabel id={id} />
       </div>
-      {props.errorMessage && (
-        <div className="mt-1 text-red-500 text-xs">{props.errorMessage}</div>
+      {errorMessage && (
+        <div className="mt-1 text-red-500 text-xs">{errorMessage}</div>
       )}
     </>
   );

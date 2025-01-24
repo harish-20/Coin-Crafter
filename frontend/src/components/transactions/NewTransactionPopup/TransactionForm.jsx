@@ -97,7 +97,7 @@ const TransactionForm = (props) => {
             onChange={(value) => handleChange("category", value)}
             expenseList={[...defaultCategories, ...customCategories]}
             errorMessage={
-              isFormSubmitted && formErrors.expense && "Select a expense type"
+              isFormSubmitted && formErrors.category && "Select a category"
             }
           />
 

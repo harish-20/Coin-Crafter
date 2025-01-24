@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import TextInput from "../UI/InputElements/TextInput";
 import PasswordInput from "../UI/InputElements/PasswordInput";
@@ -11,18 +13,11 @@ import ErrorText from "../UI/ErrorText";
 
 import { userActions } from "../../store/slices/user/userSlice";
 
+import { signupSchema } from "../../zodSchemas";
+
 import { emailSignup } from "../../api/auth";
 
 import getErrorMessage from "../../helpers/getErrorMessage";
-import { validateEmail, validatePassword } from "../../helpers/validations";
-
-const initialFormData = {
-  name: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  isPoliciesAccepted: false,
-};
 
 const SigninIconWithText = () => (
   <div className="flex items-center justify-center gap-2 text-zinc-800">
@@ -31,64 +26,20 @@ const SigninIconWithText = () => (
 );
 
 const SignupForm = () => {
-  const [formData, setFormData] = useState(initialFormData);
-  const [invalidData, setInvalidData] = useState({
-    name: false,
-    email: false,
-    password: false,
-    confirmPassword: false,
-  });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [isSigningUp, setIsSigningUp] = useState(false);
   const [formError, setFormError] = useState("");
+
+  const {
+    register,
+    formState,
+    handleSubmit: onSubmit,
+  } = useForm({
+    resolver: zodResolver(signupSchema),
+  });
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const validateForm = () => {
-    const isValidName = !!formData.name?.trim();
-    const isValidEmail = validateEmail(formData.email);
-    const isValidPassword = validatePassword(formData.password);
-    const isValidConfirmPassword =
-      validatePassword(formData.confirmPassword) &&
-      formData.password === formData.confirmPassword;
-
-    setInvalidData({
-      name: !isValidName,
-      email: !isValidEmail,
-      password: !isValidPassword,
-      confirmPassword: !isValidConfirmPassword,
-    });
-
-    return (
-      isValidName && isValidEmail && isValidPassword && isValidConfirmPassword
-    );
-  };
-
-  useEffect(() => {
-    if (isFormSubmitted) validateForm();
-  }, [formData]);
-
-  const changeHandler = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const togglePolicyCheckBox = () => {
-    setFormData((prev) => ({
-      ...prev,
-      isPoliciesAccepted: !prev.isPoliciesAccepted,
-    }));
-  };
-
-  const submitHandler = async (event) => {
-    event.preventDefault();
-    setIsFormSubmitted(true);
-    setIsSigningUp(true);
-    setFormError("");
-
-    if (!validateForm()) return setIsSigningUp(false);
-
+  const handleSubmit = async (formData) => {
     try {
       const data = await emailSignup(
         formData.name,
@@ -104,64 +55,50 @@ const SignupForm = () => {
       const errorMessage = getErrorMessage(errorCode);
 
       setFormError(errorMessage || "Something went wrong. Cannot Signin");
-    } finally {
-      setIsSigningUp(false);
     }
   };
 
   return (
-    <form className="flex-1 mt-8" onSubmit={submitHandler} autoComplete="on">
+    <form
+      className="flex-1 mt-8"
+      onSubmit={onSubmit(handleSubmit)}
+      autoComplete="on"
+    >
       <TextInput
         label="Name"
         id="name"
-        name="name"
-        value={formData.name}
-        onChange={changeHandler}
-        errorMessage={invalidData.name && "Enter a valid name"}
+        register={register("name")}
+        errorMessage={formState.errors?.name?.message}
       />
       <TextInput
         label="Email"
         id="email"
-        name="email"
-        value={formData.email}
-        onChange={changeHandler}
-        errorMessage={invalidData.email && "Enter a valid email"}
+        register={register("email")}
+        errorMessage={formState.errors?.email?.message}
       />
       <PasswordInput
+        id="password"
         label="Password"
-        name="password"
-        value={formData.password}
-        onChange={changeHandler}
-        errorMessage={
-          invalidData.password &&
-          "Enter a valid password (A-B a-b 0-9 length-8)"
-        }
+        register={register("password")}
+        errorMessage={formState.errors?.password?.message}
       />
       <PasswordInput
         label="Confirm Password"
         name="confirmPassword"
-        value={formData.confirmPassword}
-        onChange={changeHandler}
-        errorMessage={
-          invalidData.confirmPassword && "Password is not matching or invalid"
-        }
+        register={register("confirmPassword")}
+        errorMessage={formState.errors?.confirmPassword?.message}
       />
 
       <PoliciesCheckbox
         id="policy"
-        value={formData.isPoliciesAccepted}
-        onChange={togglePolicyCheckBox}
-        errorMessage={
-          isFormSubmitted &&
-          !formData.isPoliciesAccepted &&
-          "Please check and accept the terms and condition"
-        }
+        register={register("isPoliciesAccepted")}
+        errorMessage={formState.errors?.isPoliciesAccepted?.message}
       />
 
       <div className="mt-6 text-center">
         {formError && <ErrorText className="mb-2">{formError}</ErrorText>}
 
-        <Button className="mt-0" isLoading={isSigningUp}>
+        <Button className="mt-0" isLoading={formState.isSubmitting}>
           <SigninIconWithText />
         </Button>
       </div>
