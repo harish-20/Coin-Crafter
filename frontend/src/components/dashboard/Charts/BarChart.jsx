@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import CanvasJSReact from "@canvasjs/react-charts";
 
+import EmptyTransaction from "../../transactions/TransactionList/EmptyTransaction";
 import EmptyData from "../../UI/EmptyData/EmptyData";
 import Spinner from "../../UI/Spinner";
 
 import { expensesToCategoryDataPoints } from "../../../helpers/dataProcessing";
-import EmptyTransaction from "../../transactions/TransactionList/EmptyTransaction";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 

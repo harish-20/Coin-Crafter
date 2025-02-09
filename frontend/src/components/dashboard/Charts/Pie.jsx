@@ -48,9 +48,11 @@ export default Pie;
 function getOptionsWithData(dataPoints) {
   return {
     theme: "dark2",
-    colorSet: "customColor",
     backgroundColor: "#0000",
     animationEnabled: true,
+    toolTip: {
+      shared: true,
+    },
     legend: {
       horizontalAlign: "right",
       verticalAlign: "center",
