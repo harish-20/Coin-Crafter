@@ -9,25 +9,28 @@ const DashBoard = () => {
   const expenses = useSelector((state) => state.expense.expenses);
 
   const isExpenseLoading = useSelector(
-    (state) => state.expense.loadingState.isExpenseLoading
+    (state) => state.expense.isExpenseLoading
   );
+
   const isAvailableFilterLoading = useSelector(
-    (state) => state.chart.isAvailableFilterLoading
+    (state) => state.chart.loadingState.isAvailableFilterLoading
   );
 
   const isDashboardLoading = isExpenseLoading || isAvailableFilterLoading;
 
+  if (isDashboardLoading) {
+    return (
+      <div className="flex flex-col justify-center h-full">
+        <Spinner size="50" className="my-auto h-auto flex-1" />
+      </div>
+    );
+  }
+
   return (
     <div className="fade-in">
-      {isDashboardLoading && <Spinner size="50" className="my-auto h-full" />}
-
-      {!isDashboardLoading && (
-        <>
-          <Filters />
-          <Charts />
-          <ExpenseList expenses={expenses?.slice(0, 5)} />
-        </>
-      )}
+      <Filters />
+      <Charts />
+      <ExpenseList expenses={expenses?.slice(0, 5)} />
     </div>
   );
 };
