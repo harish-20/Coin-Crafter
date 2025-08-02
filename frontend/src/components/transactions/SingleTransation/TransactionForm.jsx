@@ -9,9 +9,18 @@ import TimeInput from "../../UI/InputElements/TimeInput";
 import Spinner from "../../UI/Spinner";
 import Button from "../../UI/Button";
 
-import { expenseThunks } from "../../../store/slices/expense/expenseSlice";
+import {
+  expenseActions,
+  expenseThunks,
+} from "../../../store/slices/expense/expenseSlice";
 
 import { getSingleExpense } from "../../../api/expense";
+import DeleteIcon from "../../UI/Icons/DeleteIcon";
+import { popupActions } from "../../../store/slices/popup/popupSlice";
+
+import getAvailablePopups from "../../../helpers/getAvailablePopups";
+
+const { deleteTransactionPopup } = getAvailablePopups();
 
 // used this form for both update and creating an expense
 const TransactionForm = (props) => {
@@ -74,6 +83,17 @@ const TransactionForm = (props) => {
     setFormErrors((prev) => ({ ...prev, [key]: !value }));
   };
 
+  const handleDelete = () => {
+    dispatch(expenseActions.toggleEditMode());
+    dispatch(
+      expenseActions.setDeleteTransactionTarget({
+        id: expenseOnEditMode,
+        description: formData.description,
+      })
+    );
+    dispatch(popupActions.togglePopup(deleteTransactionPopup));
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsFormSubmitted(true);
@@ -110,6 +130,15 @@ const TransactionForm = (props) => {
   return (
     <div className="p-10 h-full overflow-auto">
       <form className="flex flex-col h-full" onSubmit={handleSubmit}>
+        <div className="flex justify-end">
+          <div
+            className="p-2 rounded-md cursor-pointer hover:bg-red-500/40"
+            onClick={handleDelete}
+          >
+            <DeleteIcon className="fill-red-500" />
+          </div>
+        </div>
+
         <div className="flex flex-1 flex-col">
           <ExpenseDropDown
             label="Category"
@@ -170,7 +199,7 @@ const TransactionForm = (props) => {
           />
         </div>
 
-        <div className="mt-4 flex gap-2">
+        <div className="mt-3 flex gap-2">
           <Button variant="outlined" onClick={closeModal} type="button">
             Cancel
           </Button>

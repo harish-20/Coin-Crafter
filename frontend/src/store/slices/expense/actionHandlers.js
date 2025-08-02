@@ -17,3 +17,19 @@ export const toggleSort = (state, action) => {
 export const setSearch = (state, action) => {
   state.search = action.payload;
 };
+
+export const setDeleteTransactionTarget = (state, action) => {
+  const defaultDeleteTransaction = {
+    id: "",
+    description: "",
+  };
+  state.deleteTransactionTarget = {
+    ...defaultDeleteTransaction,
+    ...action.payload,
+  };
+};
+
+export const removeExpenseSoft = (state, action) => {
+  const id = action.payload;
+  state.expenses = state.expenses.filter((expense) => expense._id !== id);
+};

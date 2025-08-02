@@ -33,7 +33,7 @@ app.use(cors(corsOptions));
 
 app.use("/api", router);
 
-app.use("/", (err, req, res, next) => {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   return res.status(500).send({
     errorCode: "serverError",

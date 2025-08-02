@@ -241,4 +241,13 @@ module.exports.updateExpense = async (req, res) => {
   }
 };
 
-module.exports.deleteExpense = async (req, res) => {};
+module.exports.deleteExpense = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await Expense.deleteOne({ _id: id });
+
+    return res.status(200).send({ message: `${id} expense deleted` });
+  } catch (error) {
+    return res.status(500).send(ERROR_CODES.CANNOT_UPDATE_EXPENSE);
+  }
+};

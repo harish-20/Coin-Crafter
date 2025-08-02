@@ -4,8 +4,11 @@ import {
   createExpense,
   getAllExpense,
   updateExpense,
+  deleteExpense,
   autoFillExpense,
 } from "../../../api/expense";
+
+import { expenseActions } from "./expenseSlice";
 
 import { chartThunks } from "../chart/chartSlice";
 
@@ -85,6 +88,20 @@ export const updateTransaction = createAsyncThunk(
       return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error);
+    }
+  }
+);
+
+export const deleteTransaction = createAsyncThunk(
+  "delete-transaction",
+  async (args, thunkApi) => {
+    try {
+      const response = await deleteExpense(args);
+
+      thunkApi.dispatch(expenseActions.removeExpenseSoft(args));
+      return response;
+    } catch (error) {
+      console.log(error);
     }
   }
 );

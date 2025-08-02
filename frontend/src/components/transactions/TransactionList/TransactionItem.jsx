@@ -27,6 +27,9 @@ const TransactionItem = (props) => {
   const expensesUpdating = useSelector(
     (state) => state.expense.loadingState.expensesUpdating
   );
+  const deletingExpenseId = useSelector(
+    (state) => state.expense.deleteTransactionTarget.id
+  );
 
   const dispatch = useDispatch();
 
@@ -44,14 +47,21 @@ const TransactionItem = (props) => {
     : null;
 
   const ExpenseIcon = expenseIcon[category.expenseType];
-  const isSelectedTransaction = expenseOnEditMode === id;
   const isExpenseUpdating = expensesUpdating.includes(id);
+
+  const getTransactionBg = () => {
+    if (deletingExpenseId === id) return "bg-red-600/30";
+
+    if (expenseOnEditMode === id) {
+      return "bg-slate-700";
+    }
+
+    return "";
+  };
   return (
     <div
       style={style}
-      className={`gap-2 cursor-pointer p-4 duration-150 rounded-lg ${
-        isSelectedTransaction ? "bg-slate-700" : "hover:bg-slate-800"
-      }`}
+      className={`gap-2 cursor-pointer p-4 duration-150 rounded-lg ${getTransactionBg()} hover:bg-slate-800`}
       onClick={() => dispatch(expenseActions.toggleEditMode(id))}
     >
       <div className="flex justify-between items-start min-h-[50px] flex-wrap gap-4">

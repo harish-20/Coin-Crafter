@@ -64,6 +64,16 @@ export const updateExpense = async (data) => {
   }
 };
 
+export const deleteExpense = async (id) => {
+  try {
+    const result = await api.delete(`/expense/${id}`);
+
+    return result.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const autoFillExpense = async () => {
   try {
     const result = await api.post("/expense/createMany");

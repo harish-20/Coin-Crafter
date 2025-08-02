@@ -55,6 +55,18 @@ export const updateTransaction = {
   },
 };
 
+export const deleteTransaction = {
+  pending: (state, action) => {
+    state.loadingState.isExpenseDeleting = true;
+  },
+  fulfilled: (state, action) => {
+    state.loadingState.isExpenseDeleting = false;
+  },
+  rejected: (state, action) => {
+    state.loadingState.isExpenseDeleting = false;
+  },
+};
+
 export const autoFillExpense = {
   pending: (state, action) => {
     state.loadingState.isAutoFilling = true;

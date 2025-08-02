@@ -11,6 +11,10 @@ const initialState = {
     category: "",
     incomeType: "",
   },
+  deleteTransactionTarget: {
+    id: "",
+    description: "",
+  },
   sorts: {},
   search: "",
   loadingState: {
@@ -18,6 +22,7 @@ const initialState = {
     isExpenseAdding: false,
     expensesUpdating: [],
     isAutoFilling: false,
+    isExpenseDeleting: false,
   },
   errorState: {
     isExpensesLoadingError: false,
@@ -32,6 +37,8 @@ const expenseSlice = createSlice({
     toggleFilter: actionHandlers.toggleFilter,
     toggleSort: actionHandlers.toggleSort,
     setSearch: actionHandlers.setSearch,
+    setDeleteTransactionTarget: actionHandlers.setDeleteTransactionTarget,
+    removeExpenseSoft: actionHandlers.removeExpenseSoft,
   },
   extraReducers: (builder) => {
     // Get all transactions
@@ -69,6 +76,19 @@ const expenseSlice = createSlice({
       .addCase(
         thunks.updateTransaction.fulfilled,
         thunkHandlers.updateTransaction.fulfilled
+      )
+      // Delete transaction
+      .addCase(
+        thunks.deleteTransaction.pending,
+        thunkHandlers.deleteTransaction.pending
+      )
+      .addCase(
+        thunks.deleteTransaction.fulfilled,
+        thunkHandlers.deleteTransaction.fulfilled
+      )
+      .addCase(
+        thunks.deleteTransaction.rejected,
+        thunkHandlers.deleteTransaction.rejected
       )
       // auto fill transaction
       .addCase(
