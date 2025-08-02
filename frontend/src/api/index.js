@@ -1,10 +1,6 @@
 import axios from "axios";
 
-const productionAPI = "https://api-coin-crafter.onrender.com/api";
-const developmentAPI = "http://localhost:8080/api";
-
-const baseURL =
-  process.env.NODE_ENV === "development" ? developmentAPI : productionAPI;
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 export const api = axios.create({
   baseURL,
