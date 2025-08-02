@@ -38,6 +38,11 @@ const Transactions = () => {
 
   useEffect(() => {
     dispatch(expenseThunks.getAllTransaction());
+
+    return () => {
+      // reset the list when user go out this page
+      dispatch(expenseThunks.getAllTransaction());
+    };
   }, [filters, sorts]);
 
   useEffect(() => {
