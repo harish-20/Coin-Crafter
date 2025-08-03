@@ -23,7 +23,7 @@ module.exports.getAllExpense = async (req, res) => {
     // search filter
     if (search) {
       const allQueries = [];
-      const words = search.split(" ");
+      const words = search.split(" ").filter((word) => word.trimStart());
       words.forEach((word) => {
         allQueries.push({ shortNote: { $regex: word, $options: "i" } });
       });
