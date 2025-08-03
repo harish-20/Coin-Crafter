@@ -99,7 +99,3 @@ Contributions are welcome! If you'd like to improve or extend Coin Crafter:
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-If you want this customized for deployment platforms like Vercel, Render, or want a README badge section, let me know.
