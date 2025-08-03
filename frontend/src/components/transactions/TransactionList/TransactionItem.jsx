@@ -55,7 +55,7 @@ const TransactionItem = (props) => {
   const getTransactionBg = () => {
     if (deletingExpenseId === id)
       return `bg-red-600/60 ${
-        isExpensesDeleting ? "opacity-100" : "opacity-30"
+        isExpensesDeleting ? "opacity-30" : "opacity-100"
       }`;
 
     if (expenseOnEditMode === id) return "bg-slate-700";
