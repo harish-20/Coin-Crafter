@@ -50,11 +50,9 @@ const TransactionItem = (props) => {
   const isExpenseUpdating = expensesUpdating.includes(id);
 
   const getTransactionBg = () => {
-    if (deletingExpenseId === id) return "bg-red-600/30";
+    if (deletingExpenseId === id) return "bg-red-600 opacity-50";
 
-    if (expenseOnEditMode === id) {
-      return "bg-slate-700";
-    }
+    if (expenseOnEditMode === id) return "bg-slate-700";
 
     return "";
   };

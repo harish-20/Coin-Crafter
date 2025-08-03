@@ -26,7 +26,7 @@ const DeleteExpenseModal = (props) => {
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
-    await dispatch(expenseThunks.deleteTransaction(transaction.id)).unwrap();
+    dispatch(expenseThunks.deleteTransaction(transaction.id));
     closeModal();
   };
 
@@ -44,7 +44,6 @@ const DeleteExpenseModal = (props) => {
         <Button
           className="overflow-hidden"
           onClick={handleDelete}
-          isLoading={isExpenseDeleting}
           disabled={isExpenseDeleting}
         >
           {isExpenseDeleting ? "Deleting..." : "Yes"}
