@@ -30,11 +30,6 @@ const DeleteExpenseModal = (props) => {
     closeModal();
   };
 
-  const handleClose = () => {
-    dispatch(expenseActions.setDeleteTransactionTarget({}));
-    closeModal();
-  };
-
   return (
     <div
       className={`min-w-[300px] flex flex-col justify-between p-8 ${className}`}
@@ -55,7 +50,7 @@ const DeleteExpenseModal = (props) => {
           {isExpenseDeleting ? "Deleting..." : "Yes"}
         </Button>
         <Button
-          onClick={handleClose}
+          onClick={closeModal}
           variant="outlined"
           disabled={isExpenseDeleting}
         >

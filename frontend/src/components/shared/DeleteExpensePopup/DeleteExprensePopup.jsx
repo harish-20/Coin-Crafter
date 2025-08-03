@@ -4,6 +4,7 @@ import Popup from "../../popup/Popup";
 import DeleteExpenseModal from "./DeleteExpenseModal";
 
 import { popupActions } from "../../../store/slices/popup/popupSlice";
+import { expenseActions } from "../../../store/slices/expense/expenseSlice";
 
 import getAvailablePopups from "../../../helpers/getAvailablePopups";
 
@@ -14,7 +15,10 @@ const DeleteExpensePopup = () => {
 
   const dispatch = useDispatch();
 
-  const closeModal = () => dispatch(popupActions.togglePopup("none"));
+  const closeModal = () => {
+    dispatch(expenseActions.setDeleteTransactionTarget({}));
+    dispatch(popupActions.togglePopup("none"));
+  };
 
   const isLogoutPopupOpen = currentPopup === deleteTransactionPopup;
 
