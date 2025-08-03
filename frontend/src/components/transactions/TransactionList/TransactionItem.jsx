@@ -28,7 +28,7 @@ const TransactionItem = (props) => {
     (state) => state.expense.loadingState.expensesUpdating
   );
   const isExpensesDeleting = useSelector(
-    (state) => state.expense.loadingState.expensesDeleting
+    (state) => state.expense.loadingState.isExpenseDeleting
   );
   const deletingExpenseId = useSelector(
     (state) => state.expense.deleteTransactionTarget.id
@@ -53,6 +53,7 @@ const TransactionItem = (props) => {
   const isExpenseUpdating = expensesUpdating.includes(id);
 
   const getTransactionBg = () => {
+    console.log({ deletingExpenseId, isExpensesDeleting });
     if (deletingExpenseId === id)
       return `bg-red-600/60 ${
         isExpensesDeleting ? "opacity-30" : "opacity-100"
@@ -60,12 +61,12 @@ const TransactionItem = (props) => {
 
     if (expenseOnEditMode === id) return "bg-slate-700";
 
-    return "";
+    return "hover:bg-slate-800";
   };
   return (
     <div
       style={style}
-      className={`gap-2 cursor-pointer p-4 duration-150 rounded-lg ${getTransactionBg()} hover:bg-slate-800`}
+      className={`gap-2 cursor-pointer p-4 duration-150 rounded-lg ${getTransactionBg()}`}
       onClick={() => dispatch(expenseActions.toggleEditMode(id))}
     >
       <div className="flex justify-between items-start min-h-[50px] flex-wrap gap-4">

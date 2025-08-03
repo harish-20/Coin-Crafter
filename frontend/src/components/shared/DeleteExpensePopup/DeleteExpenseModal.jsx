@@ -26,8 +26,10 @@ const DeleteExpenseModal = (props) => {
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
-    dispatch(expenseThunks.deleteTransaction(transaction.id));
-    closeModal();
+    closeModal(false);
+
+    await dispatch(expenseThunks.deleteTransaction(transaction.id)).unwrap();
+    dispatch(expenseActions.setDeleteTransactionTarget({}));
   };
 
   return (

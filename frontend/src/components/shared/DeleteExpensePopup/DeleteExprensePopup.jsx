@@ -15,8 +15,9 @@ const DeleteExpensePopup = () => {
 
   const dispatch = useDispatch();
 
-  const closeModal = () => {
-    dispatch(expenseActions.setDeleteTransactionTarget({}));
+  const closeModal = (reset = true) => {
+    if (reset) dispatch(expenseActions.setDeleteTransactionTarget({}));
+
     dispatch(popupActions.togglePopup("none"));
   };
 
