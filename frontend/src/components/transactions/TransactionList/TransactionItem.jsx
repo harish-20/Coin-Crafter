@@ -27,6 +27,9 @@ const TransactionItem = (props) => {
   const expensesUpdating = useSelector(
     (state) => state.expense.loadingState.expensesUpdating
   );
+  const isExpensesDeleting = useSelector(
+    (state) => state.expense.loadingState.expensesDeleting
+  );
   const deletingExpenseId = useSelector(
     (state) => state.expense.deleteTransactionTarget.id
   );
@@ -50,7 +53,10 @@ const TransactionItem = (props) => {
   const isExpenseUpdating = expensesUpdating.includes(id);
 
   const getTransactionBg = () => {
-    if (deletingExpenseId === id) return "bg-red-600 opacity-50";
+    if (deletingExpenseId === id)
+      return `bg-red-600/60 ${
+        isExpensesDeleting ? "opacity-100" : "opacity-30"
+      }`;
 
     if (expenseOnEditMode === id) return "bg-slate-700";
 
