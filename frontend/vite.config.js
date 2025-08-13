@@ -8,5 +8,19 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/setupTests.js",
+    css: true,
+    browser: {
+      enabled: true,
+      instances: [
+        {
+          browser: "chrome",
+        },
+      ],
+    },
+  },
   plugins: [react(), mkcert()],
 });
