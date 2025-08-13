@@ -4,7 +4,7 @@ import { render } from "../../../setupTests";
 
 import Button from "../../../components/UI/Button";
 
-describe("Button should be dynamic when href if prop passed", () => {
+describe("Button", () => {
   it("should render <button> when no href", () => {
     render(<Button>Test</Button>);
 
