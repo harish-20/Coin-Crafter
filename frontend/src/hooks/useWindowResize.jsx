@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const THROTTLE_INTERVAL = 300;
-
-const useWindowResize = (callback) => {
+const useWindowResize = (callback, throttleInterval = 300) => {
   const timerRef = useRef(null);
 
   const throttledFunction = () => {
@@ -14,7 +12,7 @@ const useWindowResize = (callback) => {
       const isSmallScreen = windowWidth <= 768;
 
       callback(windowWidth, windowHeight, isSmallScreen);
-    }, THROTTLE_INTERVAL);
+    }, throttleInterval);
   };
 
   useEffect(() => {

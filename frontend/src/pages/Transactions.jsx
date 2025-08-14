@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import useDebounce from "../hooks/useDebounce";
+
 import SearchBar from "../components/transactions/SearchBar/SearchBar";
 
 import ListControl from "../components/transactions/ListControl/ListControl";
@@ -12,17 +14,16 @@ import {
 } from "../store/slices/expense/expenseSlice";
 import { categoryThunks } from "../store/slices/category/categorySlice";
 
-let debounceTimer = null;
-const debounceDelay = 400;
-
 const Transactions = () => {
   const filters = useSelector((state) => state.expense.filters);
   const sorts = useSelector((state) => state.expense.sorts);
   const search = useSelector((state) => state.expense.search);
 
-  const firstRenderRef = useRef(true);
-
   const dispatch = useDispatch();
+
+  useDebounce(() => {
+    dispatch(expenseThunks.getAllTransaction());
+  }, [search]);
 
   useEffect(() => {
     dispatch(categoryThunks.getDefaultCategories());
@@ -44,17 +45,6 @@ const Transactions = () => {
       dispatch(expenseThunks.getAllTransaction());
     };
   }, [filters, sorts]);
-
-  useEffect(() => {
-    if (!firstRenderRef.current)
-      debounceTimer = setTimeout(() => {
-        dispatch(expenseThunks.getAllTransaction());
-      }, debounceDelay);
-
-    firstRenderRef.current = false;
-
-    return () => clearTimeout(debounceTimer);
-  }, [search]);
 
   return (
     <div className="fade-in flex flex-col h-full">
