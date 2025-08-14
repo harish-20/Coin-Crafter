@@ -9,7 +9,7 @@ import store from "./store/store.js";
 
 import "./index.css";
 
-const CLIENT_ID = process.env.VITE_CLIENT_ID;
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <GoogleOAuthProvider clientId={CLIENT_ID}>
