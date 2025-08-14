@@ -91,6 +91,7 @@ const TransactionList = () => {
 
       {shouldShowTransactionList && (
         <List
+          aria-label="transaction-list"
           height={dimensions.height}
           rowHeight={rowHeight}
           width={dimensions.width}
