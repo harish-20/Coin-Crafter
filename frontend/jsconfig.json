@@ -1,8 +1,13 @@
 {
     "compilerOptions": {
         "types": [
-            "vitest/globals"
+            "vitest/globals",
+            "cypress"
         ],
         "isolatedModules": true
-    }
+    },
+    "include": [
+        "./node_modules/cypress",
+        "cypress/**/*.js"
+    ]
 }

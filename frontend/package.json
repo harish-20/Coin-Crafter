@@ -10,7 +10,8 @@
     "test": "vitest",
     "test:watch": "vitest --ui",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cypress:open": "npx cypress open"
   },
   "dependencies": {
     "@canvasjs/react-charts": "^1.0.0",
@@ -39,6 +40,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/browser": "^3.2.4",
     "@vitest/ui": "^3.2.4",
+    "cypress": "^14.5.4",
     "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",

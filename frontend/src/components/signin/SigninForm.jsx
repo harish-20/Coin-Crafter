@@ -55,6 +55,7 @@ const SigninForm = () => {
         placeholder="Enter your email..."
         errorMessage={formState.errors?.email?.message}
         register={register("email")}
+        data-test="email-input"
       />
 
       <PasswordInput
@@ -63,13 +64,18 @@ const SigninForm = () => {
         placeholder="Enter your password"
         errorMessage={formState.errors?.password?.message}
         register={register("password")}
+        data-test="password-input"
       />
       <p className="text-sm mt-2 text-gray-400">Forget password?</p>
 
       <div className="mt-6 text-center">
         {formError && <ErrorText className="mb-2">{formError}</ErrorText>}
 
-        <Button className="mt-0" isLoading={formState.isSubmitting}>
+        <Button
+          className="mt-0"
+          isLoading={formState.isSubmitting}
+          data-test="submit"
+        >
           <LoginIconWithText />
         </Button>
       </div>
