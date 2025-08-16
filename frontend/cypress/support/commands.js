@@ -29,12 +29,9 @@ const password = Cypress.env("password");
 
 const apiUrl = Cypress.env("apiUrl");
 
-Cypress.Commands.add(
-  "apiIntercept",
-  (method, endpoint, alias, options = {}) => {
-    cy.intercept(method, `${apiUrl}${endpoint}`, options).as(alias);
-  }
-);
+Cypress.Commands.add("apiIntercept", (method, endpoint, alias, options) => {
+  cy.intercept(method, `${apiUrl}${endpoint}`, options).as(alias);
+});
 
 Cypress.Commands.add("login", () => {
   cy.apiIntercept("POST", "/user/signin", "signin");
@@ -44,7 +41,7 @@ Cypress.Commands.add("login", () => {
   cy.get(`[data-test="email-input"]`).type(email);
   cy.get(`[data-test="password-input"]`).type(password);
 
-  cy.get(`[data-test="submit"]`).click();
+  cy.get(`[data-test="submit"]`).click().wait(3000);
 
   cy.wait("@signin");
 });

@@ -18,6 +18,7 @@ const AddExpenseButton = () => {
     <Button
       className="bg-gray-500 rounded-md p-2 md:w-max min-w-max !mt-0"
       onClick={openTransactionPopup}
+      data-test="add-transaction"
     >
       + Add New
     </Button>

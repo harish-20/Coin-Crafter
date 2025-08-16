@@ -99,6 +99,7 @@ const TransactionForm = (props) => {
             errorMessage={
               isFormSubmitted && formErrors.category && "Select a category"
             }
+            data-test="category-dropdown"
           />
 
           <TextInput
@@ -108,6 +109,7 @@ const TransactionForm = (props) => {
             errorMessage={
               isFormSubmitted && formErrors.amount && "Enter a valid amount"
             }
+            data-test="amount"
           />
 
           <TextAreaInput
@@ -123,6 +125,7 @@ const TransactionForm = (props) => {
               formErrors.description &&
               "Enter a valid description"
             }
+            data-test="description"
           />
 
           <DateInput
@@ -159,7 +162,9 @@ const TransactionForm = (props) => {
             <Button variant="outlined" type="button" onClick={closeModal}>
               Cancel
             </Button>
-            <Button isLoading={isExpenseAdding}>Add</Button>
+            <Button isLoading={isExpenseAdding} data-test="transaction-submit">
+              Add
+            </Button>
           </div>
         </div>
       </form>

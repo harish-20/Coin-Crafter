@@ -14,6 +14,7 @@ const ExpenseItem = (props) => {
         props.className || ""
       }`}
       onClick={props.onClick}
+      data-testid={props.title}
     >
       <div
         style={{ background: props.backgroundColor }}
@@ -30,8 +31,15 @@ const ExpenseItem = (props) => {
 };
 
 const ExpenseDropDown = (props) => {
-  const { label, value, className, onChange, expenseList, errorMessage } =
-    props;
+  const {
+    label,
+    value,
+    className,
+    onChange,
+    expenseList,
+    errorMessage,
+    "data-test": dataTest,
+  } = props;
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const dropDownRef = useRef(null);
@@ -72,6 +80,7 @@ const ExpenseDropDown = (props) => {
           } ${className || ""}`}
           onClick={openDropDown}
           tabIndex={1}
+          data-test={dataTest || ""}
         >
           <ExpenseItem
             icon={selectedItem?.icon || ""}
@@ -84,6 +93,7 @@ const ExpenseDropDown = (props) => {
         <div
           style={{ height: isDropDownOpen ? "200px" : "0px" }}
           className="absolute z-10 w-full top-[110%] overflow-y-auto duration-300 bg-gray-800 rounded-lg"
+          data-test="category-dropdown-list"
         >
           {expenseList.map((expense, index) => (
             <ExpenseItem
