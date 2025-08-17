@@ -1,6 +1,5 @@
 {
   "projectPath": "D:\\Projects\\fullstack-projects\\Coin Crafter\\frontend",
   "envName": "dev",
-  "defaultEditor": "vscode",
-  "noUpdateBackend": true
+  "defaultEditor": "vscode"
 }

@@ -10,6 +10,14 @@
       "StackName": "amplify-frontend-dev-9f8b1",
       "StackId": "arn:aws:cloudformation:eu-north-1:271851634905:stack/amplify-frontend-dev-9f8b1/b4091140-7b3d-11f0-9c15-0a8267268c21",
       "AmplifyAppId": "d2moczoskrm9xc"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2moczoskrm9xc",
+          "type": "manual"
+        }
+      }
     }
   }
 }
