@@ -55,6 +55,7 @@ jobs:
         run: |
           npm install -g @aws-amplify/cli
           amplify pull --appId d2moczoskrm9xc --envName dev --yes
-          amplify configure project --distribution-dir dist --yes
+          amplify add hoisting
+          amplify amplify configure
           amplify publish --yes
         working-directory: frontend
