@@ -33,19 +33,19 @@ jobs:
 
       - name: Running tests
         run: npm run test
-        working-directory: ./frontend
+        working-directory: "frontend"
 
       - name: Installing deps
         run: npm install
-        working-directory: ./frontend
+        working-directory: "frontend"
 
       - name: Building app
         run: npm run build
-        working-directory: ./frontend
+        working-directory: "frontend"
 
       - name: Build app
         run: npm run build
-        working-directory: ./frontend
+        working-directory: "frontend"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
