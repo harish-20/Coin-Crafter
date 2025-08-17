@@ -6,11 +6,11 @@ name: Coin Crafter CI
 on:
   push:
     branches: ["master"]
-    paths: ["/frontend"]
+      path: "./frontend"
 
   pull_request:
     branches: ["master"]
-    paths: ["/frontend"]
+      path: "./frontend"
 
 jobs:
   build:
