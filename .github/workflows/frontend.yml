@@ -31,16 +31,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: Running tests
-        run: npm run test
-        working-directory: "frontend"
-
       - name: Installing deps
         run: npm install
         working-directory: "frontend"
 
-      - name: Building app
-        run: npm run build
+      - name: Running tests
+        run: npm run test
         working-directory: "frontend"
 
       - name: Build app
@@ -59,4 +55,4 @@ jobs:
           npm install -g @aws-amplify/cli
           amplify pull --appId d1cyvn86yu1nkm --envName production --yes
           amplify publish --yes
-        working-directory: ./frontend
+        working-directory: "frontend"
