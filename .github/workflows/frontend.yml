@@ -1,61 +1,65 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Coin Crafter CI
+name: Coin Crafter CI/CD
 
 on:
   push:
     branches:
-      - "master"
-      - "frontend/**"
-
+      - master
+      - frontend/**
   pull_request:
     branches:
-      - "master"
-      - "frontend/**"
+      - master
+      - frontend/**
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     environment: production
 
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
+      # Checkout code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
 
-      - name: Installing deps
-        run: npm install
-        working-directory: "frontend"
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: frontend
 
-      - name: Running tests
-        run: npm run test
-        working-directory: "frontend"
+      # Run tests
+      - name: Run Tests
+        run: npm test
+        working-directory: frontend
 
-      - name: Build app
+      # Build frontend
+      - name: Build Application
         run: npm run build
-        working-directory: "frontend"
+        working-directory: frontend
 
-      - name: Configure AWS credentials
+      # Configure AWS credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: eu-north-1
 
-      - name: Deploy to Amplify (Headless)
+      # Deploy to Amplify Hosting (Headless)
+      - name: Deploy to AWS Amplify
         run: |
           cd frontend
           npm install -g @aws-amplify/cli
-          amplify pull --appId d12v71fvv6s7j9 -y
-
-          echo "🚀 Publishing app..."
-          amplify publish -y
+          amplify pull --appId d12v71fvv6s7j9 --y
+          echo "🚀 Publishing app to Amplify..."
+          amplify publish --yes
