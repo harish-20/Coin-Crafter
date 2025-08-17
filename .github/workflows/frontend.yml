@@ -5,12 +5,14 @@ name: Coin Crafter CI
 
 on:
   push:
-    branches: ["master"]
-      path: "./frontend"
+    branches:
+      - "master"
+      - "frontend/**"
 
   pull_request:
-    branches: ["master"]
-      path: "./frontend"
+    branches:
+      - "master"
+      - "frontend/**"
 
 jobs:
   build:
@@ -40,7 +42,7 @@ jobs:
       - name: Building app
         run: npm run build
         working-directory: ./frontend
-        
+
       - name: Build app
         run: npm run build
         working-directory: ./frontend
