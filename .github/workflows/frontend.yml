@@ -56,28 +56,11 @@ jobs:
           cd frontend
           npm install -g @aws-amplify/cli
 
-          AMPLIFY='{
-            "projectName":"CoinCrafter",
-            "appId":"d2moczoskrm9xc",
-            "envName":"dev",
-            "defaultEditor":"none"
-          }'
+          AMPLIFY="{\"projectName\":\"CoinCrafter\",\"appId\":\"d2moczoskrm9xc\",\"envName\":\"dev\",\"defaultEditor\":\"none\"}"
 
-          FRONTEND='{
-            "frontend":"javascript",
-            "framework":"react",
-            "config":{"SourceDir":"src","DistributionDir":"dist","BuildCommand":"npm run build","StartCommand":"npm start"}
-          }'
+          FRONTEND="{\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":{\"SourceDir\":\"src\",\"DistributionDir\":\"dist\",\"BuildCommand\":\"npm run build\",\"StartCommand\":\"npm start\"}}"
 
-          PROVIDERS='{
-            "awscloudformation":{
-              "configLevel":"project",
-              "useProfile":false,
-              "accessKeyId":"${AWS_ACCESS_KEY_ID}",
-              "secretAccessKey":"${AWS_SECRET_ACCESS_KEY}",
-              "region":"${{ secrets.AWS_REGION }}"
-            }
-          }'
+          PROVIDERS="{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"${{ secrets.AWS_REGION }}\"}}"
 
           amplify pull \
             --amplify "$AMPLIFY" \
