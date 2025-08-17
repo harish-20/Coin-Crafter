@@ -1,0 +1,16 @@
+{
+  "whyContinueWithGen1": "I find the Gen 1 CLI easier to use",
+  "projectName": "coincrafter",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "dist",
+      "BuildCommand": "npm run build",
+      "StartCommand": "npm run start"
+    }
+  },
+  "providers": ["awscloudformation"]
+}

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-coincrafter-dev-21b81-authRole",
+      "UnauthRoleArn": "arn:aws:iam::271851634905:role/amplify-coincrafter-dev-21b81-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::271851634905:role/amplify-coincrafter-dev-21b81-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-coincrafter-dev-21b81-deployment",
+      "UnauthRoleName": "amplify-coincrafter-dev-21b81-unauthRole",
+      "StackName": "amplify-coincrafter-dev-21b81",
+      "StackId": "arn:aws:cloudformation:eu-north-1:271851634905:stack/amplify-coincrafter-dev-21b81/7429e630-7b92-11f0-b196-0a4c85de4365",
+      "AmplifyAppId": "d12v71fvv6s7j9"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

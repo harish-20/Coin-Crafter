@@ -57,4 +57,4 @@ jobs:
           npm install -g @aws-amplify/cli
 
           echo "🚀 Publishing app..."
-          amplify publish --yes
+          amplify publish -y
