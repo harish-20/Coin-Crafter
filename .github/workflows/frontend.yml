@@ -55,6 +55,7 @@ jobs:
         run: |
           cd frontend
           npm install -g @aws-amplify/cli
+          amplify pull --appId d12v71fvv6s7j9 -y
 
           echo "🚀 Publishing app..."
           amplify publish -y
