@@ -54,6 +54,6 @@ jobs:
       - name: Deploy to Amplify
         run: |
           npm install -g @aws-amplify/cli
-          amplify pull --appId d2moczoskrm9xc --envName dev --yes"
+          amplify pull --appId d2moczoskrm9xc --envName dev --yes
           amplify publish --yes
         working-directory: frontend
