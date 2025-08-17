@@ -60,7 +60,7 @@ jobs:
 
           FRONTEND="{\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":{\"SourceDir\":\"src\",\"DistributionDir\":\"dist\",\"BuildCommand\":\"npm run build\",\"StartCommand\":\"npm start\"}}"
 
-          PROVIDERS="{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"$${{ secrets.AWS_ACCESS_KEY }}\",\"secretAccessKey\":\"$${{ secrets.AWS_SECRET_KEY }}\",\"region\":\"eu-north-1\"}}"
+          PROVIDERS="{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"{{ secrets.AWS_ACCESS_KEY }}\",\"secretAccessKey\":\"{{ secrets.AWS_SECRET_KEY }}\",\"region\":\"eu-north-1\"}}"
 
           amplify pull \
             --amplify "$AMPLIFY" \
