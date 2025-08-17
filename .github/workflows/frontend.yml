@@ -62,10 +62,8 @@ jobs:
 
           PROVIDERS="{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"{{ secrets.AWS_ACCESS_KEY }}\",\"secretAccessKey\":\"{{ secrets.AWS_SECRET_KEY }}\",\"region\":\"eu-north-1\"}}"
 
-          amplify pull \
-            --amplify "$AMPLIFY" \
-            --frontend "$FRONTEND" \
-            --providers "$PROVIDERS" \
-            --yes
+          echo "⚡ Bootstrapping Amplify config..."
+          amplify pull --amplify \"$AMPLIFY\" --frontend \"$FRONTEND\" --providers \"$PROVIDERS\" --yes
 
+          echo "🚀 Publishing app..."
           amplify publish --yes
