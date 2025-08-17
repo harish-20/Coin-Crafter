@@ -51,17 +51,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: eu-north-1
 
-      - name: Deploy to Amplify (Headless)
-        run: |
-          cd frontend
-          npm install -g @aws-amplify/cli
-
-          AMPLIFY={\"projectName\":\"Coin Crafter\",\"appId\":\"d2moczoskrm9xc\",\"envName\":\"dev\",\"defaultEditor\":\"code\"}
-          FRONTEND={\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":{\"SourceDir\":\"src\",\"DistributionDir\":\"dist\",\"BuildCommand\":\"npm run build\",\"StartCommand\":\"npm run dev\"}}
-          PROVIDERS={\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"{{ secrets.AWS_ACCESS_KEY }}\",\"secretAccessKey\":\"{{ secrets.AWS_SECRET_KEY }}\",\"region\":\"eu-north-1\"}}
-
-          echo "⚡ Bootstrapping Amplify config..."
-          amplify pull --amplify \"$AMPLIFY\" --frontend \"$FRONTEND\" --providers \"$PROVIDERS\" --yes
-
-          echo "🚀 Publishing app..."
-          amplify publish --yes
+      - name: deploy
+        uses: ambientlight/amplify-cli-action@0.3.0
+        with:
+          amplify_command: publish
+          amplify_env: dev
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS }}
+          AWS_REGION: eu-north-1
