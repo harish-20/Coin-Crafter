@@ -51,9 +51,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: eu-north-1
 
-      - name: Deploy to Amplify
-        run: |
-          npm install -g @aws-amplify/cli
-          amplify pull --appId d1cyvn86yu1nkm --envName production --yes --amplify "{\"envName\":\"production\"}"
-          amplify publish --yes
-        working-directory: frontend
+      - name: Deploy to Amplify Hosting
+        uses: aws-actions/amplify-hosting-deploy@v2
+        with:
+          app-id: d1cyvn86yu1nkm
+          branch: master
+          frontend: frontend/dist
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_REGION: eu-north-1
