@@ -51,7 +51,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: eu-north-1
-        working-directory: ./frontend
 
       - name: Deploy to Amplify
         run: |
