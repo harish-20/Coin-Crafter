@@ -56,9 +56,9 @@ jobs:
           cd frontend
           npm install -g @aws-amplify/cli
 
-          AMPLIFY='{\"projectName\":\"Coin Crafter\",\"appId\":\"d2moczoskrm9xc\",\"envName\":\"dev\",\"defaultEditor\":\"code\"}'
-          FRONTEND='{\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":{\"SourceDir\":\"src\",\"DistributionDir\":\"dist\",\"BuildCommand\":\"npm run build\",\"StartCommand\":\"npm run dev\"}}'
-          PROVIDERS='{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"{{ secrets.AWS_ACCESS_KEY }}\",\"secretAccessKey\":\"{{ secrets.AWS_SECRET_KEY }}\",\"region\":\"eu-north-1\"}}'
+          AMPLIFY={\"projectName\":\"Coin Crafter\",\"appId\":\"d2moczoskrm9xc\",\"envName\":\"dev\",\"defaultEditor\":\"code\"}
+          FRONTEND={\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":{\"SourceDir\":\"src\",\"DistributionDir\":\"dist\",\"BuildCommand\":\"npm run build\",\"StartCommand\":\"npm run dev\"}}
+          PROVIDERS={\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"{{ secrets.AWS_ACCESS_KEY }}\",\"secretAccessKey\":\"{{ secrets.AWS_SECRET_KEY }}\",\"region\":\"eu-north-1\"}}
 
           echo "⚡ Bootstrapping Amplify config..."
           amplify pull --amplify \"$AMPLIFY\" --frontend \"$FRONTEND\" --providers \"$PROVIDERS\" --yes
