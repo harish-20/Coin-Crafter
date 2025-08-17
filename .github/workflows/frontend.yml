@@ -1,0 +1,63 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Coin Crafter CI
+
+on:
+  push:
+    path:
+      branches: ["master"]
+        paths:
+          - '/frontend'
+    pull_request:
+        branches: ["master"]
+        paths:
+          - '/frontend'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Running tests
+        run: npm run test
+        working-directory: ./frontend
+
+      - name: Installing deps
+        run: npm install
+        working-directory: ./frontend
+
+      - name: Building app
+        run: npm run build
+        working-directory: ./frontend
+
+      - name: Build app
+        run: npm run build
+        working-directory: ./frontend
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: eu-north-1
+        working-directory: ./frontend
+
+      - name: Deploy to Amplify
+        run: |
+          npm install -g @aws-amplify/cli
+          amplify pull --appId d1cyvn86yu1nkm --envName production --yes
+          amplify publish --yes
+        working-directory: ./frontend
