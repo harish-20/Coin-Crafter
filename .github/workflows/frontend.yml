@@ -51,12 +51,39 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: eu-north-1
 
-      - name: Deploy to Amplify
+      - name: Deploy to Amplify (Headless)
         run: |
+          cd frontend
           npm install -g @aws-amplify/cli
-          amplify pull --appId d2moczoskrm9xc --envName dev --yes \
-            --frontend javascript \
-            --framework react \
-            --config "{ \"SourceDir\":\"src\", \"DistributionDir\":\"dist\", \"BuildCommand\":\"npm run build\", \"StartCommand\":\"npm start\" }"
+
+          AMPLIFY='$(
+            jq -n \
+            --arg pn "CoinCrafter" \
+            --arg aid "d2moczoskrm9xc" \
+            --arg env "dev" \
+            '{ projectName: $pn, appId: $aid, envName: $env, defaultEditor: "none" }'
+          )'
+
+          FRONTEND='$(
+            jq -n \
+            --arg frontend "javascript" \
+            --arg framework "react" \
+            --argjson cfg '{"SourceDir":"src","DistributionDir":"dist","BuildCommand":"npm run build","StartCommand":"npm start"}' \
+            '{ frontend: $frontend, framework: $framework, config: $cfg }'
+          )'
+
+          PROVIDERS='$(
+            jq -n \
+            --arg region "${{ secrets.AWS_REGION }}" \
+            --arg ak "$AWS_ACCESS_KEY_ID" \
+            --arg sk "$AWS_SECRET_ACCESS_KEY" \
+            '{ awscloudformation: { configLevel: "project", useProfile: false, accessKeyId: $ak, secretAccessKey: $sk, region: $region } }'
+          )'
+
+          amplify pull \
+            --amplify "$AMPLIFY" \
+            --frontend "$FRONTEND" \
+            --providers "$PROVIDERS" \
+            --yes
+
           amplify publish --yes
-        working-directory: frontend
